@@ -1,0 +1,38 @@
+ibanezbetes
+danizgz95@gmail.com
+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
+git config --global user.name "Daniel Ibáñez"
+git config --global user.email danizgz95@gmail.com
+git config --list
+git confi --global --unset-all user.name //borra todos los user.name del Git
+git add .
+git status
+git commit -m "[05/11/2024 11:26"
+git push -u origin main
+https://github.com/ibanezbetes/test_html.git
+git remote add origin https://github.com/ibanezbetes/test_html.git
+
+
+// mv ruta/origen ruta/destino (PARA MOVER [CORTAR-PEGAR] Y RENOMBRAR)
+// rm -rf nombre_del_repositorio_carpeta_o_archivo
+	//	-r: significa "recursivo" (recursive). Le indica a rm que elimine el directorio y todo su contenido, incluyendo 			subdirectorios y archivos dentro de ellos. Sin -r, el comando rm no puede eliminar carpetas; solo archivos individuales.
+
+		-f: significa "forzado" (force). Este parámetro le dice a rm que elimine los archivos y directorios sin pedir confirmación, 		incluso si están protegidos contra escritura o si existen errores. Sin -f, rm podría pedir confirmación en cada archivo o 		carpeta, especialmente si están protegidos.
+//
+
+
+
+Para hacer un git pull en GitHub (o en cualquier repositorio remoto) y traer los cambios del repositorio remoto al repositorio local, sigue estos pasos en la terminal:
+
+1. Asegúrate de estar en la rama correcta desde la que deseas hacer pull. Puedes verificar en qué rama estás y cambiar de ser necesario:
+
+git branch
+git checkout nombre_de_la_rama
+
+
+2. Ejecuta el comando pull para traer y combinar los cambios desde el repositorio remoto:
+
+git pull origin nombre_de_la_rama
+origin es el nombre predeterminado del repositorio remoto. Si has cambiado el nombre o estás trabajando con varios remotos, reemplaza origin por el nombre adecuado.
+nombre_de_la_rama es la rama de la que quieres obtener los cambios (por ejemplo, main o master).
+Este comando hace dos cosas en uno: primero, obtiene los cambios (fetch), y luego intenta combinarlos (merge) en tu rama actual. Si hay conflictos, Git te pedirá que los resuelvas manualmente antes de completar el pull.
