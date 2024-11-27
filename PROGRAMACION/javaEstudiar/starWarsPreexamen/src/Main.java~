@@ -36,7 +36,6 @@ public class Main {
             do {
                 filaAleatoriaYoda = aleatorio.nextInt(MAX_FILA_TABLERO);
                 columnaAleatoriaYoda = aleatorio.nextInt(MAX_COLUMNA_TABLERO);
-                
             } while (tablero1[filaAleatoriaYoda][columnaAleatoriaYoda] != '·');
             tablero1[filaAleatoriaYoda][columnaAleatoriaYoda] = caracter;
         }
@@ -88,6 +87,7 @@ public class Main {
 
 
     public static void main(String[] args) {
+        Random aleatorio = new Random();
         tablero1 = new char[MAX_FILA_TABLERO][MAX_COLUMNA_TABLERO];
         asignarATablero1('·');
         tablero1[9][9] = 'F';
@@ -166,8 +166,15 @@ public class Main {
             } else if (posicionActual == 'M') {
                 System.out.println("Hay un muro. No puedes avanzar.");
                 continue;
+            } else if (posicionActual == 'P') {
+                tablero1[fila][columna] = '·';
+                do {
+                    fila = aleatorio.nextInt(MAX_FILA_TABLERO);
+                    columna = aleatorio.nextInt(MAX_COLUMNA_TABLERO);
+                } while (tablero1[fila][columna] != '·');
             } else if (posicionActual == 'F') {
                 System.out.println("Yoda ha llegado a la meta! ¡HAS GANADO!");
+                System.exit(0);
             }
 
             int nuevaFila;
@@ -177,6 +184,85 @@ public class Main {
             tablero1[fila][columna] = 'Y';
             filaYoda = fila;
             columnaYoda = columna;
+
+
+
+            if (vidasYoda <= 0) {
+                System.out.println("Yoda ha perdido todas las vidas. GAME OVER.");
+            } else if (vidasVader <= 0) {
+                System.out.println("Vader ha perdido todas las vidas. GAME OVER.");
+            }
+
+            imprimirTablero2();
+            String inputVader = lector.nextLine().toUpperCase();
+
+            fila = filaVader;
+            columna = columnaVader;
+
+            columnaAnterior = columna;
+            filaAnterior = fila;
+
+            movimiento = inputVader.charAt(0);
+            switch (movimiento) {
+                case 'A':
+                    columna = (columna - 1 + MAX_COLUMNA_TABLERO) % MAX_COLUMNA_TABLERO;
+                    break;
+                case 'D':
+                    columna = (columna + 1) % MAX_COLUMNA_TABLERO;
+                    break;
+                case 'W':
+                    fila = (fila - 1 + MAX_FILA_TABLERO) % MAX_FILA_TABLERO;
+                    break;
+                case 'S':
+                    fila = (fila + 1) % MAX_FILA_TABLERO;
+                    break;
+                case 'Q':
+                    fila = (fila - 1 + MAX_FILA_TABLERO) % MAX_FILA_TABLERO;
+                    columna = (columna - 1 + MAX_COLUMNA_TABLERO) % MAX_COLUMNA_TABLERO;
+                    break;
+                case 'E':
+                    fila = (fila - 1 + MAX_FILA_TABLERO) % MAX_FILA_TABLERO;
+                    columna = (columna + 1) % MAX_COLUMNA_TABLERO;
+                    break;
+                case 'Z':
+                    fila = (fila + 1) % MAX_FILA_TABLERO;
+                    columna = (columna - 1 + MAX_COLUMNA_TABLERO) % MAX_COLUMNA_TABLERO;
+                    break;
+                case 'C':
+                    fila = (fila + 1) % MAX_FILA_TABLERO;
+                    columna = (columna + 1) % MAX_COLUMNA_TABLERO;
+                    break;
+                default:
+                    System.out.println("Movimiento no válido.");
+                    return;
+            }
+
+            posicionActual = tablero2[fila][columna];
+
+            if (posicionActual == 'R') {
+                vidasVader--;
+                System.out.println("Vader ha perdido una vida. Le quedan " + vidasVader + " vidas.");
+            } else if (posicionActual == 'M') {
+                System.out.println("Hay un muro. No puedes avanzar.");
+                continue;
+            } else if (posicionActual == 'P') {
+                tablero2[fila][columna] = '·';
+                do {
+                    fila = aleatorio.nextInt(MAX_FILA_TABLERO);
+                    columna = aleatorio.nextInt(MAX_COLUMNA_TABLERO);
+                } while (tablero2[fila][columna] != '·');
+            } else if (posicionActual == 'F') {
+                System.out.println("Vader ha llegado a la meta! ¡HAS GANADO!");
+                System.exit(0);
+            }
+
+            nuevaFila;
+            nuevaColumna;
+
+            tablero2[filaAnterior][columnaAnterior] = '·';
+            tablero2[fila][columna] = 'V';
+            filaVader = fila;
+            columnaVader = columna;
 
 
 
