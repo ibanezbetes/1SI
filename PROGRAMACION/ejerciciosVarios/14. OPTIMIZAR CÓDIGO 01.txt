@@ -1,0 +1,86 @@
+switch (block) {
+    case "IRON":
+        // Código para el caso de IRON
+        break;
+    case "BED":
+        // Código para el caso de BED
+        break;
+    case "BED_BLOCK":
+        // Código para el caso de BED_BLOCK
+        break;
+    case "CACTUS":
+        // Código para el caso de CACTUS
+        break;
+    case "BRICK_STAIRS":
+        // Código para el caso de BRICK_STAIRS
+        break;
+    case "BIRCH_WOOD_STAIRS":
+        // Código para el caso de BIRCH_WOOD_STAIRS
+        break;
+    case "BREWING_STAND":
+        // Código para el caso de BREWING_STAND
+        break;
+    case "CAKE":
+        // Código para el caso de CAKE
+        break;
+    case "CAKE_BLOCK":
+        // Código para el caso de CAKE_BLOCK
+        break;
+    case "CAULDRON":
+        // Código para el caso de CAULDRON
+        break;
+    case "CHEST":
+        // Código para el caso de CHEST
+        break;
+    case "CLAY":
+        // Código para el caso de CLAY
+        break;
+    case "SAND":
+        // Código para el caso de SAND
+        break;
+    case "BURNING_FURNACE":
+        // Código para el caso de BURNING_FURNACE
+        break;
+    case "COBBLESTONE_STAIRS":
+        // Código para el caso de COBBLESTONE_STAIRS
+        break;
+    case "FENCE":
+        // Código para el caso de FENCE
+        break;
+    case "FENCE_GATE":
+        // Código para el caso de FENCE_GATE
+        break;
+    case "FIRE":
+        // Código para el caso de FIRE
+        break;
+    case "GRAVEL":
+        // Código para el caso de GRAVEL
+        break;
+    case "IRON_DOOR_BLOCK":
+        // Código para el caso de IRON_DOOR_BLOCK
+        break;
+    case "IRON_FENCE":
+        // Código para el caso de IRON_FENCE
+        break;
+    case "IRON_DOOR":
+        // Código para el caso de IRON_DOOR
+        break;
+    case "LADDER":
+        // Código para el caso de LADDER
+        break;
+    case "MELON":
+        // Código para el caso de MELON
+        break;
+    case "LEAVES":
+        // Código para el caso de LEAVES
+        break;
+    case "LOCKED_CHEST":
+        // Código para el caso de LOCKED_CHEST
+        break;
+    case "SANDSTONE_STAIRS":
+        // Código para el caso de SANDSTONE_STAIRS
+        break;
+    default:
+        // Código para el caso por defecto
+        break;
+}

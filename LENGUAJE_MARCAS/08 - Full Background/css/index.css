@@ -1,0 +1,11 @@
+#container p {
+    color: azure;
+}
+#container {
+    background-color: blueviolet;
+}
+body {
+    background-image: url('../img/berserk-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -1,0 +1,38 @@
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
+public class AñoMasCercano {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduce el número de casos: ");
+        int casos = scanner.nextInt();
+        String[] resultados = new String[casos];
+
+        for (int i = 0; i < casos; i++) {
+            System.out.println("Caso #" + (i + 1) + ":");
+            System.out.println("Introduce el primer año: ");
+            int A = scanner.nextInt();
+            System.out.println("Introduce el segundo año: ");
+            int B = scanner.nextInt();
+            System.out.println("Introduce el tercer año: ");
+            int C = scanner.nextInt();
+
+            int distanciaA = Math.abs(B - A);
+            int distanciaC = Math.abs(B - C);
+
+            if (distanciaA < distanciaC) {
+                resultados[i] = String.valueOf(A);
+            } else if (distanciaC < distanciaA) {
+                resultados[i] = String.valueOf(C);
+            } else {
+                resultados[i] = "EMPATE";
+            }
+        }
+
+        scanner.close();
+
+        for (String resultado : resultados) {
+            System.out.println(resultado);
+        }
+    }
+}

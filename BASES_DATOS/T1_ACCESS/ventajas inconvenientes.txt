@@ -1,0 +1,4 @@
+Ventajas: facilidad de edición para cualquier usuario, así como compatibilidad en cualquier equipo. Poco peso del archivo.
+
+Inconvenientes: sin herramientas de gestión de bases de datos para evitar duplicidad, encontrar consultas, etc..
+Mala organizacion visual, poco intuitivo, facilmente manipulable (poca seguridad).

@@ -1,0 +1,54 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Estilo de la galería */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    justify-content: center;
+}
+
+.imagen {
+    width: calc(50% - 10px); /* Dos imágenes por fila en pantallas pequeñas */
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.imagen img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.imagen img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo para pantallas grandes */
+@media (min-width: 768px) {
+    .imagen {
+        width: calc(25% - 10px); /* Cuatro imágenes por fila */
+    }
+}

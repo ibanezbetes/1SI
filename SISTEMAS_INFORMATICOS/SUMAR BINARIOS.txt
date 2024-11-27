@@ -1,0 +1,8 @@
+0 + 0 = 0
+1 + 0 = 1
+0 + 1 = 1
+1 + 1 = 0(ME LLEVO 1)
+
+SI LOS 1 SON IMPARES, LA SUMA DA 1
+SI ES 3 (1 PAR DE 1's) ME LLEVO 1
+SI ES 5 (2 PAR DE 1's) ME LLEVO 2

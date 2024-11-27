@@ -1,0 +1,96 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Galería de imágenes */
+.gallery {
+    width: 100%;
+    max-width: 800px; /* Tamaño máximo del contenedor */
+    margin: 0 auto 20px auto; /* Centrado horizontal */
+    overflow: hidden;
+    border: 2px solid #ddd; /* Borde opcional para delimitar el área */
+    border-radius: 10px;
+}
+
+.gallery-container {
+    display: flex;
+    animation: slide 10s infinite;
+}
+
+.gallery-container img {
+    width: 100%;
+    max-height: 400px; /* Tamaño máximo para las imágenes */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    flex-shrink: 0;
+    transition: transform 0.5s ease;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.1);
+}
+
+/* Animación de la galería */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+/* Contenedor de cards */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilo de las cards */
+.card {
+    flex: 1;
+    max-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background-color: #fff;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #007BFF;
+}
+
+.card p {
+    padding: 10px;
+    font-size: 1em;
+    color: #333;
+}

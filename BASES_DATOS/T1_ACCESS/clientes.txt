@@ -1,0 +1,5 @@
+001; Maria Martinez; Calle Pano y Ruata 9 1D 50015 Zaragoza; 3000; 0 (<3000); 10%
+002; Jose Perez; Calle Violeta Parra 5 2I 50015 Zaragoza; Calle Pano y Ruata 9 1D 50015 Zaragoza; 5000; 1000 (<3000); 5%
+003; Matilde Sangüesa; Calle Matilde Sangüesa 1 1D 50015 Zaragoza; 1000; 0 (<3000); 5%
+004; Antonio Fernández; Calle Pepito 4 2D 50016 Zaragoza; 500; 0 (<3000); 0%
+005; Mario Gimenez; Calle Pano y Ruata 12 4D 50015 Zaragoza; 8000; 2000 (<3000); 15%

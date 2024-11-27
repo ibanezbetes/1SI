@@ -1,0 +1,6 @@
+-Validación de datos (si le digo que el límite no puede superar 300, no podremos poner 350 como límite) y
+formato de los datos introducidos (si le obligo a poner fecha en formato dd/mm/aaaa).
+
+-Indexado de datos, usando varias páginas en el mismo fichero.
+
+-Edición visual a nivel de diseño para mayor facilidad a la hora de visualizar los datos.

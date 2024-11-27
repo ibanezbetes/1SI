@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class Piramides {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        //System.out.println("Introduce el número de casos: ");
+        int casos = scanner.nextInt();
+        String[] resultados = new String[casos];
+
+        for (int i = 0; i < casos; i++) {
+            //System.out.println("Caso #" + (i + 1) + ":");
+
+            int A, B, C;
+
+            do {
+                //System.out.println("Introduce el primer año (diferente de 0): ");
+                A = scanner.nextInt();
+            } while (A == 0);
+
+            do {
+                //System.out.println("Introduce el segundo año (diferente de 0): ");
+                B = scanner.nextInt();
+            } while (B == 0);
+
+            do {
+                //System.out.println("Introduce el tercer año (diferente de 0): ");
+                C = scanner.nextInt();
+            } while (C == 0);
+
+            int distanciaA = calcularDistancia(A, B);
+            int distanciaC = calcularDistancia(C, B);
+
+            if (distanciaA < distanciaC) {
+                resultados[i] = String.valueOf(A);
+            } else if (distanciaC < distanciaA) {
+                resultados[i] = String.valueOf(C);
+            } else {
+                resultados[i] = "EMPATE";
+            }
+        }
+
+        scanner.close();
+
+        for (String resultado : resultados) {
+            System.out.println(resultado);
+        }
+    }
+
+    private static int calcularDistancia(int año1, int año2) {
+        int distancia = (año1 > año2) ? (año1 - año2) : (año2 - año1);
+        if ((año1 < 0 && año2 > 0) || (año1 > 0 && año2 < 0)) {
+            distancia -= 1;
+        }
+        return distancia;
+    }
+}

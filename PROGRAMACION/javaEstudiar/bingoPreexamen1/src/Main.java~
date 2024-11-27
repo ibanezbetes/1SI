@@ -1,0 +1,72 @@
+import java.util.Random; // Importa la clase Random para generar números aleatorios
+
+public class Main { // Declara la clase principal del programa
+    static Random aleatorio = new Random(); // Crea una instancia de Random para generar números aleatorios
+    static final int MAX_FILA = 3; // Número máximo de filas
+    static final int MAX_COLUMNA = 9; // Número máximo de columnas
+    static int tablero[][] = new int[MAX_FILA][MAX_COLUMNA]; // Declara la matriz 'tablero'
+
+    public static void definirArray() { // Metodo para inicializar y llenar el array 'tablero'
+        // Inicializa el 'tablero' con -1 en todas las posiciones
+        for (int i = 0; i < MAX_FILA; i++) {
+            for (int j = 0; j < MAX_COLUMNA; j++) {
+                tablero[i][j] = -1;
+            }
+        }
+
+        // Recorre cada columna del 'tablero'
+        for (int j = 0; j < MAX_COLUMNA; j++) {
+            int[] numerosColumna = new int[MAX_FILA]; // Array temporal para almacenar números únicos de la columna
+            int contador = 0; // Índice para controlar la posición en 'numerosColumna'
+
+            // Genera números aleatorios únicos para la columna actual
+            while (contador < MAX_FILA) {
+                int randomizado = aleatorio.nextInt(10) + (j * 10) + 10; // Genera un número aleatorio en el rango específico de la columna
+
+                int k; // Variable para recorrer 'numerosColumna'
+                // Verifica si 'randomizado' ya existe en 'numerosColumna'
+                for (k = 0; k < contador; k++) {
+                    if (numerosColumna[k] == randomizado) {
+                        break; // Si se encuentra un duplicado, sale del bucle 'for'
+                    }
+                }
+
+                if (k == contador) { // Si no se encontró duplicado
+                    numerosColumna[contador] = randomizado; // Agrega el número al array 'numerosColumna'
+                    contador++; // Incrementa el índice para la siguiente posición
+                }
+                // Si se encontró duplicado, no se incrementa 'indice' y el bucle 'while' continúa
+            }
+
+            // Ordena los números de la columna de menor a mayor usando el metodo de burbuja
+            for (int i = 0; i < MAX_FILA - 1; i++) {
+                for (int k = 0; k < MAX_FILA - i - 1; k++) {
+                    if (numerosColumna[k] > numerosColumna[k + 1]) {
+                        int temp = numerosColumna[k]; // Intercambia los elementos si están en el orden incorrecto
+                        numerosColumna[k] = numerosColumna[k + 1];
+                        numerosColumna[k + 1] = temp;
+                    }
+                }
+            }
+
+            // Asigna los números ordenados al 'tablero' en la columna actual
+            for (int i = 0; i < MAX_FILA; i++) {
+                tablero[i][j] = numerosColumna[i];
+            }
+        }
+    }
+
+    public static void imprimirArray() { // Metodo para imprimir el contenido del 'tablero'
+        for (int i = 0; i < MAX_FILA; i++) { // Recorre cada fila
+            for (int j = 0; j < MAX_COLUMNA; j++) { // Recorre cada columna
+                System.out.print(tablero[i][j] + " "); // Imprime el valor seguido de un espacio
+            }
+            System.out.println(); // Salto de línea al final de cada fila
+        }
+    }
+
+    public static void main(String[] args) { // Metodo principal del programa
+        definirArray(); // Llama al metodo para inicializar y llenar el 'tablero'
+        imprimirArray(); // Llama al metodo para imprimir el 'tablero'
+    }
+}

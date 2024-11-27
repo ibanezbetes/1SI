@@ -1,0 +1,646 @@
+body {
+    margin: 0 auto;
+    margin-top: 125px;
+    padding: 0;
+    background-color: #ffffff;
+    color: #ffffff;
+    background-image: url('../img/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    justify-content: center;
+}
+
+a {
+    color: #00ff00; /* Color verde */
+    text-decoration: none; /* Elimina el subrayado */
+    font-weight: bold; /* Opcional: Negrita para resaltar */
+}
+
+a:hover {
+    color: #55ff55; /* Un verde más claro al pasar el ratón */
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+.titulo {
+    display: flex; /* Usa Flexbox para organizar el contenido horizontalmente */
+    justify-content: center; /* Centra el conjunto (texto + imagen) horizontalmente */
+    align-items: center; /* Alinea el texto y la imagen verticalmente */
+    text-align: center; /* Asegura que el texto se alinee correctamente */
+}
+
+.h1-image {
+    width: 300px; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantén la proporción de la imagen */
+    margin-left: 10px; /* Espacio entre el texto y la imagen */
+    text-align: center;
+    justify-content: center;
+}
+
+section, header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    width: 100%; /* O el tamaño máximo que prefieras */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #8DC72F;
+    font-weight: 700;
+    text-align: center;
+
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.row-gallery {
+    display: flex;
+}
+
+.col {
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: green;
+    flex: 1;
+    width: 33.3%;
+    padding-top: 100px;
+    color: #ffffff;
+}
+
+.col img {
+    width: 300px;
+    height: 400px;
+}
+
+#introduccion {
+    margin-bottom: 0; /* Elimina el margen inferior */
+    padding-bottom: 0; /* Asegura que no haya espacio adicional */
+    text-align: center;
+}
+
+#explorar {
+    margin-top: 0; /* Elimina el margen superior */
+    padding-top: 0; /* Asegura que no haya espacio adicional */
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: #ffffff;
+    padding: 0px 5px; /* Ajustar espaciado interno */
+    height: 60px; /* Reducir la altura del nav */
+    box-sizing: border-box; /* Incluir padding y border dentro del tamaño */
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+}
+
+nav img.nav-logo {
+    width: 120px; /* Reducir el tamaño del logo */
+    height: auto;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 50px;
+    padding: 0;
+}
+
+nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../img/vinilosHeader.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;
+    margin: 0 auto;
+}
+
+/* Menú con discos de vinilo detrás */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    padding: 20px;
+    margin: 20px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+/* General para los enlaces del menú */
+nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    text-decoration: none;
+    color: white; /* Color inicial del texto */
+    background: black; /* Fondo inicial */
+    border-radius: 50%; /* Hacerlo circular */
+    overflow: hidden;
+    position: relative; /* Para posicionar el círculo blanco */
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease; /* Animaciones suaves */
+    font-weight: bold;
+    text-align: center;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 40px; /* Tamaño del círculo */
+    height: 40px; /* Tamaño del círculo */
+    background: white; /* Color del círculo */
+    border-radius: 50%; /* Hacerlo circular */
+    z-index: 0; /* Asegurarse de que esté detrás del texto */
+    display: block; /* Siempre visible */
+    transition: transform 0.3s ease; /* Suavizar animación */
+}
+
+nav ul li a:hover {
+    transform: scale(1.1); /* Agranda ligeramente el botón */
+    background: #18d100; /* Cambia el fondo a verde */
+    color: black; /* Cambia el color del texto a negro */
+}
+
+
+
+/* Hover para efecto visual */
+nav ul li a:hover {
+    transform: scale(1.1);
+    background: #18d100;
+    color: white;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    text-align: center;
+    padding: 0px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; 
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.separador {
+    display: block;
+    margin: 30px auto 30px auto; /* Añade 20px arriba y abajo, y centra horizontalmente */
+    max-width: 100%;
+    height: auto;
+    opacity: 0.8; /* Opcional: Mantén la imagen translúcida */
+}
+
+/* Contenedor principal de la galería */
+.gallery {
+    width: 1500px; /* Ancho fijo del contenedor */
+    height: 600px; /* Altura fija del contenedor */
+    margin: 0 auto; /* Centrado horizontal */
+    overflow: hidden; /* Oculta el contenido que sobresale */
+    border: 2px solid #00ff00; /* Borde opcional para delimitar el área */
+    border-radius: 10px; /* Esquinas redondeadas */
+    position: relative;
+}
+
+/* Contenedor de imágenes que se desplaza */
+.gallery-container {
+    display: flex;
+    width: calc(600px * 30); /* Ajusta el ancho según el doble de las imágenes */
+    animation: slide 70s linear infinite; /* Animación suave y continua */
+}
+
+/* Estilo de las imágenes */
+.gallery-container img {
+    width: 600px; /* Ancho fijo de cada imagen */
+    height: 600px; /* Altura fija de cada imagen */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border: 2px solid #00ff00; /* Borde opcional */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Animación para movimiento continuo */
+@keyframes slide {
+    0% {
+        transform: translateX(0); /* Comienza en la primera imagen */
+    }
+    100% {
+        transform: translateX(-9000px); /* Desplaza el ancho total de las imágenes */
+    }
+}
+
+
+/* Contenedor principal */
+.explorar-container {
+    display: flex; /* Coloca los elementos en línea horizontal */
+    align-items: center; /* Centra verticalmente las imágenes y el texto */
+    justify-content: space-around; /* Distribuye los elementos con menor margen */
+    margin: 20px auto; /* Margen superior/inferior */
+    max-width: 700px; /* Limita el ancho total del contenedor */
+    text-align: center; /* Alinea el texto del centro */
+    gap: 10px; /* Espaciado más reducido entre los elementos */
+}
+
+/* Imágenes */
+.explorar-img {
+    width: 120px; /* Tamaño más pequeño para las imágenes */
+    height: auto; /* Mantiene las proporciones */
+}
+
+/* Texto */
+.explorar-texto {
+    flex: 1; /* El texto ocupa el espacio restante */
+    max-width: 500px; /* Ajusta el ancho máximo del texto */
+    padding: 0 10px; /* Reduce el espacio interno entre texto y bordes */
+}
+
+.explorar-texto h1 {
+    margin-bottom: 10px; /* Espaciado más pequeño debajo del título */
+    font-size: 1.5rem; /* Tamaño del título */
+    text-align: center;
+}
+
+.explorar-texto p {
+    font-size: 1rem; /* Tamaño del texto */
+    color: #ffffff; /* Color blanco para el texto */
+    line-height: 1.4; /* Espaciado más compacto entre líneas */
+}
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta dinámicamente las columnas */
+    gap: 60px; /* Espacio entre tarjetas */
+    margin: 30px auto; /* Centra el contenedor */
+    padding: 20px;
+    max-width: 1200px; /* Ancho máximo del contenedor */
+     /* Asegura que el padding no desborde */
+}
+
+.card {
+    position: relative; /* Necesario para los pseudo-elementos */
+    width: 100%; /* La tarjeta se ajustará al tamaño del grid */
+    height: 400px; /* Altura fija de las tarjetas */
+    border: 1px solid #8DC72F;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    text-align: center;
+    background-color: #070916;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animaciones suaves */
+}
+
+.card:hover {
+    transform: scale(1.20); /* Agranda ligeramente la tarjeta */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+.card img {
+    width: 100%;
+    height: 100%; /* Imagen ocupa el 100% de la tarjeta */
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #8DC72F; /* Línea separadora debajo de la imagen */
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%; /* El área del gradiente */
+    background: linear-gradient(to top, rgba(0, 0.5, 0.5, 1), transparent); /* Gradiente negro a transparente */
+    z-index: 1; /* Asegura que está encima de la imagen */
+}
+
+/* Contenedor para el texto */
+.card .card-content {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 2; /* Por encima del gradiente */
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.card h2 {
+    font-size: 1em;
+    margin: 5px 0; /* Márgenes pequeños */
+    color: #00ff15;
+}
+
+.card p {
+    font-size: 0.9em;
+    margin: 5px; /* Márgenes pequeños */
+    color: #58bf28;
+}
+
+.button__text {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px; /* Ajusta el tamaño del texto */
+    line-height: 1.5; /* Controla la separación vertical */
+    transform-origin: center center; /* Centra el punto de rotación */
+    animation: text-rotation 10s linear infinite;
+}
+
+.button__text span {
+    position: absolute;
+    transform: rotate(calc(var(--index) * 20deg)) translate(0, 40px); /* Ajusta la rotación y la posición */
+    transform-origin: center center; /* Punto de rotación central */
+    color: white;
+    letter-spacing: -1px; /* Espaciado entre letras */
+    font-size: 12px; /* Ajusta el tamaño del texto */
+    text-transform: uppercase; /* Convierte las letras en mayúsculas */
+}
+
+
+@keyframes text-rotation {
+    to {
+        rotate: 360deg;
+    }
+}
+
+/* Contenedor principal para el efecto */
+.scroll-effect-container {
+    position: relative;
+    background: transparent;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea horizontalmente al centro */
+    justify-content: flex-start;
+}
+
+/* Contenedor interno */
+.scroll-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea horizontalmente */
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* Imagen de la carátula */
+.cover-image img {
+    width: 688px;
+    height: auto;
+    z-index: 2; /* La carátula siempre al frente */
+    position: relative; /* Respetar el flujo del documento */
+    margin-bottom: -688px; /* Evita el hueco inicial entre carátula y vinilo */
+}
+
+/* Imagen del vinilo */
+.vinyl-image {
+    width: 688px; /* Tamaño igual a la carátula */
+    height: auto;
+    z-index: 1; /* Vinilo detrás */
+    position: relative; /* Para que empuje el contenido */
+    margin-top: 0; /* Inicialmente alineado con la carátula */
+    opacity: 0; /* Invisible inicialmente */
+    transition: margin-top 1.5s ease-out, opacity 1.5s ease-out; /* Animación suave */
+}
+
+/* Ajuste de imagen interna del vinilo */
+.vinyl-image img {  
+    width: 100%; /* Ocupa todo el contenedor */
+    height: auto;
+}
+
+/* Al hacer hover, el vinilo aparece */
+.scroll-effect-container:hover .vinyl-image {
+    margin-top: 620px; /* El vinilo se desplaza hacia abajo */
+    opacity: 1; /* Se hace visible */
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente el timeline */
+    position: relative;
+    margin: 0 auto; /* Centra horizontalmente el contenedor */
+    padding: 20px 0;
+    max-width: 800px; /* Ancho máximo del timeline */
+    margin-top: 190px;
+}
+
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%; /* Línea central */
+    width: 4px;
+    height: 100%;
+    background: #8DC72F; /* Color de la línea */
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.timeline-item {
+    display: flex;
+    position: relative;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    margin: 5px 0; /* Espaciado entre elementos */
+    margin-top: -150px; /* Desplaza los elementos hacia abajo */
+}
+
+.timeline-item:nth-child(odd) {
+    justify-content: flex-start; /* Elementos impares hacia la izquierda */
+}
+
+.timeline-item:nth-child(even) {
+    justify-content: flex-end; /* Elementos pares hacia la derecha */
+}
+
+.timeline-content {
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro translúcido */
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px; /* Ancho máximo del contenido */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
+    text-align: center;
+    border: #8DC72F solid 2px;
+}
+
+.timeline-content img {
+    width: 100%; /* Tamaño adaptativo */
+    max-width: 250px; /* Tamaño máximo de las imágenes */
+    height: auto; /* Mantiene proporción */
+    border-radius: 10px;
+    margin-bottom: 10px; /* Espacio debajo de la imagen */
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    transform: translateX(-30px); /* Desplaza hacia la izquierda */
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    transform: translateX(30px); /* Desplaza hacia la derecha */
+}
+
+.timeline-year {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: #8DC72F;
+    font-weight: bold;
+    background: #000000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 1;
+    text-align: center;
+    border: #8DC72F solid 2px;
+}
+
+.timeline-year::after {
+    content: "";
+    position: absolute;
+    width: 2px; /* Grosor de la línea */
+    height: 100px; /* Longitud de la línea, ajusta según necesidad */
+    background-color: #8DC72F; /* Color de la línea */
+    top: 100%; /* Inicia justo debajo de la fecha */
+    left: 50%; /* Centrado */
+    transform: translateX(-50%);
+}
+
+/* Posiciones específicas para los años */
+.timeline-year.year-1970 {
+    top: 0%; /* Ajusta la posición según tu diseño */
+}
+
+.timeline-year.year-1980 {
+    top: 28%;
+}
+
+.timeline-year.year-1990 {
+    top: 41%;
+}
+
+.timeline-year.year-2000 {
+    top: 54%;
+}
+
+.timeline-year.year-2010 {
+    top: 61%;
+}
+
+.timeline-year.year-2020 {
+    top: 93%;
+}
+
+
+/* Estilo general para las secciones de formularios */
+.vote-section, .contact-section {
+    margin: 50px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background: #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    border: #00ff00 2px solid;
+}
+
+/* Títulos de ambas secciones */
+.vote-section h2, .contact-section h2 {
+    font-size: 2rem;
+    color: #8DC72F;
+    margin-bottom: 20px;
+}
+
+/* Estilo general para formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Etiquetas */
+form label {
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: left;
+}
+
+/* Campos de entrada, select y textarea */
+form select, form input, form textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 90%; /* Ancho fijo más ajustado */
+    margin: 0 auto; /* Centra los campos dentro del formulario */
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+/* Estilo específico para textarea */
+form textarea {
+    resize: vertical; /* Permite solo redimensionar verticalmente */
+    min-height: 100px; /* Altura mínima del área de texto */
+}
+
+/* Enfoque en los campos */
+form select:focus, form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #8DC72F;
+}
+
+/* Botones */
+form button {
+    background: #8DC72F;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 50%; /* Botón más estrecho */
+    max-width: 300px; /* Botón consistente */
+    margin: 0 auto; /* Centra el botón */
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: #75a623;
+}
+

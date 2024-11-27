@@ -1,0 +1,17 @@
+/* CSS SON TODO REGLAS DE ESTILOS */
+    /*1º) Nombre del elemento*/
+    /*2º) Apertura/Cierre de llaves*/
+    /*3º) Propiedades de los elementos(MUCHAS)*/
+
+#title1{
+    background-color: #ff0000;
+    display: inline-block;
+}
+#title2{
+    background-color: #eeff00;
+    display: block;
+}
+#title3{
+    background-color: #ff0000;
+    display: inline-block;
+}

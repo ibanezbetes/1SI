@@ -1,0 +1,49 @@
+/* CSS SON TODO REGLAS DE ESTILOS */
+    /*1º) Nombre del elemento*/
+    /*2º) Apertura/Cierre de llaves*/
+    /*3º) Propiedades de los elementos(MUCHAS)*/
+#title{
+    background-color: blueviolet;
+    display: inline-block;
+    border: 5px ridge black;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    margin-left: 250px;
+    display: block;
+}
+#description{
+    background-color: red;
+    display: inline-block;
+    border: 5px ridge black;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 50px;
+    margin-left: 250px;
+    display: block;
+}
+#card{
+    border: 1px black solid;
+    display: inline-block;
+    margin-left: 50%;
+    margin-right: 50%;
+    padding: 20px;
+}
+#zapasnike{
+    width: 250px;
+    height: 250px;
+}
+#dex1{
+    color:aqua
+}
+#dex2{
+    color:rgb(22, 199, 69)
+}
+#dex3{
+    color:rgb(229, 255, 0)
+}
+.border_box{
+    border: 0.5px black solid;
+}

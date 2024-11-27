@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/1SI-PROGRAMACION.iml" filepath="$PROJECT_DIR$/.idea/1SI-PROGRAMACION.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ChallengeArraysIbañez/Ejercicio1/Ejercicio1.iml" filepath="$PROJECT_DIR$/ChallengeArraysIbañez/Ejercicio1/Ejercicio1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ChallengeArraysIbañez/Ejercicio2/Ejercicio2.iml" filepath="$PROJECT_DIR$/ChallengeArraysIbañez/Ejercicio2/Ejercicio2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ChallengeArraysIbañez/Ejercicio3/Ejercicio3.iml" filepath="$PROJECT_DIR$/ChallengeArraysIbañez/Ejercicio3/Ejercicio3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bingo/bingo.iml" filepath="$PROJECT_DIR$/bingo/bingo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/grabacionSimpson/grabacionSimpson.iml" filepath="$PROJECT_DIR$/grabacionSimpson/grabacionSimpson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/primitiva/primitiva.iml" filepath="$PROJECT_DIR$/primitiva/primitiva.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tableroSimpson/tableroSimpson.iml" filepath="$PROJECT_DIR$/tableroSimpson/tableroSimpson.iml" />
+    </modules>
+  </component>
+</project>

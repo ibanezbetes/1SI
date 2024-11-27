@@ -1,0 +1,5 @@
+15001; pccomputer; 651555485
+15002; pccomponentes; 687942475
+15003; mediamarkt; 654654654
+15004; fnac; 696696696
+15005; elcorteingles; 635632587

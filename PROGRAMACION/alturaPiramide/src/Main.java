@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
+        int bloquesUser;
+        do {
+            bloquesUser = leer.nextInt();
+            if (bloquesUser == 0) {
+                break;
+            }
+            int nivel = 1;
+            int bloquesAcumulados = 1;
+            int multiplicadorBloques = 1;
+            while (bloquesUser > bloquesAcumulados) {
+                nivel++;
+                multiplicadorBloques += 2;
+                bloquesAcumulados += (multiplicadorBloques * multiplicadorBloques);
+            }
+            System.out.println(nivel);
+        } while (true);
+        leer.close();
+    }
+}
