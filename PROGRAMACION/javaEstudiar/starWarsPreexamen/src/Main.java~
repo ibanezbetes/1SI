@@ -123,7 +123,7 @@ public class Main {
             columnaAnterior = columna;
             filaAnterior = fila;
 
-            char movimiento = inputYoda.charAt(0);
+            String movimiento = inputYoda.charAt(0);
             switch (movimiento) {
                 case 'A':
                     columna = (columna - 1 + MAX_COLUMNA_TABLERO) % MAX_COLUMNA_TABLERO;
@@ -255,9 +255,6 @@ public class Main {
                 System.out.println("Vader ha llegado a la meta! ¡HAS GANADO!");
                 System.exit(0);
             }
-
-            nuevaFila;
-            nuevaColumna;
 
             tablero2[filaAnterior][columnaAnterior] = '·';
             tablero2[fila][columna] = 'V';
