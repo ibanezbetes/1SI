@@ -107,7 +107,6 @@ public class Main {
         imprimirTablero2();
 
         Scanner lector = new Scanner(System.in);
-
         char posicionActual;
         int filaAnterior;
         int columnaAnterior;
@@ -116,13 +115,10 @@ public class Main {
         while (vidasYoda > 0 && vidasVader > 0) {
             imprimirTablero1();
             String inputYoda = lector.nextLine().toUpperCase();
-
             fila = filaYoda;
             columna = columnaYoda;
-
             columnaAnterior = columna;
             filaAnterior = fila;
-
             char movimiento = inputYoda.charAt(0);
             switch (movimiento) {
                 case 'A':
@@ -157,9 +153,7 @@ public class Main {
                     System.out.println("Movimiento no válido.");
                     return;
             }
-
             posicionActual = tablero1[fila][columna];
-
             if (posicionActual == 'D') {
                 vidasYoda--;
                 System.out.println("Yoda ha perdido una vida. Le quedan " + vidasYoda + " vidas.");
@@ -176,23 +170,17 @@ public class Main {
                 System.out.println("Yoda ha llegado a la meta! ¡HAS GANADO!");
                 System.exit(0);
             }
-
             int nuevaFila;
             int nuevaColumna;
-
             tablero1[filaAnterior][columnaAnterior] = '·';
             tablero1[fila][columna] = 'Y';
             filaYoda = fila;
             columnaYoda = columna;
-
-
-
             if (vidasYoda <= 0) {
                 System.out.println("Yoda ha perdido todas las vidas. GAME OVER.");
             } else if (vidasVader <= 0) {
                 System.out.println("Vader ha perdido todas las vidas. GAME OVER.");
             }
-
             imprimirTablero2();
             String inputVader = lector.nextLine().toUpperCase();
 
