@@ -219,41 +219,85 @@ footer {
 }
 
 /* Contenedor principal de la galería */
+/* Contenedor principal de la galería */
 .gallery {
-    width: 1500px; /* Ancho fijo del contenedor */
-    height: 600px; /* Altura fija del contenedor */
+    width: 100%; /* Usa todo el ancho disponible */
+    height: auto; /* Altura flexible */
     margin: 0 auto; /* Centrado horizontal */
-    overflow: hidden; /* Oculta el contenido que sobresale */
-    border: 2px solid #00ff00; /* Borde opcional para delimitar el área */
+    overflow: hidden; /* Oculta contenido que sobresale */
+    
     border-radius: 10px; /* Esquinas redondeadas */
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Contenedor de imágenes que se desplaza */
 .gallery-container {
     display: flex;
-    width: calc(600px * 30); /* Ajusta el ancho según el doble de las imágenes */
+    flex-wrap: nowrap; /* No permite que las imágenes bajen a otra fila */
     animation: slide 70s linear infinite; /* Animación suave y continua */
+    gap: 10px; /* Espaciado entre imágenes */
 }
 
 /* Estilo de las imágenes */
 .gallery-container img {
-    width: 600px; /* Ancho fijo de cada imagen */
-    height: 600px; /* Altura fija de cada imagen */
+    width: 600px; /* Tamaño fijo inicial */
+    height: auto; /* Mantén la proporción */
     object-fit: cover; /* Ajusta la imagen sin deformarla */
     border: 2px solid #00ff00; /* Borde opcional */
     border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.3s ease-in-out; /* Animación al hacer hover */
 }
 
-/* Animación para movimiento continuo */
+.gallery-container img:hover {
+    transform: scale(1.1); /* Agranda la imagen al pasar el ratón */
+}
+
+/* Animación para el desplazamiento continuo */
 @keyframes slide {
     0% {
         transform: translateX(0); /* Comienza en la primera imagen */
     }
     100% {
-        transform: translateX(-9000px); /* Desplaza el ancho total de las imágenes */
+        transform: translateX(calc(-600px * 15)); /* Desplaza el ancho total de las imágenes */
     }
 }
+
+/* Media Query para pantallas medianas */
+@media (max-width: 1024px) {
+    .gallery-container img {
+        width: 400px; /* Reduce el tamaño de las imágenes */
+    }
+
+    .gallery-container {
+        gap: 8px; /* Ajusta el espacio entre imágenes */
+    }
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .gallery-container img {
+        width: 300px; /* Tamaño más pequeño para pantallas pequeñas */
+    }
+
+    .gallery {
+        height: auto; /* Ajusta la altura al contenido */
+    }
+}
+
+/* Media Query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .gallery-container img {
+        width: 200px; /* Tamaño más pequeño aún */
+    }
+
+    .gallery-container {
+        gap: 5px; /* Reduce el espacio entre imágenes */
+    }
+}
+
 
 
 /* Contenedor principal */
@@ -293,38 +337,46 @@ footer {
 }
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ajusta dinámicamente las columnas */
-    gap: 60px; /* Espacio entre tarjetas */
-    margin: 30px auto; /* Centra el contenedor */
+    grid-template-columns: repeat(3, 1fr); /* Máximo 3 tarjetas por fila */
+    gap: 60px; /* Espaciado entre las tarjetas */
+    margin: 30px auto;
     padding: 20px;
-    max-width: 1200px; /* Ancho máximo del contenedor */
-     /* Asegura que el padding no desborde */
+    max-width: 1200px;
 }
 
 .card {
-    position: relative; /* Necesario para los pseudo-elementos */
-    width: 100%; /* La tarjeta se ajustará al tamaño del grid */
-    height: 400px; /* Altura fija de las tarjetas */
+    position: relative;
+    width: 100%; /* Se ajusta al tamaño de la columna */
+    height: 400px;
     border: 1px solid #8DC72F;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     text-align: center;
     background-color: #070916;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animaciones suaves */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.card img {
+    width: 108%;
+    align-items:baseline;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #8DC72F;
+}
+
+/* Adaptación para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr); /* Una tarjeta por fila en pantallas pequeñas */
+    }
+}
+
 
 .card:hover {
     transform: scale(1.20); /* Agranda ligeramente la tarjeta */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
-}
-
-.card img {
-    width: 100%;
-    height: 100%; /* Imagen ocupa el 100% de la tarjeta */
-    object-fit: cover;
-    display: block;
-    border-bottom: 1px solid #8DC72F; /* Línea separadora debajo de la imagen */
 }
 
 .card::after {
@@ -443,7 +495,7 @@ footer {
 
 /* Al hacer hover, el vinilo aparece */
 .scroll-effect-container:hover .vinyl-image {
-    margin-top: 620px; /* El vinilo se desplaza hacia abajo */
+    margin-top: 680px; /* El vinilo se desplaza hacia abajo */
     opacity: 1; /* Se hace visible */
 }
 
@@ -454,10 +506,9 @@ footer {
     position: relative;
     margin: 0 auto; /* Centra horizontalmente el contenedor */
     padding: 20px 0;
-    max-width: 800px; /* Ancho máximo del timeline */
-    margin-top: 190px;
+    max-width: 90%; /* Reduce el ancho máximo y permite adaptarse al contenedor */
+    margin-top: 80px;
 }
-
 
 .timeline::before {
     content: "";
@@ -474,9 +525,8 @@ footer {
 .timeline-item {
     display: flex;
     position: relative;
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    margin: 5px 0; /* Espaciado entre elementos */
-    margin-top: -150px; /* Desplaza los elementos hacia abajo */
+    width: 50%; /* Ocupa todo el ancho del contenedor */
+    margin: 20px 0; /* Espaciado entre elementos */
 }
 
 .timeline-item:nth-child(odd) {
@@ -488,14 +538,16 @@ footer {
 }
 
 .timeline-content {
-    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro translúcido */
+    background: rgba(0, 0, 0, 0.8); /* Fondo oscuro translúcido */
     color: #fff;
     border-radius: 10px;
     padding: 20px;
     max-width: 300px; /* Ancho máximo del contenido */
+    width: 90%; /* Ancho flexible */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
     text-align: center;
     border: #8DC72F solid 2px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
 }
 
 .timeline-content img {
@@ -507,12 +559,39 @@ footer {
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
-    transform: translateX(-30px); /* Desplaza hacia la izquierda */
+    transform: translateX(-20px); /* Ajusta el desplazamiento */
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-    transform: translateX(30px); /* Desplaza hacia la derecha */
+    transform: translateX(20px); /* Ajusta el desplazamiento */
 }
+
+/* Media Query para pantallas medianas */
+@media (max-width: 768px) {
+    .timeline-item {
+        justify-content: center; /* Centra las fichas en pantallas pequeñas */
+    }
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        transform: translateX(0); /* Elimina el desplazamiento en pantallas pequeñas */
+    }
+    .timeline-content {
+        max-width: 100%; /* Aumenta el ancho máximo en pantallas pequeñas */
+        padding: 15px; /* Reduce el padding */
+    }
+}
+
+/* Media Query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .timeline-content {
+        padding: 10px; /* Ajusta el padding para dispositivos pequeños */
+        font-size: 0.9rem; /* Reduce el tamaño de la fuente */
+    }
+    .timeline-content img {
+        max-width: 200px; /* Reduce el tamaño máximo de la imagen */
+    }
+}
+
 
 .timeline-year {
     position: absolute;
@@ -524,7 +603,7 @@ footer {
     background: #000000;
     padding: 5px 10px;
     border-radius: 5px;
-    z-index: 1;
+    z-index: 0;
     text-align: center;
     border: #8DC72F solid 2px;
 }
@@ -542,7 +621,7 @@ footer {
 
 /* Posiciones específicas para los años */
 .timeline-year.year-1970 {
-    top: 0%; /* Ajusta la posición según tu diseño */
+    top: 1%; /* Ajusta la posición según tu diseño */
 }
 
 .timeline-year.year-1980 {
@@ -554,7 +633,7 @@ footer {
 }
 
 .timeline-year.year-2000 {
-    top: 54%;
+    top: 54.5%;
 }
 
 .timeline-year.year-2010 {
@@ -562,7 +641,7 @@ footer {
 }
 
 .timeline-year.year-2020 {
-    top: 93%;
+    top: 94%;
 }
 
 
@@ -644,3 +723,64 @@ form button:hover {
     background: #75a623;
 }
 
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.bio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .bio-container {
+        grid-template-columns: repeat(1, 1fr); /* Solo una tarjeta por fila en pantallas pequeñas */
+    }
+}
+
+.bio-card {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.bio-card summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.bio-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.bio-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.bio-card p {
+    margin: 10px 0;
+    font-size: 0.9rem;
+}
+
+details[open] summary {
+    font-weight: bold;
+}

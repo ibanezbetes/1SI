@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Random;
+
 public class Main {
     public static final int MAX_FILA_TABLERO = 10;
     public static final int MAX_COLUMNA_TABLERO = 10;
@@ -12,7 +13,8 @@ public class Main {
     public static int vidasYoda = 3;
     public static int vidasVader = 3;
 
-    public static void asignarATablero1(char caracter) {
+    public static void asignarATablero1(char c
+                                        aracter) {
         for (int i = 0; i < MAX_FILA_TABLERO; i++) {
             for (int j = 0; j < MAX_COLUMNA_TABLERO; j++) {
                 tablero1[i][j] = caracter;
