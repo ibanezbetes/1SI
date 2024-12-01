@@ -105,7 +105,7 @@ nav {
     width: 100%;
     color: #ffffff;
     padding: 0px 5px; /* Ajustar espaciado interno */
-    height: 60px; /* Reducir la altura del nav */
+    height: 120px; /* Reducir la altura del nav */
     box-sizing: border-box; /* Incluir padding y border dentro del tamaño */
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 9999;
@@ -128,7 +128,7 @@ nav::before {
     right: 0;
     bottom: 0;
     background-image: url('../img/vinilosHeader.jpg');
-    background-size: cover;
+    background-size: 40%;
     background-position: center;
     opacity: 0.5;
     z-index: -1;
@@ -213,7 +213,7 @@ footer {
 
 .separador {
     display: block;
-    margin: 80px auto 50px auto; /* Añade 20px arriba y abajo, y centra horizontalmente */
+    margin: 90px auto 50px auto; /* Añade 20px arriba y abajo, y centra horizontalmente */
     max-width: 100%;
     height: auto;
     opacity: 0.8; /* Opcional: Mantén la imagen translúcida */
@@ -941,6 +941,8 @@ header {
 .bio-card p {
     margin: 10px 0;
     font-size: 0.9rem;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 details[open] summary {
