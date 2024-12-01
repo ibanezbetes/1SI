@@ -310,10 +310,9 @@ footer {
 /* Contenedor principal de la galería */
 .gallery {
     width: 100%; /* Usa todo el ancho disponible */
-    height: auto; /* Altura flexible */
+    height: 120%; /* Altura flexible */
     margin: 0 auto; /* Centrado horizontal */
-    overflow: hidden; /* Oculta contenido que sobresale */
-    
+    overflow: hidden; /* Oculta contenido que sobresale */;
     border-radius: 10px; /* Esquinas redondeadas */
     position: relative;
     display: flex;
@@ -327,6 +326,7 @@ footer {
     flex-wrap: nowrap; /* No permite que las imágenes bajen a otra fila */
     animation: slide 70s linear infinite; /* Animación suave y continua */
     gap: 10px; /* Espaciado entre imágenes */
+    margin-top: 1%;
 }
 
 /* Estilo de las imágenes */
@@ -572,7 +572,7 @@ footer {
 
 @keyframes text-rotation {
     to {
-        rotate: 360deg;
+        rotate: -360deg;
     }
 }
 
