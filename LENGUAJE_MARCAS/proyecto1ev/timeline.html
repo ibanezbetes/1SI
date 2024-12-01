@@ -12,14 +12,15 @@
     <link rel="icon" href="img/claveSolNegra.ico" media="(prefers-color-scheme: light)">
 
 </head>
-<body>
+
     <!-- Añade un ancla al principio del documento -->
 <a id="top"></a>
 
 
 
+
 <nav>
-  <img src="img/logo2.png" alt="logo" class="nav-logo">
+  
   <ul>
       <li class="button">
           <a href="index.html" aria-label="Inicio">
@@ -98,12 +99,33 @@
   </ul>
 </nav>
     
+<!-- Menú Hamburguesa -->
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
+<label for="menu-toggle" class="hamburger-menu">
     
-    <header>
-        
-        <img src="img/linea1.png" alt="separador" class="separador">
-        <section class="timeline">
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
 
+<img src="img/titulillo.png" alt="logo" class="logomobile">
+<!-- Menú Móvil -->
+<div class="mobile-nav">
+    <a href="index.html">Inicio</a>
+    <a href="canciones.html">Canciones</a>
+    <a href="timeline.html">Lanzamiento</a>
+    <a href="biografias.html">Biografías</a>
+    <a href="contacto.html">Contacto</a>
+</div>
+<body>
+<header>
+    <img src="img/linea1.png" alt="separador" class="separador">
+    <h1>Año de lanzamiento</h1>
+    <p>Averigua en que año se estrenaron las canciones que te gustan.</p>
+</header>
+
+    <body>
+        <section class="timeline">
         <!-- Años en la línea verde -->
     <div class="timeline-year year-1970">1970</div>
     <div class="timeline-year year-1980">1980</div>
@@ -249,7 +271,7 @@
           </div>
       </section>
       <img src="img/linea1.png" alt="separador" class="separador">
-    </header>
+    </body>
 
 
     <footer>

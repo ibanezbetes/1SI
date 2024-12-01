@@ -2,9 +2,8 @@ body {
     margin: 0 auto;
     margin-top: 125px;
     padding: 0;
-    background-color: #ffffff;
-    color: #ffffff;
-    background-image: url('../img/background.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), 
+                url('../img/bg.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -138,18 +137,20 @@ nav::before {
 
 /* Menú con discos de vinilo detrás */
 nav ul {
-    list-style: none;
+    margin-top: 20px; /* Baja los discos de vinilo */
+    padding: 20px; /* Mantiene el espaciado interno */
+    list-style: none; /* Sin viñetas */
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
     gap: 20px;
-    padding: 20px;
-    margin: 20px;
 }
 
+/* Opcional: ajusta la posición específica de cada disco si es necesario */
 nav ul li {
     position: relative;
+    margin-top: 50px; /* Baja cada disco de forma individual */
 }
 
 /* General para los enlaces del menú */
@@ -212,11 +213,98 @@ footer {
 
 .separador {
     display: block;
-    margin: 30px auto 30px auto; /* Añade 20px arriba y abajo, y centra horizontalmente */
+    margin: 80px auto 50px auto; /* Añade 20px arriba y abajo, y centra horizontalmente */
     max-width: 100%;
     height: auto;
     opacity: 0.8; /* Opcional: Mantén la imagen translúcida */
 }
+
+
+/* Estilo inicial para ocultar el input de tipo checkbox */
+.menu-toggle {
+    display: none; /* Oculta el checkbox */
+}
+
+/* Menú Hamburguesa */
+.hamburger-menu {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Menú Móvil */
+.mobile-nav {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 999;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    transition: color 0.3s;
+}
+
+.mobile-nav a:hover {
+    color: #00ff00;
+}
+
+/* Cuando el checkbox está activo, muestra el menú */
+.menu-toggle:checked ~ .mobile-nav {
+    display: flex;
+}
+
+/* Transforma la hamburguesa cuando está activa */
+.menu-toggle:checked + .hamburger-menu span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.menu-toggle:checked + .hamburger-menu span:nth-child(2) {
+    opacity: 0; /* Oculta la barra central */
+}
+
+.menu-toggle:checked + .hamburger-menu span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Media Query para Dispositivos Móviles */
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Oculta el nav original */
+    }
+
+    .hamburger-menu {
+        display: flex; /* Muestra el menú hamburguesa */
+    }
+}
+
+
 
 /* Contenedor principal de la galería */
 /* Contenedor principal de la galería */
@@ -304,30 +392,31 @@ footer {
 .explorar-container {
     display: flex; /* Coloca los elementos en línea horizontal */
     align-items: center; /* Centra verticalmente las imágenes y el texto */
-    justify-content: space-around; /* Distribuye los elementos con menor margen */
+    justify-content: space-between; /* Distribuye las imágenes y el texto */
     margin: 20px auto; /* Margen superior/inferior */
     max-width: 700px; /* Limita el ancho total del contenedor */
     text-align: center; /* Alinea el texto del centro */
-    gap: 10px; /* Espaciado más reducido entre los elementos */
+    gap: 10px; /* Espaciado entre los elementos */
 }
 
 /* Imágenes */
 .explorar-img {
-    width: 120px; /* Tamaño más pequeño para las imágenes */
+    width: 120px; /* Tamaño inicial de las imágenes */
     height: auto; /* Mantiene las proporciones */
+    flex-shrink: 0; /* Evita que las imágenes se reduzcan demasiado */
 }
 
 /* Texto */
 .explorar-texto {
     flex: 1; /* El texto ocupa el espacio restante */
     max-width: 500px; /* Ajusta el ancho máximo del texto */
-    padding: 0 10px; /* Reduce el espacio interno entre texto y bordes */
+    padding: 0 10px; /* Espaciado interno entre texto e imágenes */
+    text-align: center;
 }
 
 .explorar-texto h1 {
     margin-bottom: 10px; /* Espaciado más pequeño debajo del título */
     font-size: 1.5rem; /* Tamaño del título */
-    text-align: center;
 }
 
 .explorar-texto p {
@@ -335,6 +424,45 @@ footer {
     color: #ffffff; /* Color blanco para el texto */
     line-height: 1.4; /* Espaciado más compacto entre líneas */
 }
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .explorar-container {
+        max-width: 100%; /* Asegúrate de que ocupe todo el ancho del contenedor */
+        gap: 5px; /* Reduce el espacio entre los elementos */
+        padding: 10px; /* Añade un poco de margen interno */
+    }
+
+    .explorar-img {
+        width: 80px; /* Haz las imágenes más pequeñas en pantallas pequeñas */
+        height: auto; /* Mantén las proporciones */
+    }
+
+    .explorar-texto {
+        font-size: 0.9rem; /* Reduce el tamaño del texto */
+    }
+}
+
+/* Media Query para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .explorar-container {
+        gap: 5px; /* Reduce el espacio entre los elementos aún más */
+    }
+
+    .explorar-img {
+        width: 60px; /* Haz las imágenes aún más pequeñas */
+        height: auto; /* Mantén las proporciones */
+    }
+
+    .explorar-texto h1 {
+        font-size: 1.2rem; /* Ajusta el tamaño del título */
+    }
+
+    .explorar-texto p {
+        font-size: 0.8rem; /* Ajusta el tamaño del texto */
+    }
+}
+
 .cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Máximo 3 tarjetas por fila */
@@ -342,6 +470,8 @@ footer {
     margin: 30px auto;
     padding: 20px;
     max-width: 1200px;
+    justify-content: center;
+    
 }
 
 .card {
@@ -455,10 +585,13 @@ footer {
     flex-direction: column;
     align-items: center; /* Alinea horizontalmente al centro */
     justify-content: flex-start;
+    gap: -510px;
+    display: block; 
 }
 
 /* Contenedor interno */
 .scroll-inner {
+    margin-top: -60%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -469,20 +602,31 @@ footer {
 
 /* Imagen de la carátula */
 .cover-image img {
-    width: 688px;
+    width: 80%;
     height: auto;
     z-index: 2; /* La carátula siempre al frente */
     position: relative; /* Respetar el flujo del documento */
-    margin-bottom: -688px; /* Evita el hueco inicial entre carátula y vinilo */
+    margin-bottom: -10%; /* Evita el hueco inicial entre carátula y vinilo */
+    transform: translateY(444px);
+}
+.cover-image2 img {
+    width: 80%;
+    height: auto;
+    z-index: 2; /* La carátula siempre al frente */
+    position: relative; /* Respetar el flujo del documento */
+    margin-bottom: 0px; /* Evita el hueco inicial entre carátula y vinilo */
+    margin-top: -160%;
+    
 }
 
 /* Imagen del vinilo */
 .vinyl-image {
-    width: 688px; /* Tamaño igual a la carátula */
+    width: 80%; /* Tamaño igual a la carátula */
     height: auto;
     z-index: 1; /* Vinilo detrás */
     position: relative; /* Para que empuje el contenido */
     margin-top: 0; /* Inicialmente alineado con la carátula */
+    margin-bottom: 45%;
     opacity: 0; /* Invisible inicialmente */
     transition: margin-top 1.5s ease-out, opacity 1.5s ease-out; /* Animación suave */
 }
@@ -495,8 +639,26 @@ footer {
 
 /* Al hacer hover, el vinilo aparece */
 .scroll-effect-container:hover .vinyl-image {
-    margin-top: 680px; /* El vinilo se desplaza hacia abajo */
+    margin-top: 85%; /* El vinilo se desplaza hacia abajo */
     opacity: 1; /* Se hace visible */
+}
+
+@media (max-width: 768px) {
+    .scroll-effect-container {
+        display: none; /* Oculta en móviles */
+    }
+}
+
+
+.listaspotimovil {
+    display: none; /* Oculto por defecto */
+    
+    width: 80%; /* Tamaño igual a la carátula */
+}
+@media (max-width: 768px) {
+    .listaspotimovil {
+        display: block; /* Oculta en móviles */
+    }
 }
 
 .timeline {
@@ -538,7 +700,7 @@ footer {
 }
 
 .timeline-content {
-    background: rgba(0, 0, 0, 0.8); /* Fondo oscuro translúcido */
+    background: rgba(0, 0, 0, 0.95); /* Fondo oscuro translúcido */
     color: #fff;
     border-radius: 10px;
     padding: 20px;
@@ -783,4 +945,23 @@ header {
 
 details[open] summary {
     font-weight: bold;
+}
+
+
+/* Por defecto, oculta la imagen */
+.logomobile {
+    display: none; /* Oculta la imagen en todas las resoluciones */
+}
+
+/* Mostrar la imagen solo en dispositivos móviles */
+@media (max-width: 768px) {
+    .logomobile {
+        display: block; /* Muestra la imagen solo en pantallas pequeñas */
+        width: 90%; /* La imagen ocupará el 90% del ancho del contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+        margin-top: 60px; /* Baja la posición de la imagen */
+        margin-bottom: -80px; /* Añade espacio debajo */
+        margin-left: 25px; /* Centrado horizontal */
+        margin-right: 90px; /* Centrado horizontal */
+    }
 }

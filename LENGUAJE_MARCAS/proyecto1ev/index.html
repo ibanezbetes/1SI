@@ -16,8 +16,11 @@
     <!-- Añade un ancla al principio del documento -->
 <a id="top"></a>
 
+
+
+
 <nav>
-  <img src="img/logo2.png" alt="logo" class="nav-logo">
+  
   <ul>
       <li class="button">
           <a href="index.html" aria-label="Inicio">
@@ -95,28 +98,47 @@
       </li>
   </ul>
 </nav>
+    
+<!-- Menú Hamburguesa -->
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
+<label for="menu-toggle" class="hamburger-menu">
+    
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
 
+<img src="img/titulillo.png" alt="logo" class="logomobile">
+<!-- Menú Móvil -->
+<div class="mobile-nav">
+    <a href="index.html">Inicio</a>
+    <a href="canciones.html">Canciones</a>
+    <a href="timeline.html">Lanzamiento</a>
+    <a href="biografias.html">Biografías</a>
+    <a href="contacto.html">Contacto</a>
+</div>
+
+
+    
     <header>
-        
         <img src="img/linea1.png" alt="separador" class="separador">
-
-        <div class="scroll-effect-container">
-            <div class="scroll-inner">
-                <!-- Carátula fija -->
-                <div class="cover-image">
-                    <img src="img/carátula.png" alt="Carátula de disco">
-                </div>
-                <!-- Vinilo que aparece -->
-                <div class="vinyl-image">
-                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0Q0HUqJZo6fuDZUsrHFhkd?utm_source=generator&theme=0" width="100%" height="452" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-                </div>
-            </div>
+        <h1>Los 15 Principales</h1>
+        <section id="explorar">
+            <div class="explorar-container">
+                <img src="img/mediovinilo1.png" alt="Imagen izquierda" class="explorar-img">
+                <div class="explorar-texto">
+            <h1>Explora la Web</h1>
+            <p>
+                Usa la barra de navegación para<br> explorar la <b><u>biografía</u></b> de los artistas,<br> <b><u>conocer más</u></b> sobre cada temazo,<br> <b><u>votar</u></b> tu canción favorita<br>y averiguar su <b><u>año de lanzamiento.</u></b>
+            </p>
+           
         </div>
-        
-        
-        <img src="img/linea1.png" alt="separador" class="separador">
-        <h1>Los 15 Principales.</h1>
-        <p>Descubre las 15 canciones que lideranel ranking actual a nivel internacional.</p>
+        <img src="img/mediovinilo2.png" alt="Imagen derecha" class="explorar-img">
+    </div>
+
+    </header>
+<body>
+    <main>
         <section class="gallery">
             <div class="gallery-container">
                 <!-- Primera tanda de imágenes -->
@@ -181,45 +203,36 @@
                 <img src="img/caratulas/sweetchildomine.jpg" alt="Sweet Child O' Mine">
                 <img src="img/caratulas/wonderwall.jpg" alt="Wonderwall">
             </div>
-        </section>
-        
-            <br>
+
+            <img src="img/linea1.png" alt="separador" class="separador">
+
+            <div class="scroll-effect-container">
+                <div class="scroll-inner">
+                    <!-- Carátula fija -->
+                    <div class="cover-image">
+                        <img src="img/vinilogold1.png" alt="Carátula de disco">
+                    </div>
+                    <!-- Vinilo que aparece -->
+                    <div class="vinyl-image">
+                        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0Q0HUqJZo6fuDZUsrHFhkd?utm_source=generator&theme=0" width="100%" height="452" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+                
+
+            </div>
+            <div class="cover-image2">
+                <img src="img/vinilogold2.png" alt="Carátula de disco">
+            </div>
+            </div>
+            <div class="listaspotimovil">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0Q0HUqJZo6fuDZUsrHFhkd?utm_source=generator&theme=0" width="100%" height="452" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
             
-             <a href="spotify:playlist:0Q0HUqJZo6fuDZUsrHFhkd" target="_blank">
-                <img src="img/spotify.png" alt="Lista de reproducción." style="width: 150px; height: auto;">
-            </a>
-             <p>
-                ¿No puedes abrir la app? <br><a href="https://open.spotify.com/playlist/0Q0HUqJZo6fuDZUsrHFhkd" target="_blank" rel="noopener noreferrer">Abrir en el navegador</a>
-             </p>
-    </header>
-    <img src="img/linea1.png" alt="separador" class="separador">
-    <section id="introduccion">
-        <h1>¿Por qué estas canciones?</h1>
-        <p>
-            Estas canciones han sido votadas por los usuarios <br> en la aplicación móvil disponible en Android e iOS.<br>
-        </p>
-        <img src="img/jukebox.png" alt="Jukebox" class="h1-image">
-        
-        
-        
-    </section>
 
-    <img src="img/linea1.png" alt="separador" class="separador">
-
-    <section id="explorar">
-        <div class="explorar-container">
-            <img src="img/mediovinilo1.png" alt="Imagen izquierda" class="explorar-img">
-            <div class="explorar-texto">
-        <h1>Explora la Web</h1>
-        <p>
-            Usa la barra de navegación para<br> explorar la <b><u>biografía</u></b> de los artistas,<br> <b><u>conocer más</u></b> sobre cada temazo,<br> <b><u>votar</u></b> tu canción favorita<br>y averiguar su <b><u>año de lanzamiento.</u></b>
-        </p>
-       
-    </div>
-    <img src="img/mediovinilo2.png" alt="Imagen derecha" class="explorar-img">
-</div>
-<img src="img/linea1.png" alt="separador" class="separador">
+        </section>
+    </main>
     </section>
+    <img src="img/linea1.png" alt="separador" class="separador">
+</body>
     <footer>
         <p>© Daniel Jesús Ibáñez Betés. Lenguaje de Marcas. 1º Desarrollo Multiplataforma. San Valero.</p>
     </footer>
