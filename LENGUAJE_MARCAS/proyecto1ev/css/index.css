@@ -395,6 +395,8 @@ footer {
 
     .gallery {
         height: auto; /* Ajusta la altura al contenido */
+        overflow: hidden; /* Oculta el contenido que sobresale */
+        margin: 0 auto;
     }
 }
 
