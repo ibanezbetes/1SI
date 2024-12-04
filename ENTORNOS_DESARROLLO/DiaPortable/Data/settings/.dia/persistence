@@ -2,16 +2,16 @@
 <dia:persistence xmlns:dia="http://www.lysator.liu.se/~alla/dia/">
   <dia:window role="dia-main-window">
     <dia:attribute name="xpos">
-      <dia:int val="1912"/>
+      <dia:int val="3276"/>
     </dia:attribute>
     <dia:attribute name="ypos">
       <dia:int val="-8"/>
     </dia:attribute>
     <dia:attribute name="width">
-      <dia:int val="1920"/>
+      <dia:int val="1280"/>
     </dia:attribute>
     <dia:attribute name="height">
-      <dia:int val="1009"/>
+      <dia:int val="953"/>
     </dia:attribute>
     <dia:attribute name="isopen">
       <dia:boolean val="true"/>
@@ -56,17 +56,17 @@ C:\Users\daniz\Downloads\Sandwitch ejemplo inicial.dia#</dia:string>
       <dia:string>##</dia:string>
     </dia:attribute>
   </dia:list>
-  <dia:list role="arrow-menu">
-    <dia:attribute name="listvalue">
-      <dia:string>##</dia:string>
-    </dia:attribute>
-  </dia:list>
   <dia:list role="color-menu">
     <dia:attribute name="listvalue">
       <dia:string>##</dia:string>
     </dia:attribute>
   </dia:list>
   <dia:list role="font-menu">
+    <dia:attribute name="listvalue">
+      <dia:string>##</dia:string>
+    </dia:attribute>
+  </dia:list>
+  <dia:list role="arrow-menu">
     <dia:attribute name="listvalue">
       <dia:string>##</dia:string>
     </dia:attribute>
