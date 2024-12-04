@@ -2,7 +2,7 @@
 <dia:persistence xmlns:dia="http://www.lysator.liu.se/~alla/dia/">
   <dia:window role="dia-main-window">
     <dia:attribute name="xpos">
-      <dia:int val="1912"/>
+      <dia:int val="1250"/>
     </dia:attribute>
     <dia:attribute name="ypos">
       <dia:int val="-8"/>
@@ -36,7 +36,8 @@
   </dia:window>
   <dia:list role="recent-files">
     <dia:attribute name="listvalue">
-      <dia:string>#C:\Users\daniz\Downloads\StarWars2.0.dia
+      <dia:string>#C:\Users\daniz\Desktop\IBÁÑEZ_BETÉS_DANIEL\DiagramaExamenTipoA.dia
+C:\Users\daniz\Downloads\StarWars2.0.dia
 C:\Users\daniz\Documents\GitHub\1SI-ENTORNOS_DESARROLLO\DiagramaIrrigadoresv2.dia
 C:\Users\daniz\Documents\GitHub\1SI-ENTORNOS_DESARROLLO\T1\HomersEjerc2.dia
 C:\Users\daniz\Documents\GitHub\1SI-ENTORNOS_DESARROLLO\T1\Busqueda en Array aleatorio v3.dia
@@ -56,17 +57,17 @@ C:\Users\daniz\Downloads\Sandwitch ejemplo inicial.dia#</dia:string>
       <dia:string>##</dia:string>
     </dia:attribute>
   </dia:list>
-  <dia:list role="arrow-menu">
-    <dia:attribute name="listvalue">
-      <dia:string>##</dia:string>
-    </dia:attribute>
-  </dia:list>
   <dia:list role="color-menu">
     <dia:attribute name="listvalue">
       <dia:string>##</dia:string>
     </dia:attribute>
   </dia:list>
   <dia:list role="font-menu">
+    <dia:attribute name="listvalue">
+      <dia:string>##</dia:string>
+    </dia:attribute>
+  </dia:list>
+  <dia:list role="arrow-menu">
     <dia:attribute name="listvalue">
       <dia:string>##</dia:string>
     </dia:attribute>
@@ -278,7 +279,7 @@ C:\Users\daniz\Downloads\Sandwitch ejemplo inicial.dia#</dia:string>
   </dia:string>
   <dia:string role="end-arrow-type">
     <dia:attribute name="stringvalue">
-      <dia:string>#Filled Concave#</dia:string>
+      <dia:string>#Filled Triangle#</dia:string>
     </dia:attribute>
   </dia:string>
   <dia:string role="start-arrow-type">
