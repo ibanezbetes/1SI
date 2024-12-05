@@ -336,6 +336,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 /* Contenedor de imágenes que se desplaza */
@@ -918,6 +919,7 @@ body {
     padding: 0;
     width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 
@@ -944,7 +946,6 @@ body {
     border: 2px solid #00ff00;
     border-radius: 10px;
     padding: 15px;
-    margin: %;
     transition: transform 0.3s ease;
 }
 
