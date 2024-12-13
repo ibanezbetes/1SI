@@ -1,0 +1,30 @@
+BINARIO LEGIBLE
+
+
+
+INICIO
+Asignar(suma,0) ----> 1111 1111 (0110 1100, 0000 0000)
+Asignar(contador,1) ----> 1111 1111 (0110 1101, 0000 0001)
+Mientrasque(contador<=10) ----->  1111 1101 (0110 1101, 0000 1010 , 0011 1101)
+Leer(numero)  ----> 0000 1000 ( 0110 1110 )
+Asignar(suma,suma+numero) ----> 1111 1111 (0110 1100, 0110 1100, 0110 1110)
+Asignar(contador,contador+1) ----> 1111 1111 (0110 1101, 0110 1101, 0000 0001)
+Asignar(media,suma/10) ----> 1111 1111 (0110 1111, 0110 1100, 0000 1010)
+Imprimir(media) ----> 0001 0000(0110 1111)
+FIN
+
+
+
+BINARIO PURO
+
+
+INICIO
+Asignar(suma,0) ---->  11111111 01101100 00000000
+Asignar(contador,1) ----> 11111111 01101101 00000001
+Mientrasque(contador<=10) ----> 11111101 01101101 00001010 00111101
+Leer(numero)   ----> 00001000 01101110
+Asignar(suma,suma+numero) ----> 11111111 01101100 01101100 01101110
+Asignar(contador,contador+1) ----> 11111111 01101101 01101101 00000001
+Asignar(media,suma/10) ----> 11111111 01101111 01101100 00001010
+Imprimir(media) ----> 00010000 01101111
+FIN
