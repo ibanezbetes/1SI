@@ -1,0 +1,2 @@
+SELECT * FROM PELICULAS
+WHERE genero = 'Drama';
