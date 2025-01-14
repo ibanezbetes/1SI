@@ -22,7 +22,7 @@ public class Main {
 
         Magdalena[] listaMagdalenas = new Magdalena[10];    // Array tamaño fijo
         listaMagdalenas[1] = magdalena;
-        ArrayList<Magdalena> lisaMagDin = new ArrayList();  // Array tamoño dinámico
+        ArrayList<Magdalena> lisaMagDin = new ArrayList();  // Array tamaño dinámico
     }
 }
 
