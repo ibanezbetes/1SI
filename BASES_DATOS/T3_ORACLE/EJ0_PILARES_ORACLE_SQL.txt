@@ -1,0 +1,44 @@
+CREATE Table PERSONA(
+    id_persona NUMBER(3),
+    dni_persona VARCHAR2(9),
+    nombre_persona VARCHAR2(12),
+    CONSTRAINT PK_id_persona PRIMARY KEY (id_persona),
+    CONSTRAINT NN_id_persona CHECK (id_persona IS NOT NULL), 
+    CONSTRAINT NN_dni_persona CHECK (dni_persona IS NOT NULL), 
+    CONSTRAINT NN_nombre_persona CHECK (nombre_persona IS NOT NULL)
+);
+
+CREATE Table PENIA(
+    id_penia NUMBER(3),
+    nombre_penia VARCHAR2(10),
+    fecha_fundacion_penia DATE,
+    direccion_penia VARCHAR2(20),
+    CONSTRAINT PK_id_penia PRIMARY KEY(id_penia),
+    CONSTRAINT NN_nombre_penia CHECK (nombre_penia IS NOT NULL),
+    CONSTRAINT NN_fecha_fundacion_penia CHECK (fecha_fundacion_penia IS NOT NULL),
+    CONSTRAINT NN_direccion_penia CHECK (direccion_penia IS NOT NULL)
+);
+
+CREATE Table PENISTA(
+    id_penista NUMBER(3),
+    numero_penista NUMBER(3),
+    fecha_entrada_penista DATE,
+    id_penia NUMBER(3),
+    CONSTRAINT PK_id_penista PRIMARY KEY (id_penista),
+    CONSTRAINT FK_id_penia FOREIGN KEY (id_penia) REFERENCES PENIA (id_penia),
+    CONSTRAINT NN_numero_penista CHECK (numero_penista IS NOT NULL),
+    CONSTRAINT NN_fecha_entrada_penista CHECK (fecha_entrada_penista IS NOT NULL)
+);
+
+INSERT INTO PERSONA VALUES (5, '12345678A', 'Jose');
+INSERT INTO PERSONA VALUES (6, '87654321A', 'Paco');
+INSERT INTO PERSONA VALUES (7, '01234567A', 'Pepe');
+INSERT INTO PERSONA VALUES (8, '00123456A', 'Manu');
+
+INSERT INTO PENIA VALUES (1, 'Chachos', TO_DATE('1920-01-01', 'YYYY-MM-DD'), 'M. Sangüesa, 12');
+INSERT INTO PENIA VALUES (2, 'La Murga', TO_DATE('1900-03-05', 'YYYY-MM-DD'), 'P. Villacampa, 34');
+INSERT INTO PENIA VALUES (3, 'El Sarao', TO_DATE('2001-09-11', 'YYYY-MM-DD'), 'Pano y ruata, 8');
+
+INSERT INTO PENISTA VALUES (1, 158, TO_DATE('1950-02-11', 'YYYY-MM-DD'), 1);
+INSERT INTO PENISTA VALUES (2, 825, TO_DATE('1980-04-22', 'YYYY-MM-DD'), 2);
+INSERT INTO PENISTA VALUES (3, 248, TO_DATE('1990-06-30', 'YYYY-MM-DD'), 3);

@@ -1,0 +1,9 @@
+connect sys as sysdba
+
+
+NOMBRES DE CONSTRAINTS
+----------------------
+PK_  --> PRIMARY KEY
+FK_  --> FOREIGN KEY
+CK_  --> TIPO CHECK
+NN_  --> NOT NULL
