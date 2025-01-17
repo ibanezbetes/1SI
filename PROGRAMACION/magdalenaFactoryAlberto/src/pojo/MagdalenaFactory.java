@@ -1,33 +1,32 @@
 package pojo;
 
 public class MagdalenaFactory {
-    private Magdalena[] listaMagdalenas = new Magdalena[4]; // Array
+    private Magdalena[] listaMagdalenas;
 
-// LO COMENTADO ES LO DE ALBERTO
-
-    // funcion añadir magdalenas , magdalena y posicion magdalena
-    public void addMagdalena(Magdalena magdalena, int posicion) {
-        //private void addMagdalena(Magdalena magdalena, int posicion) {
-        listaMagdalenas[posicion] = magdalena;
-        //posicion++;
-    }
-
-    //funcion para imprimir el array de las magdalenas
-    public void printMagdalena() {
-        //private void printMagdalena(){
-        for (int i = 0; i < this.listaMagdalenas.length; i++) {
-            //Magdalena magdalena =listaMagdalenas[i];
-            if (this.listaMagdalenas[i] != null) { // si contiene algo en la lista
-                // muestre datos de la magdalena
-                System.out.println("Magdalena " + (i + 1) + ": " + this.listaMagdalenas[i].mostrarMagdalena());
-                //System.out.print("Magdalena: [ " + i + "]");
-                //System.out.print("Atributos: Sabor - " + magdalena.getSabor());
-                //System.out.print("Atributos: Color - " + magdalena.getColor());
-
-            }
+    public MagdalenaFactory(int capacidad) {
+        if (capacidad > 0) {
+            this.listaMagdalenas = new Magdalena[capacidad];
+        } else {
+            throw new IllegalArgumentException("La capacidad debe ser mayor que 0.");
         }
     }
 
+    public void addMagdalena(Magdalena magdalena, int posicion) {
+        if (posicion >= 0 && posicion < listaMagdalenas.length) {
+            listaMagdalenas[posicion] = magdalena;
+        } else {
+            System.out.println("Posición fuera de los límites del array.");
+        }
+    }
+
+    public void printMagdalena() {
+        for (int i = 0; i < listaMagdalenas.length; i++) {
+            if (listaMagdalenas[i] != null) {
+                System.out.println("Magdalena " + (i + 1) + ": " + listaMagdalenas[i].toString());
+            }
+        }
+    }
 }
+
 
 
