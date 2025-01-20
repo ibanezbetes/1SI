@@ -1,0 +1,7 @@
+database-1.c3e8kqaso7s8.us-east-1.rds.amazonaws.com
+5432
+
+NAME:	netflix-01
+
+USER:	postgres
+PASS:	420Manera$
