@@ -1,0 +1,140 @@
+nombre de la clase igual que el constructor
+
+fn + alt + ins (portátil)
+alt + fn + suprmir (pc?) para generar el constructor. seleccionar todas
+
+public static void hace que haga static para todos los objetos del mismo mundo
+
+
+
+
+HACER ESTOS CURSOS: 
+
+1º) SCRUM Y METODOLOGÍAS ÁGILES PARA PROYECTOS DIGITALES ->
+2º) SERVICIOS EN LA NUBE (CLOUD) CON AWS
+
+//////// DE CARA A SEGUNDO CURSO - SEPT/OCT ///////////
+/////    3º) FUNDAMENTOS DE PROGRAMACIÓN EN PYTHON  ///
+///////////////////////////////////////////////////////
+
+
+
+
+/*21/01/2025 -> JAVA POO*/
+// MAIN
+// Crear algunos libros
+        Libro libro1 = new Libro("El Quijote", "Miguel de Cervantes", 1605);
+        Libro libro2 = new Libro("1984", "George Orwell", 1949);
+        Libro libro3 = new Libro("El Principito", "Antoine de Saint-Exupéry", 1943);
+
+        // Agregar libros a la biblioteca
+        Biblioteca.agregarLibro(libro1);
+        Biblioteca.agregarLibro(libro2);
+        Biblioteca.agregarLibro(libro3);
+
+        // Listar libros
+        Biblioteca.listarLibros();
+
+        // Buscar y prestar un libro
+        Biblioteca.prestarLibro("1984");
+        Biblioteca.listarLibros();
+
+        // Intentar prestar el mismo libro
+        Biblioteca.prestarLibro("1984");
+
+        // Devolver el libro
+        Biblioteca.devolverLibro("1984");
+        Biblioteca.listarLibros();
+// FIN MAIN
+
+package org.example;
+
+public class Biblioteca {
+    private static final int CAPACIDAD = 10;
+    private static Libro[] libros = new Libro[CAPACIDAD];
+    private static int contadorLibros = 0;
+
+    void agregarLibro(Libro libro){
+        if(contadorLibros < CAPACIDAD){
+            libros[contadorLibros] = libro;
+            contadorLibros++;
+            System.out.println("CON ESPACIO");
+        }else{
+            System.out.println("SIN ESPACIO");
+        }
+    }
+    void listarLibro(){
+        // For normal
+        // Foreach para Objetos
+        for (Libro libro:libros
+             ) {
+            System.out.println(libro.toString());
+        }
+        /*for (int i = 0; i < contadorLibros; i++) {
+          Libro libro = libros[i];
+        }*/
+    }
+    public Libro buscarLibro(String titulo){
+        for (Libro libro: libros) {
+            if(libro.getTitulo().equals(titulo)){
+                return libro;
+            }
+        }
+        return null;
+    }
+    void prestarLibro(){
+
+    }
+    void devolverLibro(){
+        
+    }
+}
+
+
+package org.example;
+
+public class Libro {
+    // ATRIBUTOS
+    private String titulo;
+    private String autor;
+    private int anioPublicacion;
+    private boolean disponible;
+    public static int contadorLibros = 0;
+    //CONSTRUCTOR
+
+    public Libro(String titulo, String autor, int anioPublicacion, boolean disponible) {
+       // initParams(titulo, autor, anioPublicacion, disponible);
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anioPublicacion = anioPublicacion;
+        this.disponible = disponible;
+        this.contadorLibros++;
+    }
+    /*public Libro(String titulo) {
+        //this.titulo = titulo;
+        if(){}
+    }*/
+
+
+    public Libro(){}
+    //MÉTODOS
+        // GETTER/SETTER
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "titulo='" + titulo + '\'' +
+                ", autor='" + autor + '\'' +
+                ", anioPublicacion=" + anioPublicacion +
+                ", disponible=" + disponible +
+                '}';
+    }
+}
