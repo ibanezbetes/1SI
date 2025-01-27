@@ -1,0 +1,134 @@
+CREATE TABLE IMPRENTA (
+    ID_Imprenta NUMBER PRIMARY KEY,
+    Nombre VARCHAR2(100),
+    Ubicacion VARCHAR2(200),
+    Contacto VARCHAR2(50)
+);
+
+CREATE TABLE LIBRO (
+    ID_Libro NUMBER PRIMARY KEY,
+    Titulo VARCHAR2(200),
+    Estado VARCHAR2(50)
+);
+
+CREATE TABLE AUTOR (
+    ID_Autor NUMBER PRIMARY KEY,
+    Nombre VARCHAR2(100),
+    Pseudonimo VARCHAR2(50),
+    Nacionalidad VARCHAR2(50)
+);
+
+CREATE TABLE EDITOR (
+    ID_Editor NUMBER PRIMARY KEY,
+    Nombre VARCHAR2(100),
+    Direccion VARCHAR2(200),
+    Email VARCHAR2(100)
+);
+
+CREATE TABLE ESCRIBIR (
+    ID_Libro NUMBER,
+    ID_Autor NUMBER,
+    PRIMARY KEY (ID_Libro, ID_Autor),
+    FOREIGN KEY (ID_Libro) REFERENCES LIBRO(ID_Libro),
+    FOREIGN KEY (ID_Autor) REFERENCES AUTOR(ID_Autor)
+);
+
+CREATE TABLE IMPRIMIR (
+    ID_Libro NUMBER,
+    ID_Imprenta NUMBER,
+    PRIMARY KEY (ID_Libro, ID_Imprenta),
+    FOREIGN KEY (ID_Libro) REFERENCES LIBRO(ID_Libro),
+    FOREIGN KEY (ID_Imprenta) REFERENCES IMPRENTA(ID_Imprenta)
+);
+
+
+ADD CONSTRAINT FK_LIBRO_EDITOR FOREIGN KEY (ID_Editor) REFERENCES EDITOR(ID_Editor);
+
+
+
+INSERT INTO IMPRENTA (ID_Imprenta, Nombre, Ubicacion, Contacto) VALUES (1, 'Imprenta Zaragoza', 'Zaragoza', '123-456-789');
+INSERT INTO IMPRENTA (ID_Imprenta, Nombre, Ubicacion, Contacto) VALUES (2, 'Imprenta Madrid', 'Madrid', '987-654-321');
+INSERT INTO IMPRENTA (ID_Imprenta, Nombre, Ubicacion, Contacto) VALUES (3, 'Imprenta Barcelona', 'Barcelona', '555-555-555');
+
+INSERT INTO LIBRO (ID_Libro, Titulo, Estado) VALUES (1, 'El Arte de Programar', 'En revisión');
+INSERT INTO LIBRO (ID_Libro, Titulo, Estado) VALUES (2, 'Bases de Datos Avanzadas', 'Publicado');
+INSERT INTO LIBRO (ID_Libro, Titulo, Estado) VALUES (3, 'Desarrollo Multiplataforma', 'En revisión');
+INSERT INTO LIBRO (ID_Libro, Titulo, Estado) VALUES (4, 'Diseño de Sistemas', 'Publicado');
+
+INSERT INTO AUTOR (ID_Autor, Nombre, Pseudonimo, Nacionalidad) VALUES (1, 'Lolo Lólez', 'L. L.', 'Española');
+INSERT INTO AUTOR (ID_Autor, Nombre, Pseudonimo, Nacionalidad) VALUES (2, 'Lila López', 'Lila', 'Mexicana');
+INSERT INTO AUTOR (ID_Autor, Nombre, Pseudonimo, Nacionalidad) VALUES (3, 'Carlos Sánchez', 'C.S.', 'Argentina');
+
+INSERT INTO EDITOR (ID_Editor, Nombre, Direccion, Email) VALUES (1, 'Lalo Lález', 'Calle Falsa 123', 'lalo@example.com');
+INSERT INTO EDITOR (ID_Editor, Nombre, Direccion, Email) VALUES (2, 'Laura Gómez', 'Av. Siempre Viva 456', 'laura@example.com');
+INSERT INTO EDITOR (ID_Editor, Nombre, Direccion, Email) VALUES (3, 'Manuel García', 'Plaza Central 789', 'manuel@example.com');
+
+INSERT INTO ESCRIBIR (ID_Libro, ID_Autor) VALUES (1, 1); -- "El Arte de Programar" por "Lolo Lólez"
+INSERT INTO ESCRIBIR (ID_Libro, ID_Autor) VALUES (2, 2); -- "Bases de Datos Avanzadas" por "Lila López"
+INSERT INTO ESCRIBIR (ID_Libro, ID_Autor) VALUES (3, 3); -- "Desarrollo Multiplataforma" por "Carlos Sánchez"
+INSERT INTO ESCRIBIR (ID_Libro, ID_Autor) VALUES (4, 1); -- "Diseño de Sistemas" por "Lolo Lólez"
+
+INSERT INTO IMPRIMIR (ID_Libro, ID_Imprenta) VALUES (1, 1); -- "El Arte de Programar" impreso por "Imprenta Zaragoza"
+INSERT INTO IMPRIMIR (ID_Libro, ID_Imprenta) VALUES (2, 2); -- "Bases de Datos Avanzadas" impreso por "Imprenta Madrid"
+INSERT INTO IMPRIMIR (ID_Libro, ID_Imprenta) VALUES (3, 3); -- "Desarrollo Multiplataforma" impreso por "Imprenta Barcelona"
+INSERT INTO IMPRIMIR (ID_Libro, ID_Imprenta) VALUES (4, 1); -- "Diseño de Sistemas" impreso por "Imprenta Zaragoza"
+
+UPDATE LIBRO SET ID_Editor = 1 WHERE ID_Libro = 1; -- "El Arte de Programar" editado por "Lalo Lález"
+UPDATE LIBRO SET ID_Editor = 2 WHERE ID_Libro = 2; -- "Bases de Datos Avanzadas" editado por "Laura Gómez"
+UPDATE LIBRO SET ID_Editor = 1 WHERE ID_Libro = 3; -- "Desarrollo Multiplataforma" editado por "Lalo Lález"
+UPDATE LIBRO SET ID_Editor = 3 WHERE ID_Libro = 4; -- "Diseño de Sistemas" editado por "Manuel García";
+
+
+
+
+-  Nombre de todos los autores que tenemos
+
+SELECT Nombre 
+FROM AUTOR;
+
+
+-  Nombre de los editores
+
+SELECT Nombre 
+FROM EDITOR;
+
+
+-  Nombre de los editores que trabajan con el libro "Programación en Java"
+
+SELECT EDITOR.Nombre 
+FROM EDITOR
+JOIN LIBRO ON EDITOR.ID_Editor = LIBRO.ID_Editor
+WHERE LIBRO.Titulo = 'Programación en Java';
+
+
+-  Nombre de los libros que ha editado "Lalo Lález"
+
+SELECT LIBRO.Titulo 
+FROM LIBRO
+JOIN EDITOR ON LIBRO.ID_Editor = EDITOR.ID_Editor
+WHERE EDITOR.Nombre = 'Lalo Lález';
+
+
+-  Los libros que aún están en revisión
+
+SELECT Titulo 
+FROM LIBRO 
+WHERE Estado = 'En revisión';
+
+
+-  Los nombres de imprenta que me han impreso algún libro
+
+SELECT IMPRENTA.Nombre 
+FROM IMPRENTA
+JOIN IMPRIMIR ON IMPRENTA.ID_Imprenta = IMPRIMIR.ID_Imprenta;
+
+
+-  Los nombres de imprenta que me han impreso algún libro del autor "Lolo Lólez"
+
+SELECT IMPRENTA.Nombre 
+FROM IMPRENTA
+JOIN IMPRIMIR ON IMPRENTA.ID_Imprenta = IMPRIMIR.ID_Imprenta
+JOIN LIBRO ON IMPRIMIR.ID_Libro = LIBRO.ID_Libro
+JOIN ESCRIBIR ON LIBRO.ID_Libro = ESCRIBIR.ID_Libro
+JOIN AUTOR ON ESCRIBIR.ID_Autor = AUTOR.ID_Autor
+WHERE AUTOR.Nombre = 'Lolo Lólez';
