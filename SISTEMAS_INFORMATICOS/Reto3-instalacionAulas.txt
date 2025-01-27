@@ -1,0 +1,10 @@
+se pide en el edificio de seas, la instalación de 
+4 aulas de informática de 30 puestos cada una + 2 puestos profesor 
+tres aulas de (20x10m)
+y un aula de (25x10m)
+
+en el área de descanso profesor 4 puestos (5x5m)
+en cafetería 10 puestos (8x8m)
+sala de reuniones 5 puestos (6x3m)
+
+diseño con Cisco Packet Tracer y presupuesto que costaría (cableado, dispositivos, un rack por sala)
