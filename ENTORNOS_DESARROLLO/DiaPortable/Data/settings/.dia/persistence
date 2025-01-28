@@ -5,7 +5,7 @@
       <dia:int val="-8"/>
     </dia:attribute>
     <dia:attribute name="ypos">
-      <dia:int val="619"/>
+      <dia:int val="1072"/>
     </dia:attribute>
     <dia:attribute name="width">
       <dia:int val="1536"/>
@@ -36,7 +36,7 @@
   </dia:window>
   <dia:list role="recent-files">
     <dia:attribute name="listvalue">
-      <dia:string>##</dia:string>
+      <dia:string>#C:\Users\daniz\Documents\GitHub\1SI\ENTORNOS_DESARROLLO\LAVADORA\Lavadora v2.0.dia#</dia:string>
     </dia:attribute>
   </dia:list>
   <dia:list role="sheets">
@@ -87,6 +87,11 @@
   <dia:integer role="diagram_tree_dia_sort">
     <dia:attribute name="intvalue">
       <dia:int val="2"/>
+    </dia:attribute>
+  </dia:integer>
+  <dia:integer role="import-filter">
+    <dia:attribute name="intvalue">
+      <dia:int val="0"/>
     </dia:attribute>
   </dia:integer>
   <dia:real role="start-arrow-width">
