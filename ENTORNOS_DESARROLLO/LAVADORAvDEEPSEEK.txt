@@ -1,0 +1,94 @@
+MAIN
+
+package org.example;
+
+public class Main {
+    public static void main(String[] args) {
+
+        AlmacenMusica.addCancion();
+        AlmacenMusica almacenMusica1 = new AlmacenMusica();
+        almacenMusica1.addCancionPrueba();
+
+
+
+
+
+    }
+}
+
+
+
+CLASE ALMACENMUSICA
+
+package org.example;
+
+import java.util.ArrayList;
+
+public class AlmacenMusica {
+    /// INTERMEDIARIO
+        // AÑADIR UNA PELÍCULA
+            // ALMACÉN ESTÁTICO
+            // LISTAS   (PENDIENTE CON ALBERTO)
+            // ARRAYLIST (AHORA)
+    private ArrayList<Cancion> listaDeCanciones;
+    // IKEA -> OPTIMIZACIÓN DE MEMORIA
+
+    public AlmacenMusica() {
+        this.listaDeCanciones = new ArrayList<>(); // nodo
+    }
+
+    public static void addCancion(){
+
+    }
+    public  void addCancionPrueba(Cancion cancion){
+            listaDeCanciones.add(cancion);
+    }
+    public void imprimirCanciones(){
+        for (Cancion cancion: listaDeCanciones
+             ) {
+                cancion.toString();
+        }
+    }
+    
+    
+CLASE CANCION
+
+package org.example;
+
+public class Cancion {
+    // Representa a una tabla de base de datos -> Entity
+    // Representa a caso de uso -> DTO (DATA TRANSFER OBJECT)
+    // POJO = SIMPLE ATRIBUTOS, CONSTRUCTOR, GETTER/SETTER Y TO_STRING
+
+    private int id;
+    private String titulo;
+
+    public Cancion(int id, String titulo) {
+        this.id = id;
+        this.titulo = titulo;
+    }
+
+    @Override
+    public String toString() {
+        return "Cancion{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                '}';
+    }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getTitulo() {
+        return titulo;
+    }
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+}
+
+
+            // HASHMAP
+}
