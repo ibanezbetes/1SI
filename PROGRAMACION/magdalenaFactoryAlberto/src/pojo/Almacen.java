@@ -1,6 +1,6 @@
 package pojo;
 
-public class Almacen {
+public class ya vesAlmacen {
     private Producto[] inventario;
     private int contador;
 
