@@ -1,19 +1,51 @@
-public class Prenda {
-    private String tipo;
-    private String color;
-    private int peso;
-    private String nivelSuciedad;
+package Lavadora;
 
-    public Prenda(String tipo, String color, int peso, String nivelSuciedad) {
-        this.tipo = tipo;
-        this.color = color;
+public class Prenda {
+    private String nombre;
+    private double peso;         // Peso de la prenda en kg
+    private int nivelSuciedad;   // Nivel de suciedad de 0 (limpia) a 100 (muy sucia)
+
+    // NUEVO: indica si esta prenda está disponible para cargar en la lavadora
+    private boolean disponible;
+
+    public Prenda(String nombre, double peso, int nivelSuciedad) {
+        this.nombre = nombre;
         this.peso = peso;
+        this.nivelSuciedad = nivelSuciedad;
+        this.disponible = true; // Por defecto, al crear una prenda, está disponible
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public int getNivelSuciedad() {
+        return nivelSuciedad;
+    }
+
+    public void setNivelSuciedad(int nivelSuciedad) {
         this.nivelSuciedad = nivelSuciedad;
     }
 
-    public String obtenerTipo() { return tipo; }
-    public String obtenerColor() { return color; }
-    public int obtenerPeso() { return peso; }
-    public String obtenerNivelSuciedad() { return nivelSuciedad; }
-    public void setSuciedad(String nuevoNivel) { this.nivelSuciedad = nuevoNivel; }
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
+    @Override
+    public String toString() {
+        return "Prenda{" +
+                "nombre='" + nombre + '\'' +
+                ", peso=" + peso +
+                ", nivelSuciedad=" + nivelSuciedad +
+                ", disponible=" + disponible +
+                '}';
+    }
 }
