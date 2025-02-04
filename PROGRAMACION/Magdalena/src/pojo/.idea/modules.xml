@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/peliculasArrayDinamica.iml" filepath="$PROJECT_DIR$/peliculasArrayDinamica.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pojo.iml" filepath="$PROJECT_DIR$/pojo.iml" />
     </modules>
   </component>
 </project>
