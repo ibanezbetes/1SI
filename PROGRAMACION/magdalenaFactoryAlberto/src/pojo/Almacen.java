@@ -28,7 +28,7 @@ public class ya vesAlmacen {
         }
         if (contador == 0) {
             System.out.println("El inventario está vacío.");
-        }
+        }ñ´`
     }
 
     // Método para buscar un producto por nombre
