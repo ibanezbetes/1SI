@@ -49,6 +49,16 @@
       <dia:string>##</dia:string>
     </dia:attribute>
   </dia:list>
+  <dia:list role="font-menu">
+    <dia:attribute name="listvalue">
+      <dia:string>##</dia:string>
+    </dia:attribute>
+  </dia:list>
+  <dia:list role="color-menu">
+    <dia:attribute name="listvalue">
+      <dia:string>##</dia:string>
+    </dia:attribute>
+  </dia:list>
   <dia:integer role="line-style">
     <dia:attribute name="intvalue">
       <dia:int val="0"/>
@@ -246,7 +256,7 @@
   </dia:string>
   <dia:string role="last-sheet-selected">
     <dia:attribute name="stringvalue">
-      <dia:string>#Diagrama de flujo#</dia:string>
+      <dia:string>#UML#</dia:string>
     </dia:attribute>
   </dia:string>
   <dia:string role="end-arrow-type">
