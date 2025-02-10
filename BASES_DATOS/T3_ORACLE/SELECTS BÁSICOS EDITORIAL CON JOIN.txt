@@ -1,0 +1,55 @@
+// SELECTS BÁSICOS EDITORIAL CON JOIN 10/02/2025 9:36
+
+
+-  Nombre de todos los autores que tenemos
+
+SELECT AUTOR.Nombre
+FROM AUTOR;
+
+
+-  Nombre de los editores
+
+SELECT EDITOR.Nombre
+FROM EDITOR;
+
+
+-  Nombre de los editores que trabajan con el libro "Programación en Java"
+
+SELECT DISTINCT EDITOR.Nombre
+FROM EDITOR
+JOIN LIBRO ON EDITOR.ID_Editor = LIBRO.ID_Editor
+WHERE UPPER(LIBRO.Titulo) = 'PROGRAMACIÓN EN JAVA';
+
+
+-  Nombre de los libros que ha editado "Lalo Lález"
+
+SELECT LIBRO.Titulo
+FROM LIBRO
+JOIN EDITOR ON LIBRO.ID_Editor = EDITOR.ID_Editor
+WHERE UPPER(EDITOR.Nombre) = 'LALO LÁLEZ';
+
+
+-  Los libros que aún están en revisión
+
+SELECT LIBRO.Titulo
+FROM LIBRO
+WHERE UPPER(LIBRO.Estado) = 'EN REVISIÓN';
+
+
+-  Los nombres de imprenta que me han impreso algún libro
+
+SELECT DISTINCT IMPRENTA.Nombre
+FROM IMPRENTA
+JOIN IMPRIMIR ON IMPRENTA.ID_Imprenta = IMPRIMIR.ID_Imprenta
+JOIN LIBRO ON IMPRIMIR.ID_Libro = LIBRO.ID_Libro;
+
+
+-  Los nombres de imprenta que me han impreso algún libro del autor "Lolo Lólez"
+
+SELECT DISTINCT IMPRENTA.Nombre
+FROM IMPRENTA
+JOIN IMPRIMIR ON IMPRENTA.ID_Imprenta = IMPRIMIR.ID_Imprenta
+JOIN LIBRO ON IMPRIMIR.ID_Libro = LIBRO.ID_Libro
+JOIN ESCRIBIR ON LIBRO.ID_Libro = ESCRIBIR.ID_Libro
+JOIN AUTOR ON ESCRIBIR.ID_Autor = AUTOR.ID_Autor
+WHERE UPPER(AUTOR.Nombre) = 'LOLO LÓLEZ';
