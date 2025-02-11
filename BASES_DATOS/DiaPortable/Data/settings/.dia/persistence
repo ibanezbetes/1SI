@@ -2,10 +2,10 @@
 <dia:persistence xmlns:dia="http://www.lysator.liu.se/~alla/dia/">
   <dia:window role="dia-main-window">
     <dia:attribute name="xpos">
-      <dia:int val="1391"/>
+      <dia:int val="-8"/>
     </dia:attribute>
     <dia:attribute name="ypos">
-      <dia:int val="79"/>
+      <dia:int val="1072"/>
     </dia:attribute>
     <dia:attribute name="width">
       <dia:int val="1536"/>
@@ -36,7 +36,8 @@
   </dia:window>
   <dia:list role="recent-files">
     <dia:attribute name="listvalue">
-      <dia:string>#C:\Users\daniz\Documents\GitHub\1SI\ENTORNOS_DESARROLLO\LAVADORA\Lavadora.dia
+      <dia:string>#C:\Users\daniz\Documents\GitHub\1SI\BASES_DATOS\T3_ORACLE\Ejercicio 17 Cadena de hoteles.dia
+C:\Users\daniz\Documents\GitHub\1SI\ENTORNOS_DESARROLLO\LAVADORA\Lavadora.dia
 C:\Users\daniz\Documents\GitHub\1SI-BASES_DATOS\T2_SQL\Ejercicio7.dia
 C:\Users\daniz\Documents\GitHub\1SI-ENTORNOS_DESARROLLO\DiagramaIrrigadores.dia
 C:\Users\daniz\Downloads\DiagramaIrrigadores.dia
@@ -63,17 +64,17 @@ Diagrama de flujo#</dia:string>
       <dia:string>##</dia:string>
     </dia:attribute>
   </dia:list>
-  <dia:list role="diagram-tree-hidden-types">
-    <dia:attribute name="listvalue">
-      <dia:string>##</dia:string>
-    </dia:attribute>
-  </dia:list>
   <dia:list role="color-menu">
     <dia:attribute name="listvalue">
       <dia:string>##</dia:string>
     </dia:attribute>
   </dia:list>
   <dia:list role="font-menu">
+    <dia:attribute name="listvalue">
+      <dia:string>##</dia:string>
+    </dia:attribute>
+  </dia:list>
+  <dia:list role="diagram-tree-hidden-types">
     <dia:attribute name="listvalue">
       <dia:string>##</dia:string>
     </dia:attribute>
