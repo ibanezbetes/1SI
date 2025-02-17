@@ -1,0 +1,139 @@
+CREATE TABLE CATEGORIA (
+  idCategoria   NUMBER(5) CONSTRAINT nn_categoria_id NOT NULL,
+  estrellas     NUMBER(1) CONSTRAINT nn_categoria_estrellas NOT NULL,
+  IVA           NUMBER(2) CONSTRAINT nn_categoria_iva NOT NULL,
+  descripcion   VARCHAR2(100),
+  CONSTRAINT pk_categoria PRIMARY KEY (idCategoria)
+);
+
+CREATE TABLE HOTEL (
+  idHotel          NUMBER(5) CONSTRAINT nn_hotel_id NOT NULL,
+  nombre           VARCHAR2(60) CONSTRAINT nn_hotel_nombre NOT NULL,
+  direccion        VARCHAR2(120),
+  telefono         VARCHAR2(15),
+  anioConstruccion NUMBER(4),
+  idCategoria      NUMBER(5) CONSTRAINT nn_hotel_idcat NOT NULL,
+  CONSTRAINT pk_hotel PRIMARY KEY (idHotel),
+  CONSTRAINT fk_hotel_categoria FOREIGN KEY (idCategoria) REFERENCES CATEGORIA (idCategoria)
+);
+
+CREATE TABLE HABITACION (
+  idHabitacion NUMBER(5) CONSTRAINT nn_habitacion_id NOT NULL,
+  codigo       VARCHAR2(10),
+  tipo         VARCHAR2(30),
+  idHotel      NUMBER(5) CONSTRAINT nn_habitacion_idhotel NOT NULL,
+  CONSTRAINT pk_habitacion PRIMARY KEY (idHabitacion),
+  CONSTRAINT fk_habitacion_hotel FOREIGN KEY (idHotel) REFERENCES HOTEL (idHotel)
+);
+
+CREATE TABLE CLIENTE (
+  idCliente NUMBER(5) CONSTRAINT nn_cliente_id NOT NULL,
+  nombre    VARCHAR2(60) CONSTRAINT nn_cliente_nombre NOT NULL,
+  direccion VARCHAR2(120),
+  tlfn      VARCHAR2(15),
+  CONSTRAINT pk_cliente PRIMARY KEY (idCliente)
+);
+
+CREATE TABLE RESERVA (
+  idReserva     NUMBER(5) CONSTRAINT nn_reserva_id NOT NULL,
+  fechaInicio   DATE      CONSTRAINT nn_reserva_fechainicio NOT NULL,
+  fechaSalida   DATE      CONSTRAINT nn_reserva_fechasalida NOT NULL,
+  precio        NUMBER(8,2),
+  nombreReserva VARCHAR2(60),
+  idHabitacion  NUMBER(5) CONSTRAINT nn_reserva_idhab NOT NULL,
+  idCliente     NUMBER(5) CONSTRAINT nn_reserva_idcli NOT NULL,
+  CONSTRAINT pk_reserva PRIMARY KEY (idReserva),
+  CONSTRAINT fk_reserva_habitacion FOREIGN KEY (idHabitacion) REFERENCES HABITACION (idHabitacion),
+  CONSTRAINT fk_reserva_cliente FOREIGN KEY (idCliente) REFERENCES CLIENTE (idCliente)
+);
+
+
+
+// SELECT
+
+
+Hoteles de 3 estrellas en Zaragoza
+
+SELECT H.IDHOTEL, H.NOMBRE, H.DIRECCION, C.ESTRELLAS
+FROM   HOTEL H
+       JOIN CATEGORIA C ON H.IDCATEGORIA = C.IDCATEGORIA
+WHERE  C.ESTRELLAS = 3
+  AND  UPPER(H.DIRECCION) LIKE '%ZARAGOZA%';
+
+
+
+Las suites que tengo en los hoteles de 3 estrellas en Zaragoza
+
+SELECT H.IDHOTEL, H.NOMBRE AS NOMBRE_HOTEL, 
+       HB.IDHABITACION, HB.TIPO
+FROM   HOTEL H
+       JOIN CATEGORIA C ON H.IDCATEGORIA = C.IDCATEGORIA
+       JOIN HABITACION HB ON H.IDHOTEL = HB.IDHOTEL
+WHERE  C.ESTRELLAS = 3
+  AND  UPPER(H.DIRECCION) LIKE '%ZARAGOZA%'
+  AND  UPPER(HB.TIPO) = 'SUITE';
+
+
+
+Las suites libres para hoy en los hoteles de 3 estrellas en Zaragoza
+
+SELECT HB.IDHABITACION, HB.TIPO, H.NOMBRE AS NOMBRE_HOTEL
+FROM   HOTEL H
+       JOIN CATEGORIA C      ON H.IDCATEGORIA = C.IDCATEGORIA
+       JOIN HABITACION HB    ON H.IDHOTEL     = HB.IDHOTEL
+WHERE  C.ESTRELLAS = 3
+  AND  UPPER(H.DIRECCION) LIKE '%ZARAGOZA%'
+  AND  UPPER(HB.TIPO) = 'SUITE'
+  AND  HB.IDHABITACION NOT IN (
+         SELECT R.IDHABITACION
+         FROM   RESERVA R
+         WHERE  SYSDATE BETWEEN R.FECHAINICIO AND R.FECHASALIDA
+       );
+
+
+
+Las reservas para hoy que tiene el cliente "Lolo Lolez"
+
+SELECT R.IDRESERVA,
+       R.FECHAINICIO,
+       R.FECHASALIDA,
+       R.PRECIO,
+       R.NOMBRERESERVA
+FROM   RESERVA R
+       JOIN CLIENTE CL ON R.IDCLIENTE = CL.IDCLIENTE
+WHERE  UPPER(CL.NOMBRE) = 'LOLO LOLEZ'
+  AND  SYSDATE BETWEEN R.FECHAINICIO AND R.FECHASALIDA;
+
+
+
+Las reservas de los últimos 30 días que tiene el cliente "Lolo Lolez"
+
+SELECT R.IDRESERVA,
+       R.FECHAINICIO,
+       R.FECHASALIDA,
+       R.PRECIO,
+       R.NOMBRERESERVA
+FROM   RESERVA R
+       JOIN CLIENTE CL ON R.IDCLIENTE = CL.IDCLIENTE
+WHERE  UPPER(CL.NOMBRE) = 'LOLO LOLEZ'
+  AND  R.FECHAINICIO BETWEEN (SYSDATE - 30) AND SYSDATE;
+
+
+
+Las reservas de los últimos 30 días que tiene "Lolo Lolez"
+
+SELECT R.IDRESERVA,
+       R.FECHAINICIO,
+       R.FECHASALIDA,
+       R.PRECIO,
+       H.NOMBRE    AS NOMBRE_HOTEL,
+       C.ESTRELLAS
+FROM   RESERVA R
+       JOIN CLIENTE CL      ON R.IDCLIENTE    = CL.IDCLIENTE
+       JOIN HABITACION HB   ON R.IDHABITACION = HB.IDHABITACION
+       JOIN HOTEL H         ON HB.IDHOTEL     = H.IDHOTEL
+       JOIN CATEGORIA C     ON H.IDCATEGORIA  = C.IDCATEGORIA
+WHERE  UPPER(CL.NOMBRE) = 'LOLO LOLEZ'
+  AND  R.FECHAINICIO BETWEEN (SYSDATE - 30) AND SYSDATE
+  AND  C.ESTRELLAS = 3
+  AND  UPPER(H.DIRECCION) LIKE '%ZARAGOZA%';
