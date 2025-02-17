@@ -1,0 +1,52 @@
+SELECT EMP_NO, APELLIDO FROM EMPLE
+	WHERE UPPER(APELLIDO)='CEREZO';
+
+//// DEVUELVE 7782
+//// SABIENDO EL ID PODEMOS HACER:
+
+
+SELECT EMP_NO, APELLIDO FROM EMPLE
+	WHERE DIR='7782';
+
+
+//////////////////////////////////////////////////
+
+SELECT EMP_NO, APELLIDO FROM EMPLE
+	WHERE DIR=(SELECT EMP_NO FROM EMPLE
+		WHERE UPPER(APELLIDO)='CEREZO');
+
+//////////////////////////////////////////////////
+
+PODRÍA HABER DOS JEFES QUE SE LLAMARAN CEREZO,
+	ENTONCES MEJOR PONER UN IN (DIR IN)
+
+//////////////////////////////////////////////////
+
+SELECT EMP_NO, APELLIDO FROM EMPLE
+	WHERE DIR IN (SELECT EMP_NO FROM EMPLE
+		WHERE UPPER(APELLIDO)='CEREZO');
+
+//////////////////////////////////////////////////
+
+
+
+
+
+PARA SACAR EN UNA TABLA LOS ARTICULOS QUE NO TIENEN VENTAS,
+NO SE PUEDEN HACER UN MOSTRAR LOS NULL,
+HABRIA QUE MOSTRAR UN: "TODOS MENOS VENTAS" "TODOS - VENTAS"
+ESTO LO HACEMOS CON UN "NOT IN"
+
+////////////////////////////////////////////////////////////////////////////
+
+SELECT DISTINCT ARTICULO, COD_FABRICANTE
+	FROM ARTICULOS
+	WHERE ARTICULO NOT IN (SELECT ARTICULO FROM VENTAS);
+
+////////////////////////////////////////////////////////////////////////////
+
+SELECT DISTINCT ARTICULO, COD_FABRICANTE
+	FROM ARTICULOS
+	WHERE UPPER(ARTICULO) NOT IN (SELECT UPPER(ARTICULO) FROM VENTAS);
+
+////////////////////////////////////////////////////////////////////////////
