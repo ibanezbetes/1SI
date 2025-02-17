@@ -5,13 +5,13 @@
       <dia:int val="-8"/>
     </dia:attribute>
     <dia:attribute name="ypos">
-      <dia:int val="1072"/>
+      <dia:int val="56"/>
     </dia:attribute>
     <dia:attribute name="width">
-      <dia:int val="1536"/>
+      <dia:int val="2560"/>
     </dia:attribute>
     <dia:attribute name="height">
-      <dia:int val="793"/>
+      <dia:int val="1369"/>
     </dia:attribute>
     <dia:attribute name="isopen">
       <dia:boolean val="true"/>
@@ -36,12 +36,15 @@
   </dia:window>
   <dia:list role="recent-files">
     <dia:attribute name="listvalue">
-      <dia:string>#C:\Users\daniz\Documents\GitHub\1SI\ENTORNOS_DESARROLLO\LAVADORA\Lavadora v2.0.dia#</dia:string>
+      <dia:string>#C:\Users\daniz\Documents\GitHub\1SI\BASES_DATOS\T3_ORACLE\Ejercicio 17 Cadena de hoteles.dia
+C:\Users\daniz\Documents\GitHub\1SI\ENTORNOS_DESARROLLO\DiaPortable\Data\Diagrama1.dia
+C:\Users\daniz\Documents\GitHub\1SI\ENTORNOS_DESARROLLO\LAVADORA\Lavadora v2.0.dia#</dia:string>
     </dia:attribute>
   </dia:list>
   <dia:list role="sheets">
     <dia:attribute name="listvalue">
-      <dia:string>#Diagrama de flujo#</dia:string>
+      <dia:string>#ER
+Diagrama de flujo#</dia:string>
     </dia:attribute>
   </dia:list>
   <dia:list role="diagram-tree-hidden-types">
@@ -256,12 +259,12 @@
   </dia:string>
   <dia:string role="last-sheet-selected">
     <dia:attribute name="stringvalue">
-      <dia:string>#UML#</dia:string>
+      <dia:string>#ER#</dia:string>
     </dia:attribute>
   </dia:string>
   <dia:string role="end-arrow-type">
     <dia:attribute name="stringvalue">
-      <dia:string>#Filled Concave#</dia:string>
+      <dia:string>#None#</dia:string>
     </dia:attribute>
   </dia:string>
   <dia:string role="start-arrow-type">
