@@ -1,0 +1,7 @@
+package pojo;
+
+public interface Move {
+
+    public void move();
+
+}
