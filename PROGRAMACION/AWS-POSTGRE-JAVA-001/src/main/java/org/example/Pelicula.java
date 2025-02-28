@@ -5,6 +5,8 @@ public class Pelicula {
     private String titulo;
     private String director;
     private int anio;
+    // Genero genero;
+    // ArrayList<Genero> lsGeneros;
 
     public Pelicula(int id, String titulo, String director, int anio) {
         this.id = id;
