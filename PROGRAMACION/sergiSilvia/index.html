@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>¡Feliz Cumpleaños, Silvia!</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="text-box">
+    <h1>¡Feliz Cumpleaños, Silvia!</h1>
+    <h3>Hoy es un día especial, un día en el que celebramos tu 30 vuelta al sol,  ¡Feliz cumpleaños! Aunque este año esté siendo muy duro, espero que te traiga infinitas sonrisas, momentos de alegría, y sueños cumplidos.
+        Que nunca dejes de creer en ti misma, porque tienes todo lo necesario para lograr todo lo que te propongas. Que sigas brillando con esa energía única que te hace tan especial y que la vida te regale solo lo mejor.
+        <br>Te quiero cosita
+        </h3>
+</div>
+  </header>
+  <main>
+    
+        
+        <!-- Sección de la ruleta "trucada" -->
+    <section id="wheelSection">
+      <div class="wheel-container">
+        <div id="wheel">
+          <!-- Cada label en el centro de su sector (30°, 90°, 150°, etc.) -->
+          <div class="label" style="--rot: 60deg;">
+            <img src="img/regalo2.png" alt="Regalo Sorpresa">
+        </div>
+          <div class="label" style="--rot: 1200deg;">
+            <img src="img/comida1.png" alt="Comida">
+        </div>
+          <div class="label" style="--rot: 180deg;">
+            <img src="img/viaje.png" alt="Viaje">
+        </div>
+          <div class="label" style="--rot: 240deg;">
+            <img src="img/regalo1.png" alt="Regalo Sorpresa">
+        </div>
+          <div class="label" style="--rot: 300deg;">
+            <img src="img/comida.png" alt="Comida">
+        </div>
+          <div class="label" style="--rot: 360deg;">
+            <img src="img/viaje.png" alt="Viaje">
+        </div>
+        </div>
+        <!-- Flecha que indica el resultado -->
+        <div class="pointer"></div>
+      </div>
+      <button id="spinButton" onclick="spinWheel()">Girar</button>
+    </section>
+
+    <!-- Sección con el mensaje tras girar la ruleta -->
+    <section id="resultSection" class="hidden">
+        <div class="text-box">
+      <p class="result-message">¡Te ha tocado Regalo Sorpresa!</p></div>
+      <button id="openButton" onclick="openGift()">Abrir</button>
+    </section>
+
+    <!-- Sección del regalo (imagen y texto) -->
+    <section id="giftContent" class="hidden">
+        <div class="text-box">
+        <p>Airwrap i.d.™<br>Moldeador multifunciones y secador Liso+Ondulado</p></div>
+        <div class="text-box">
+      <img src="img/regalo.png" alt="Regalo" /></div>
+      
+    </section>
+    <audio controls autoplay>
+      <source src="music.mp3" type="audio/mpeg">
+    </audio>
+  </main>
+  
+  <script src="script.js"></script>
+</body>
+</html>
