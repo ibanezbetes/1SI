@@ -1,0 +1,177 @@
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+  
+    /* Si quieres usar SOLO la imagen de fondo */
+    background: url("img/foto1.jpg") no-repeat center center fixed; 
+    background-size: cover;
+  }
+  
+  .text-box {
+    background-color: rgba(255, 255, 255, 0.7); /* Blanco 70% opaco */
+    border-radius: 10px;  /* Esquinas redondeadas */
+    padding: 20px;        /* Espacio interno */
+    margin: 10px auto;    /* Separación externa, centrado automático */
+    max-width: 80%;       /* Limita el ancho máximo */
+    color: #333;          /* Color de texto más oscuro */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2); /* Sombra opcional */
+  }
+  
+  
+  header {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    color: #0e00d3;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  
+  /* Contenedor principal */
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Sección de la ruleta */
+  #wheelSection {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .wheel-container {
+    position: relative;
+    width: 350px;  /* Ajustado para más espacio */
+    height: 350px;
+    margin: 0 auto 20px;
+  }
+  
+  /* Ruleta con 6 segmentos usando conic-gradient */
+  #wheel {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+      #f44336 0deg   60deg,   /* Viaje */
+      #ff9800 60deg  120deg,  /* Comida */
+      #4caf50 120deg 180deg,  /* Regalo Sorpresa */
+      #f44336 180deg 240deg,  /* Viaje */
+      #ff9800 240deg 300deg,  /* Comida */
+      #4caf50 300deg 360deg   /* Regalo Sorpresa */
+    );
+    transition: transform 3s ease-out;
+    position: relative;
+  }
+  
+  /* Cada casilla (label) ahora contiene una imagen en vez de texto */
+  .label {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* Si tenías text-shadow u otras propiedades para el texto,
+       puedes quitarlas si ya no son necesarias para las imágenes */
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.3;
+    white-space: nowrap;
+  
+    /*
+      - translate(-50%, -50%) centra el origen en el centro del círculo
+      - rotate(var(--rot)) gira la etiqueta al ángulo del segmento
+      - translate(100px) la acerca o aleja del centro
+      - rotate(-var(--rot)) endereza el contenido para que quede horizontal
+    */
+    transform: translate(-50%, -50%)
+      rotate(var(--rot))
+      translate(100px)
+      rotate(calc(-1 * var(--rot)));
+  }
+  
+  /* Ajusta el tamaño de las imágenes dentro de las casillas */
+  .label img {
+    max-width: 50px; /* Ajusta según te convenga */
+    height: auto;
+    display: block;  /* Para centrar en el contenedor .label */
+  }
+  
+  /* Flecha (pointer) */
+  .pointer {
+    position: absolute;
+    top: 0; /* Ajusta según tu preferencia */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid #000;  /* Flecha hacia abajo */
+    z-index: 999; /* Asegúrate de que quede por encima de la ruleta */
+  }
+  
+  /* Botones */
+  #spinButton,
+  #openButton {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #d32f2f;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #spinButton:hover,
+  #openButton:hover {
+    background-color: #b71c1c;
+  }
+  
+  /* Sección del mensaje de resultado */
+  #resultSection {
+    text-align: center;
+    animation: fadeIn 1s;
+  }
+  
+  .result-message {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Sección del regalo */
+  #giftContent {
+    text-align: center;
+    animation: fadeIn 1s;
+  }
+  
+  #giftContent img {
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #giftContent p {
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  /* Clase para ocultar elementos */
+  .hidden {
+    display: none;
+  }
+  
+  /* Animación de aparición */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
