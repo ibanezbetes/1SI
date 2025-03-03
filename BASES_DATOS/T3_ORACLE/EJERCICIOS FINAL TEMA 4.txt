@@ -1,0 +1,294 @@
+ABS(n).
+Obtén el valor absoluto del SALARIO - 10000 para todas las filas de la tabla EMPLE:
+
+SQL> SELECT APELLIDO, SALARIO, ABS(SALARIO - 10000)
+     FROM EMPLE;
+
+
+
+CEIL(n). Prueba con números positivos y negativos:
+
+SQL> SELECT CEIL(20.3), CEIL(16), CEIL(-20.3), CEIL(-16)
+     FROM DUAL;
+
+
+
+FLOOR(n). Prueba con números positivos y negativos:
+
+SQL> SELECT FLOOR(20.3), FLOOR(16), FLOOR(-20.3), FLOOR(-16)
+     FROM DUAL;
+
+
+
+MOD(m, n). Prueba con números positivos y negativos:
+
+SQL> SELECT MOD(11,4), MOD(10,-15), MOD(-10,-3), MOD(10,4,4,5)
+     FROM DUAL;
+
+
+
+NVL(valor, expresión).
+A partir de la tabla EMPLE obtenemos el SALARIO, la COMISION y la suma de ambos:
+
+SQL> SELECT SALARIO, COMISION, SALARIO + COMISION
+     FROM EMPLE;
+
+
+
+POWER(m, exponente). Prueba con números positivos y negativos:
+
+SQL> SELECT POWER(2,4),
+            POWER(2,-4),
+            POWER(3.5, 2.4),
+            POWER(4.5, 2)
+     FROM DUAL;
+
+
+ROUND(número [, m]). Prueba con redondeo positivo:
+
+SQL> SELECT ROUND(1.56,1),
+            ROUND(1.56),
+            ROUND(1.2234,2),
+            ROUND(1.2676,3)
+     FROM DUAL;
+
+Prueba con redondeo negativo:
+
+SQL> SELECT ROUND(145.5,-1),
+            ROUND(145.5,-2),
+            ROUND(145.5,-3),
+            ROUND(141,-1),
+            ROUND(145,-1),
+     FROM DUAL;
+
+
+
+SIGN(valor). Prueba con números positivos y negativos:
+
+SQL> SELECT SIGN(-10), SIGN(10)
+     FROM DUAL;
+
+
+
+SQRT(n).
+
+SQL> SELECT SQRT(25), SQRT(25.6)
+     FROM DUAL;
+
+
+
+TRUNC(número [, m]).
+
+Con truncamiento positivo:
+
+SQL> SELECT TRUNC(1.5634, 1),
+            TRUNC(1.1684, 2),
+            TRUNC(1.652)
+     FROM DUAL;
+
+
+
+Con truncamiento negativo:
+
+SQL> SELECT TRUNC(187.98, -1),
+            TRUNC(187.98, -2),
+            TRUNC(187.98, -3)
+     FROM DUAL;
+
+
+Actividades propuestas:
+“¿Cuál sería la salida de ejecutar estas funciones?”
+
+ABS(146)        -> 146
+ABS(-30)        -> 30
+CEIL(2.3)       -> 3
+CEIL(1.3)       -> 2
+CEIL(-2.3)      -> -2
+FLOOR(2.3)      -> 2
+FLOOR(-2.3)     -> -3
+MOD(23,22)      -> 1
+MOD(2,3)        -> 2
+POWER(10,0)     -> 1
+
+POWER(3,-1)     -> ?
+POWER(3,-1.0)   -> ?
+ROUND(33.67)    -> ?
+ROUND(-33.67,2) -> ?
+ROUND(33.27,1)  -> ?
+ROUND(-33.27,-1)-> ?
+TRUNC(67.232,2) -> ?
+TRUNC(67.58,1)  -> ?
+...
+
+
+
+AVG(n). Cálculo del salario medio de los empleados del departamento 10 de la tabla EMPLE:
+
+SQL> SELECT AVG(SALARIO)
+     FROM EMPLE
+     WHERE DEPT_NO = 10;
+
+
+
+COUNT(*). Cálculo del número de filas de la tabla EMPLE:
+
+SQL> SELECT COUNT(*)
+     FROM EMPLE;
+
+
+
+Cálculo del número de filas de la tabla EMPLE donde la COMISION no es nula:
+
+SQL> SELECT COUNT(COMISION)
+     FROM EMPLE;
+
+
+MAX(expresión). Cálculo del máximo salario de la tabla EMPLE:
+
+SQL> SELECT MAX(SALARIO)
+     FROM EMPLE;
+
+
+Cálculo del máximo apellido (alfabéticamente) de la tabla EMPLE:
+
+SQL> SELECT MAX(APELLIDO)
+     FROM EMPLE;
+
+
+
+Obtén el apellido del empleado que tiene mayor salario:
+
+SQL> SELECT APELLIDO, SALARIO
+     FROM EMPLE
+     WHERE SALARIO = (SELECT MAX(SALARIO) FROM EMPLE);
+
+
+
+MIN(expresión). Obtén el mínimo salario de la tabla EMPLE:
+
+SQL> SELECT MIN(SALARIO)
+     FROM EMPLE;
+
+
+
+Obtén el apellido del empleado que tiene ese mínimo salario:
+
+SQL> SELECT APELLIDO, SALARIO
+     FROM EMPLE
+     WHERE SALARIO = (SELECT MIN(SALARIO) FROM EMPLE);
+
+
+
+SUM(expresión). Consigue la suma de todos los salarios de la tabla EMPLE:
+
+SQL> SELECT SUM(SALARIO)
+     FROM EMPLE;
+
+
+
+
+
+
+
+
+VARIANCE(expresión). Obtén la varianza de todos los salarios de la tabla EMPLE:
+
+SQL> SELECT VARIANCE(SALARIO)
+     FROM EMPLE;
+
+
+
+
+Tabla NOTAS_ALUMNOS:
+
+SQL> DESC NOTAS_ALUMNOS;
+
+Nombre         nNulo?  Tipo
+-------------- ------- --------------------
+NOMBRE_ALUMNO  NOT NULL VARCHAR2(25)
+NOTA1                   NUMBER(2)
+NOTA2                   NUMBER(2)
+NOTA3                   NUMBER(2)
+Obtén para cada alumno la mayor nota y la menor nota de las tres que tiene:
+
+pgsql
+Copiar
+Editar
+SQL> SELECT NOMBRE_ALUMNO,
+            GREATEST(NOTA1, NOTA2, NOTA3) "MAYOR",
+            LEAST(NOTA1, NOTA2, NOTA3) "MENOR"
+     FROM NOTAS_ALUMNOS;
+sql
+Copiar
+Editar
+NOMBRE_ALUMNO           MAYOR  MENOR
+----------------------- ------ ------
+Alcalde García, M. L.   8      5
+Benito Martín, Luis     8      5
+Casas Martínez, Manuel  9      6
+Corregidor Sánchez, Ana 9      7
+Díaz Sánchez, María     (NULL) (NULL)
+(La última fila tiene un resultado de NULL, debido a que GREATEST y LEAST no pueden comparar un valor con otro valor nulo.)
+
+Estas funciones se pueden usar también con columnas de caracteres. Ejemplos:
+Obtén el mayor nombre alfabético de la lista:
+
+pgsql
+Copiar
+Editar
+SQL> SELECT GREATEST('BENITO','JORGE','ANDRES','ISABEL')
+     FROM DUAL;
+
+GREAT
+-----
+JORGE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

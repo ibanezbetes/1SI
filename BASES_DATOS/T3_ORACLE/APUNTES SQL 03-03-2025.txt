@@ -1,0 +1,53 @@
+//APUNTES SQL 03/03/2025
+
+
+//todos los empleados de toda la empresa que cobren por encima de 2500€
+
+SELECT COUNT(*) FROM EMPLE
+	WHERE (SALARIO+NVL(COMISION,0)) > 2500;
+
+
+
+//todos los empleados de toda la empresa que cobren por encima de 2500€ que tengan comisión:
+
+SELECT COUNT(COMISION) FROM EMPLE
+	WHERE
+	(SALARIO+NVL(COMISION,0)) > 2500;
+
+
+
+//quiero saber los oficios que hay en el DEPT_30:
+
+SELECT COUNT (DISTINCT (OFICIO)) FROM EMPLE
+WHERE DEPT_NO = 30;
+
+
+
+//nota máxima de la primera evaluación:
+
+SELECT MAX(NOTA1)
+	FROM NOTAS_ALUMNOS;
+
+
+
+//nota mínima de la primera evaluación:
+
+SELECT MIN(NOTA1)
+	FROM NOTAS_ALUMNOS;
+
+
+
+//nota máxima de Luis:
+
+SELECT GREATEST(NOTA1,NOTA2,NOTA3)
+	FROM NOTAS_ALUMNOS
+	WHERE NOMBRE_ALUMNO = 'Benito Martín, Luis';
+
+
+
+//nota mínima de Luis con alias:
+
+SELECT LEAST(NOTA1,NOTA2,NOTA3) "MÍNIMA"
+	FROM NOTAS_ALUMNOS
+	WHERE NOMBRE_ALUMNO = 'Benito Martín, Luis';
+
