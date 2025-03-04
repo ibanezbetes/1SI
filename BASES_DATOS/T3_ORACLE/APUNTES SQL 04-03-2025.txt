@@ -1,0 +1,572 @@
+SELECT RTRIM(LTRIM('SALUDOS','AS'),'AS')FROM DUAL;
+
+RTRI
+----
+LUDO
+
+
+
+SELECT RPAD(RTRIM(LTRIM('SALUDOS','AS'),'AS'),15,'*-')FROM DUAL;
+
+RPAD(RTRIM(LTRI
+---------------
+LUDO*-*-*-*-*-*
+
+
+
+SELECT REPLACE ('SALUDO', 'UD', 'ud') FROM DUAL;
+
+REPLAC
+------
+SALudO
+
+
+
+SELECT SUBSTR('HOLA, QUE HACE',7) "SALUDO" FROM DUAL;
+
+SALUDO
+--------
+QUE HACE
+
+
+
+SELECT TRANSLATE('SALUDO', 'AO', 'ao') "SALUDO" FROM DUAL;
+
+SALUDO
+------
+SaLUDo
+
+
+
+SELECT TRANSLATE('SALUDO POR LA MAÑANA', 'AO ', 'ao') "SALUDO" FROM DUAL;
+
+SALUDO
+------------------
+SaLUDoPoRLaMaÑaNa
+
+
+
+SELECT REPLACE(AUTOR,SUBSTR(AUTOR, INSTR(AUTOR, ' '))) FROM MISTEXTOS;
+
+REPLACE(AUTOR,SUBSTR(A
+----------------------
+GARCÍA
+GARCÍA
+RUÍZ
+RUÍZ
+
+
+
+
+
+
+
+SQL> SELECT CHR(65)
+  2  FROM DUAL;
+
+C
+-
+A
+
+SQL> SELECT CHAR(65) "LETRA"
+  2  FROM DUAL;
+SELECT CHAR(65) "LETRA"
+       *
+ERROR en lÝnea 1:
+ORA-00936: falta una expresi¾n
+
+
+SQL> SELECT CHR(65) "LETRA"
+  2  FROM DUAL;
+
+L
+-
+A
+
+SQL> SELECT ASCII('A') "LETRA"
+  2  FROM DUAL;
+
+     LETRA
+----------
+        65
+
+SQL> SELECT CONCAT('HOLA ','QUE HACE') "SALUDO"
+  2  FROM DUAL;
+
+SALUDO
+-------------
+HOLA QUE HACE
+
+SQL> SELECT LOWER('HOLA, QUE HACE') "SALUDO"
+  2  FROM DUAL;
+
+SALUDO
+--------------
+hola, que hace
+
+SQL> SELECT UPPER('HOLA, QUE HACE') "SALUDO"
+  2  FROM DUAL;
+
+SALUDO
+--------------
+HOLA, QUE HACE
+
+SQL> SELECT INITCAP(LOWER('HOLA, QUE HACE')) "SALUDO"
+  2  FROM DUAL;
+
+SALUDO
+--------------
+Hola, Que Hace
+
+SQL> SELECT RPAD('HOLA, QUE HACE',30,'*') "SALUDO"
+  2  FROM DUAL;
+
+SALUDO
+------------------------------
+HOLA, QUE HACE****************
+
+SQL> SELECT APELLIDO, SALARIO, COMISION
+  2  FROM EMPLE
+  3  WHERE DEPT_NO = 30;
+
+APELLIDO      SALARIO   COMISION
+---------- ---------- ----------
+ARROYO           1500        390
+SALA             1625        650
+MARTIN           1600       1020
+NEGRO            3005
+TOVAR            1350          0
+JIMENO           1335
+
+6 filas seleccionadas.
+
+SQL> DESC EMPLE
+ Nombre                                    ┐Nulo?   Tipo
+ ----------------------------------------- -------- ----------------------------
+ EMP_NO                                    NOT NULL NUMBER(4)
+ APELLIDO                                           VARCHAR2(10)
+ OFICIO                                             VARCHAR2(10)
+ DIR                                                NUMBER(4)
+ FECHA_ALT                                          DATE
+ SALARIO                                            NUMBER(7)
+ COMISION                                           NUMBER(7)
+ DEPT_NO                                   NOT NULL NUMBER(2)
+
+SQL> SELECT RPAD(APELLIDO,10,'*'), SALARIO, COMISION
+  2  FROM EMPLE
+  3  WHERE DEPT_NO = 30;
+
+RPAD(APELLIDO,10,'*')                       SALARIO   COMISION
+---------------------------------------- ---------- ----------
+ARROYO****                                     1500        390
+SALA******                                     1625        650
+MARTIN****                                     1600       1020
+NEGRO*****                                     3005
+TOVAR*****                                     1350          0
+JIMENO****                                     1335
+
+6 filas seleccionadas.
+
+SQL> SELECT RPAD(APELLIDO,10,'*') "APELLIDO", SALARIO, COMISION
+  2  FROM EMPLE
+  3  WHERE DEPT_NO = 30;
+
+APELLIDO                                    SALARIO   COMISION
+---------------------------------------- ---------- ----------
+ARROYO****                                     1500        390
+SALA******                                     1625        650
+MARTIN****                                     1600       1020
+NEGRO*****                                     3005
+TOVAR*****                                     1350          0
+JIMENO****                                     1335
+
+6 filas seleccionadas.
+
+SQL> SELECT RPAD(APELLIDO,30,'*'), SALARIO, COMISION
+  2  FROM EMPLE
+  3  WHERE DEPT_NO = 30;
+
+RPAD(APELLIDO,30,'*')
+--------------------------------------------------------------------------------
+   SALARIO   COMISION
+---------- ----------
+ARROYO************************
+      1500        390
+
+SALA**************************
+      1625        650
+
+MARTIN************************
+      1600       1020
+
+
+RPAD(APELLIDO,30,'*')
+--------------------------------------------------------------------------------
+   SALARIO   COMISION
+---------- ----------
+NEGRO*************************
+      3005
+
+TOVAR*************************
+      1350          0
+
+JIMENO************************
+      1335
+
+
+6 filas seleccionadas.
+
+SQL> SELECT RPAD(APELLIDO,20,'*') "APELLIDO", SALARIO, COMISION
+  2  FROM EMPLE
+  3  WHERE DEPT_NO = 30;
+
+APELLIDO
+--------------------------------------------------------------------------------
+   SALARIO   COMISION
+---------- ----------
+ARROYO**************
+      1500        390
+
+SALA****************
+      1625        650
+
+MARTIN**************
+      1600       1020
+
+
+APELLIDO
+--------------------------------------------------------------------------------
+   SALARIO   COMISION
+---------- ----------
+NEGRO***************
+      3005
+
+TOVAR***************
+      1350          0
+
+JIMENO**************
+      1335
+
+
+6 filas seleccionadas.
+
+SQL> SELECT RPAD(APELLIDO,10,'*'), SALARIO, COMISION
+  2  FROM EMPLE
+  3  WHERE DEPT_NO = 30;
+
+RPAD(APELLIDO,10,'*')                       SALARIO   COMISION
+---------------------------------------- ---------- ----------
+ARROYO****                                     1500        390
+SALA******                                     1625        650
+MARTIN****                                     1600       1020
+NEGRO*****                                     3005
+TOVAR*****                                     1350          0
+JIMENO****                                     1335
+
+6 filas seleccionadas.
+
+SQL> SELECT RPAD(APELLIDO,20,'*') "APELLIDO", LPAD(SALARIO,6,'*'), COMISION
+  2  FROM EMPLE
+  3  WHERE DEPT_NO = 30;
+
+APELLIDO
+--------------------------------------------------------------------------------
+LPAD(SALARIO,6,'*')        COMISION
+------------------------ ----------
+ARROYO**************
+**1500                          390
+
+SALA****************
+**1625                          650
+
+MARTIN**************
+**1600                         1020
+
+
+APELLIDO
+--------------------------------------------------------------------------------
+LPAD(SALARIO,6,'*')        COMISION
+------------------------ ----------
+NEGRO***************
+**3005
+
+TOVAR***************
+**1350                            0
+
+JIMENO**************
+**1335
+
+
+6 filas seleccionadas.
+
+SQL> SELECT '       SALUDO' FROM DUAL;
+
+'SALUDO'
+-------------
+       SALUDO
+
+SQL> SELECT LTRIM('       SALUDO') FROM DUAL;
+
+LTRIM(
+------
+SALUDO
+
+SQL> DESC EMPLE
+ Nombre                                    ┐Nulo?   Tipo
+ ----------------------------------------- -------- ----------------------------
+ EMP_NO                                    NOT NULL NUMBER(4)
+ APELLIDO                                           VARCHAR2(10)
+ OFICIO                                             VARCHAR2(10)
+ DIR                                                NUMBER(4)
+ FECHA_ALT                                          DATE
+ SALARIO                                            NUMBER(7)
+ COMISION                                           NUMBER(7)
+ DEPT_NO                                   NOT NULL NUMBER(2)
+
+SQL> INSERT INTO EMPLE VALUES(801, 'LOLEZ  ','DIRECTOR ',SYSDATE, 3000, 0, 30);
+INSERT INTO EMPLE VALUES(801, 'LOLEZ  ','DIRECTOR ',SYSDATE, 3000, 0, 30)
+            *
+ERROR en lÝnea 1:
+ORA-00947: no hay suficientes valores
+
+
+SQL> INSERT INTO EMPLE VALUES(801, 'LOLEZ  ','DIRECTOR ', NULL, SYSDATE, 3000, 0, 30);
+
+1 fila creada.
+
+SQL> COMMIT;
+
+Confirmaci¾n terminada.
+
+SQL> SELECT * FROM EMPLE;
+
+    EMP_NO APELLIDO   OFICIO            DIR FECHA_ALT     SALARIO   COMISION
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+   DEPT_NO
+----------
+      7369 SANCHEZ    EMPLEADO         7902 17/12/1990       1040
+        20
+
+      7499 ARROYO     VENDEDOR         7698 20/02/1990       1500        390
+        30
+
+      7521 SALA       VENDEDOR         7698 22/02/1991       1625        650
+        30
+
+
+    EMP_NO APELLIDO   OFICIO            DIR FECHA_ALT     SALARIO   COMISION
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+   DEPT_NO
+----------
+      7566 JIMENEZ    DIRECTOR         7839 02/04/1991       2900
+        20
+
+      7654 MARTIN     VENDEDOR         7698 29/09/1991       1600       1020
+        30
+
+      7698 NEGRO      DIRECTOR         7839 01/05/1991       3005
+        30
+
+
+    EMP_NO APELLIDO   OFICIO            DIR FECHA_ALT     SALARIO   COMISION
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+   DEPT_NO
+----------
+      7782 CEREZO     DIRECTOR         7839 09/06/1991       2885
+        10
+
+      7788 GIL        ANALISTA         7566 09/11/1991       3000
+        20
+
+      7839 REY        PRESIDENTE            17/11/1991       4100
+        10
+
+
+    EMP_NO APELLIDO   OFICIO            DIR FECHA_ALT     SALARIO   COMISION
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+   DEPT_NO
+----------
+      7844 TOVAR      VENDEDOR         7698 08/09/1991       1350          0
+        30
+
+      7876 ALONSO     EMPLEADO         7788 23/09/1991       1430
+        20
+
+      7900 JIMENO     EMPLEADO         7698 03/12/1991       1335
+        30
+
+
+    EMP_NO APELLIDO   OFICIO            DIR FECHA_ALT     SALARIO   COMISION
+---------- ---------- ---------- ---------- ---------- ---------- ----------
+   DEPT_NO
+----------
+      7902 FERNANDEZ  ANALISTA         7566 03/12/1991       3000
+        20
+
+      7934 MUÑOZ      EMPLEADO         7782 23/01/1992       1690
+        10
+
+       801 LOLEZ      DIRECTOR              04/03/2025       3000          0
+        30
+
+
+15 filas seleccionadas.
+
+SQL> SELECT APELLIDO FROM EMPLE
+  2  WHERE UPPER(OFICIO)='DIRECTOR';
+
+APELLIDO
+----------
+JIMENEZ
+NEGRO
+CEREZO
+
+SQL> SELECT APELLIDO FROM EMPLE
+  2  WHERE UPPER(RTRIM(OFICIO))='DIRECTOR';
+
+APELLIDO
+----------
+JIMENEZ
+NEGRO
+CEREZO
+LOLEZ
+
+SQL> SELECT LTRIM('SALUDO','S') FROM DUAL;
+
+LTRIM
+-----
+ALUDO
+
+SQL> SELECT LTRIM('SALUDOS','S') FROM DUAL;
+
+LTRIM(
+------
+ALUDOS
+
+SQL> SELECT LTRIM('SALUDOS','SA') FROM DUAL;
+
+LTRIM
+-----
+LUDOS
+
+SQL> SELECT LTRIM('SALUDOS','AS') FROM DUAL;
+
+LTRIM
+-----
+LUDOS
+
+SQL> SELECT RTRIM(LTRIM('SALUDOS','AS'),'AS') FROM DUAL;
+
+RTRI
+----
+LUDO
+
+SQL> SELECT RPAD(RTRIM(LTRIM('SALUDOS','AS'),'AS'),15,'*-') FROM DUAL;
+
+RPAD(RTRIM(LTRI
+---------------
+LUDO*-*-*-*-*-*
+
+SQL> SELECT REPLACE ('SALUDO', 'UD') FROM DUAL;
+
+REPL
+----
+SALO
+
+SQL> SELECT REPLACE ('SALUDO', 'UD', 'ud') FROM DUAL;
+
+REPLAC
+------
+SALudO
+
+SQL> SELECT REPLACE ('SALUDO', 'O', 'ITO') FROM DUAL;
+
+REPLACE(
+--------
+SALUDITO
+
+SQL> SELECT REPLACE ('SOLUDO', 'O', 'ITO') FROM DUAL;
+
+REPLACE('S
+----------
+SITOLUDITO
+
+SQL> SELECT 'HOLA, QUE HACHE' FROM DUAL;
+
+'HOLA,QUEHACHE'
+---------------
+HOLA, QUE HACHE
+
+SQL> SELECT 'HOLA, QUE HACHE' "SALUDO" FROM DUAL;
+
+SALUDO
+---------------
+HOLA, QUE HACHE
+
+SQL> SELECT SUBSTR('HOLA, QUE HACHE',5) "SALUDO" FROM DUAL;
+
+SALUDO
+-----------
+, QUE HACHE
+
+SQL> SELECT SUBSTR('HOLA, QUE HACHE',6) "SALUDO" FROM DUAL;
+
+SALUDO
+----------
+ QUE HACHE
+
+SQL> SELECT LTRIM(SUBSTR('HOLA, QUE HACHE',6)) "SALUDO" FROM DUAL;
+
+SALUDO
+---------
+QUE HACHE
+
+SQL> SELECT REPLACE ('SOLUDO', 'O', 'ITO') FROM DUAL;
+
+REPLACE('S
+----------
+SITOLUDITO
+
+SQL> SELECT TRASLATE('SALUDO', 'AO', 'ao') "SALUDO" FROM DUAL;
+SELECT TRASLATE('SALUDO', 'AO', 'ao') "SALUDO" FROM DUAL
+       *
+ERROR en lÝnea 1:
+ORA-00904: "TRASLATE": identificador no vßlido
+
+
+SQL> SELECT TRANSLATE('SALUDO', 'AO', 'ao') "SALUDO" FROM DUAL;
+
+SALUDO
+------
+SaLUDo
+
+SQL> SELECT TRANSLATE('SALUDO POR LA MAÑANA', 'AO', 'ao') "SALUDO" FROM DUAL;
+
+SALUDO
+---------------------
+SaLUDo PoR La MaÑaNa
+
+SQL> SELECT TRANSLATE('SALUDO POR LA MAÑANA', 'UAO ', 'uao') "SALUDO" FROM DUAL;
+
+SALUDO
+------------------
+SaLuDoPoRLaMaÑaNa
+
+SQL> SELECT TRANSLATE('SALUDO POR LA MAÑANA', 'UAO ', 'oua') "SALUDO" FROM DUAL;
+
+SALUDO
+------------------
+SuLoDaPaRLuMuÑuNu
+
+SQL> SELECT TRANSLATE('SALUDO POR LA MAÑANA', 'UAO ', 'iii') "SALUDO" FROM DUAL;
+
+SALUDO
+------------------
+SiLiDiPiRLiMiÑiNi
+
+SQL> SELECT TRANSLATE('SALUDO POR LA MAÑANA', 'UAOÑ', 'uao') "SALUDO" FROM DUAL;
+
+SALUDO
+-------------------
+SaLuDo PoR La MaaNa
+
