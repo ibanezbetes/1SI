@@ -233,9 +233,6 @@ Díaz Sánchez, María     (NULL) (NULL)
 Estas funciones se pueden usar también con columnas de caracteres. Ejemplos:
 Obtén el mayor nombre alfabético de la lista:
 
-pgsql
-Copiar
-Editar
 SQL> SELECT GREATEST('BENITO','JORGE','ANDRES','ISABEL')
      FROM DUAL;
 
