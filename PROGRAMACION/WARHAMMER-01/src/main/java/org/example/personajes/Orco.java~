@@ -1,0 +1,22 @@
+package org.example.personajes;
+
+import org.example.armas.interfaces.ArmaAtaque;
+
+import java.util.ArrayList;
+
+public class Orco extends PielVerde{
+    private ArrayList<Goblin> listaGoblin;
+
+    public Orco(String nombre, String puebloNacimiento) {
+        super(nombre, puebloNacimiento);
+    }
+
+    @Override
+    public void atacar(WarhammerPersonaje victima) {
+
+    }
+    @Override
+    public void defender(ArmaAtaque arma) {
+
+    }
+}
