@@ -2,31 +2,33 @@ EJERCICIOS TEMA 4 DEL FINAL
 
 1) Obtener, para los empleados del departamento 30 (tabla EMPLE):
 
-SELECT TO_CHAR(AVG(SALARIO),       '9999.99') AS "Sueldo medio",
-       COUNT(COMISION)                           AS "Comisiones no nulas",
-       TO_CHAR(MAX(SALARIO),     '9999.99') AS "Sueldo máximo",
-       TO_CHAR(MIN(SALARIO),     '9999.99') AS "Sueldo mínimo"
+SELECT (AVG(SALARIO)) AS "S.MEDIO",
+       COUNT(COMISION) AS "COM.NO_NULAS",
+       (MAX(SALARIO)) AS "S.MAX",
+       (MIN(SALARIO)) AS "S.MIN"
   FROM EMPLE
  WHERE DEPT_NO = 30;
+
 
 
 
 2) Visualizar los temas con mayor número de ejemplares (tabla LIBRERIA) y que tengan al menos una ‘E’ en el nombre del tema.
 
 SELECT TEMA, EJEMPLARES
-  FROM LIBRERIA
- WHERE TEMA LIKE '%E%' 
-   AND EJEMPLARES = (
+FROM LIBRERIA
+WHERE TEMA LIKE '%E%' 
+AND EJEMPLARES = (
          SELECT MAX(EJEMPLARES)
-           FROM LIBRERIA
-          WHERE TEMA LIKE '%E%'
-       );
+         FROM LIBRERIA
+         WHERE TEMA LIKE '%E%'
+	 );
+
 
 
 3) (Tabla MISTEXTOS) “¿Qué SELECT se debe ejecutar para tener como resultado…?”
 
 RESULTADO
----------------------------
+---------------------
 METODOLOGÍA DE LA PROGRAMACIÓN-^-^-^-^-^-
 INFORMÁTICA BÁSICA-^-^-^-^-^-^-^-^-^-^-^-
 SISTEMAS OPERATIVOS-^-^-^-^-^-^-^-^-^-^-^
@@ -34,8 +36,9 @@ SISTEMAS DIGITALES-^-^-^-^-^-^-^-^-^-^-^-
 MANUAL DE C-^-^-^-^-^-^-^-^-^-^-^-^-^-^-^
 
 
-SELECT RPAD(TITULO, 40, '-^') AS "RESULTADO"
+SELECT RPAD(TITULO, 30, '-^') AS "RESULTADO"
   FROM MISTEXTOS;
+
 
 
 
@@ -46,33 +49,39 @@ SELECT LOWER(
            REPLACE(
              REPLACE(TITULO, '"','')  
            , '.', '')                 
-       ) AS "forma1"
+       ) AS "FORMA_1"
   FROM MISTEXTOS;
 
+*****
 
 SELECT LOWER(
            TRANSLATE(TITULO,
                      '".',     
                      ' '       
            )
-       ) AS "forma2"
+       ) AS "FORMA_2"
   FROM MISTEXTOS;
+
+
 
 
 
 5) (Tabla LIBROS) “Escribe la sentencia SELECT que visualice dos columnas: una con el AUTOR y otra con el apellido del autor.”
 
 SELECT AUTOR,
-       SUBSTR(AUTOR, 1, 8)  AS "SOLO_APELLIDO"
-  FROM LIBROS;
+       SUBSTR(AUTOR, 1, INSTR(AUTOR, ',') - 1) AS "APELLIDO"
+FROM LIBROS;
+
+
 
 
 
 6) (Tabla LIBROS) “Escribe la sentencia SELECT que visualice las columnas de AUTOR y otra columna con el nombre del autor (sin el apellido).”
 
 SELECT AUTOR,
-       SUBSTR(AUTOR, 10)  AS "SOLO_NOMBRE"
-  FROM LIBROS;
+       TRIM(SUBSTR(AUTOR, INSTR(AUTOR, ',') + 1)) AS "SOLO_NOMBRE"
+FROM LIBROS;
+
 
 
 
@@ -80,11 +89,11 @@ SELECT AUTOR,
 
 7) (Tabla LIBROS) “A partir de la tabla LIBROS, realiza una sentencia SELECT que visualice en una columna, primero el nombre del autor y, luego, su apellido.”
 
-SELECT SUBSTR(AUTOR, 10)        
-       || ' '
-       || SUBSTR(AUTOR, 1, 8)   
-       AS "NOMBRE_COMPLETO"
-  FROM LIBROS;
+SELECT CONCAT(CONCAT(TRIM(SUBSTR(AUTOR, INSTR(AUTOR, ',') + 1)), ' '),
+              SUBSTR(AUTOR, 1, INSTR(AUTOR, ',') - 1)) AS "NOMBRE_COMPLETO"
+FROM LIBROS;
+
+
 
 
 
@@ -96,47 +105,20 @@ SELECT TITULO
  ORDER BY LENGTH(TITULO);
 
 
-9) (Tabla NACIMIENTOS) “Obtener la salida:
-NOMBRE, FECHANAC, FECHA_FORMATEADA,
-donde FECHA_FORMATEADA aparezca como:
-"Nació el 12 de mayo de 1982"
-
-SELECT NOMBRE,
-       FECHANAC,
-       'Nació el ' 
-         || TO_CHAR(FECHANAC,'DD "de" Month "de" YYYY')
-         AS FECHA_FORMATEADA
-  FROM NACIMIENTOS;
-
 
 
 10) (Tabla LIBRERIA) “Visualizar el tema, el último carácter del tema que no sea blanco y el número de caracteres del tema (sin blancos a la derecha) ordenados por tema.”
 
 SELECT TEMA,
-       SUBSTR(RTRIM(TEMA), -1, 1) AS "Ultimo_char",
-       LENGTH(RTRIM(TEMA))       AS "Long_sin_blancos_der"
+       SUBSTR(RTRIM(TEMA), -1, 1) AS "ULTIMO",
+       LENGTH(RTRIM(TEMA))       AS "LONGITUD"
   FROM LIBRERIA
  ORDER BY TEMA;
 
 
 
-11) (Tabla NACIMIENTOS) “En una sola columna: el nombre (sin blancos) + su fecha de nacimiento formateada.”
 
-SELECT RTRIM(NOMBRE)
-       || ' - '
-       || TO_CHAR(FECHANAC,'DD/MM/YYYY')  AS "Nom_y_Fecha"
-  FROM NACIMIENTOS;
-
-
-
-12) “Convierte la cadena '010712' a fecha y visualiza el nombre de mes en mayúsculas.”
-
-SELECT TO_CHAR(TO_DATE('010712','DDMMYY'),'MONTH') AS "MES"
-  FROM DUAL;
-
-
-
-**13) (Tabla LIBRERIA) “Visualiza los temas cuyos ejemplares sean 7 con el nombre de tema = 'SEVEN'; el resto, se muestra tal cual.”
+13) (Tabla LIBRERIA) “Visualiza los temas cuyos ejemplares sean 7 con el nombre de tema = 'SEVEN'; el resto, se muestra tal cual.”
 
 SELECT DECODE(EJEMPLARES, 7, 'SEVEN', TEMA) AS TEMA,
        EJEMPLARES
@@ -144,21 +126,23 @@ SELECT DECODE(EJEMPLARES, 7, 'SEVEN', TEMA) AS TEMA,
 
 
 
+
 14) (Tabla EMPLE) “Obtén el apellido de los empleados que lleven más de 15 años trabajando.”
 
 SELECT APELLIDO
   FROM EMPLE
- WHERE MONTHS_BETWEEN(SYSDATE, FECHA_ALT) > 15*12;
+ WHERE FECHA_ALT < SYSDATE - (15*365);
+
 
 
 
 15) (Tabla EMPLE + DEPART) “Apellido de quienes lleven más de 16 años y sean del departamento ‘VENTAS’.”
 
-SELECT E.APELLIDO
-  FROM EMPLE E
-       JOIN DEPART D ON (E.DEPT_NO = D.DEPT_NO)
- WHERE D.DNOMBRE = 'VENTAS'
-   AND MONTHS_BETWEEN(SYSDATE, E.FECHA_ALT) > 16*12;
+SELECT APELLIDO
+FROM EMPLE
+WHERE DEPT_NO = (SELECT DEPT_NO FROM DEPART WHERE DNOMBRE = 'VENTAS')
+  AND FECHA_ALT < SYSDATE - (16*365);
+
 
 
 
@@ -166,12 +150,12 @@ SELECT E.APELLIDO
 16) (Tabla EMPLE) “Apellido, salario y dept_no de los empleados cuyo salario sea el mayor de su departamento.”
 
 SELECT APELLIDO, SALARIO, DEPT_NO
-  FROM EMPLE E
- WHERE SALARIO = (
-       SELECT MAX(SALARIO)
-         FROM EMPLE
-        WHERE DEPT_NO = E.DEPT_NO
-       );
+FROM EMPLE
+WHERE SALARIO = (
+    SELECT MAX(SALARIO)
+    FROM EMPLE EMPLE2
+    WHERE EMPLE2.DEPT_NO = EMPLE.DEPT_NO
+);
 
 
 
@@ -179,12 +163,12 @@ SELECT APELLIDO, SALARIO, DEPT_NO
 17) (Tabla EMPLE) “Apellido, salario y dept_no de los empleados cuyo salario supere la media de su departamento.”
 
 SELECT APELLIDO, SALARIO, DEPT_NO
-  FROM EMPLE E
- WHERE SALARIO > (
-       SELECT AVG(SALARIO)
-         FROM EMPLE
-        WHERE DEPT_NO = E.DEPT_NO
-       );
+FROM EMPLE
+WHERE SALARIO > (
+    SELECT AVG(SALARIO)
+    FROM EMPLE EMPLE2
+    WHERE EMPLE2.DEPT_NO = EMPLE.DEPT_NO
+);
 
 
 
