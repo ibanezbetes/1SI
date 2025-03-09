@@ -2,16 +2,16 @@
 <dia:persistence xmlns:dia="http://www.lysator.liu.se/~alla/dia/">
   <dia:window role="dia-main-window">
     <dia:attribute name="xpos">
-      <dia:int val="-8"/>
+      <dia:int val="3250"/>
     </dia:attribute>
     <dia:attribute name="ypos">
-      <dia:int val="56"/>
+      <dia:int val="119"/>
     </dia:attribute>
     <dia:attribute name="width">
-      <dia:int val="2560"/>
+      <dia:int val="1099"/>
     </dia:attribute>
     <dia:attribute name="height">
-      <dia:int val="1369"/>
+      <dia:int val="787"/>
     </dia:attribute>
     <dia:attribute name="isopen">
       <dia:boolean val="true"/>
