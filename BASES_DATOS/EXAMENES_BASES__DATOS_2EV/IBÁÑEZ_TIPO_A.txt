@@ -1,0 +1,162 @@
+IBÁÑEZ.zip
+
+
+*********************** CREACION TABLAS **********************************************
+
+CLIENTE
+COCHE (fk DE CLIENTE)
+MECANICO
+COCHE_MECANICO (fk DE COCHE, fk MECANICO, ADEMAS DE FECHA)
+
+
+
+--NO PONGO QUE LOS KMS PUEDAN SER NULL, PORQUE UN COCHE NO PUEDE NO TENER KILOMETROS; CUANDO SE COMPRA NUEVO SE VENDE COMO "KILOMETRAJE 0", ENTONCES COMO MÍNIMO TENDRÁ '0' EN KILOMETRAJE.
+
+--PONGO QUE EL SALARIO PUEDE SER NULL YA QUE PUEDE SER UN MECÁNICO EN PRÁCTICAS Y NO ESTA COBRANDO PERO SIGUE ESTANDO CONTRATADO POR EL TALLER.
+
+
+
+CREATE TABLE CLIENTE(
+dni_cliente VARCHAR2(9),
+nombre_cliente VARCHAR2(30),
+apellidos_cliente VARCHAR(50),
+direccion_cliente VARCHAR2(50),
+telefono_cliente NUMBER(9),
+CONSTRAINT pk_cliente PRIMARY KEY (dni_cliente),
+CONSTRAINT nn_cliente_nombre CHECK (nombre_cliente IS NOT NULL),
+CONSTRAINT nn_apellidos_cliente CHECK (apellidos_cliente IS NOT NULL),
+CONSTRAINT nn_direccion_cliente CHECK (direccion_cliente IS NOT NULL),
+CONSTRAINT nn_telefono_cliente CHECK (telefono_cliente IS NOT NULL)
+);
+
+
+CREATE TABLE COCHE(
+matricula_coche VARCHAR2(7),
+modelo_coche VARCHAR2 (20),
+marca_coche VARCHAR2 (20),
+color_coche VARCHAR2 (20),
+kms_coche NUMBER(8),
+dni_cliente VARCHAR2(9),
+CONSTRAINT pk_coche PRIMARY KEY (matricula_coche),
+CONSTRAINT nn_modelo_coche CHECK (modelo_coche IS NOT NULL),
+CONSTRAINT nn_marca_coche CHECK (marca_coche IS NOT NULL),
+CONSTRAINT nn_color_coche CHECK (color_coche IS NOT NULL),
+CONSTRAINT nn_kms_coche CHECK (kms_coche IS NOT NULL),
+CONSTRAINT chk_kms_coche CHECK (kms_coche >= 0),
+CONSTRAINT fk_dni_cliente FOREIGN KEY (dni_cliente) REFERENCES
+CLIENTE(dni_cliente)
+);
+
+
+CREATE TABLE MECANICO(
+dni_mecanico VARCHAR2(9),
+nombre_mecanico VARCHAR2(30),
+apellidos_mecanico VARCHAR(50),
+fecha_contr_mecanico DATE,
+salario_mecanico NUMBER(7),
+CONSTRAINT pk_mecanico PRIMARY KEY (dni_mecanico),
+CONSTRAINT nn_nombre_mecanico CHECK (nombre_mecanico IS NOT NULL),
+CONSTRAINT nn_apellidos_mecanico CHECK (apellidos_mecanico IS NOT NULL),
+CONSTRAINT nn_fecha_contr_mecanico CHECK (fecha_contr_mecanico IS NOT NULL)
+);
+
+
+CREATE TABLE COCHE_MECANICO(
+matricula_coche VARCHAR2(7),
+dni_mecanico VARCHAR2(9),
+fecha_reparacion DATE,
+CONSTRAINT fk2_matricula_coche FOREIGN KEY (matricula_coche) REFERENCES
+COCHE(matricula_coche),
+CONSTRAINT fk2_dni_mecanico FOREIGN KEY (dni_mecanico) REFERENCES
+MECANICO(dni_mecanico)
+);
+
+
+
+*********************** INSERTS NECESARIOS **********************************************
+
+
+PARA ESTAS CONSULTAS:
+·Coches que tenemos de la marca “Opel” con más de 150.000 kms
+·Localización de TODOS los clientes que hayan comprado algún coche de la marca “Opel” con más de 150.000 kms
+·Matrícula de coches que todavía NO hayan sido reparados
+·Nombre, apellido y teléfono de los clientes que tengan algún coche que haya sido reparado en los últimos 30 días.
+·Número total de clientes que tengan algún coche que haya sido reparado por un mecánico contratado el último año.
+
+
+
+INSERT INTO CLIENTE VALUES ('12345678A', 'Paco', 'Martinez Soria', 'Calle Uno 1 Zaragoza', 654987358);
+INSERT INTO CLIENTE VALUES ('87654321B', 'Antonio', 'Lobato Perez', 'Calle Dos 2 Barcelona', 666555222);
+INSERT INTO CLIENTE VALUES ('11223344C', 'Jesus', 'De Nazaret', 'Calle Tres 3 Bilbao', 636363888);
+
+INSERT INTO COCHE VALUES ('2545AAA', 'CORSA', 'OPEL', 'NEGRO', 160000, '12345678A');
+INSERT INTO COCHE VALUES ('1234ABC', 'TT', 'AUDI', 'AZUL', 185000, '11223344C');
+INSERT INTO COCHE VALUES ('8978AAA', 'VALERO', 'OPEL', 'AZUL', 185000, '87654321B');
+INSERT INTO COCHE VALUES ('2945CVD', 'GANTE', 'OPEL', 'BLANCO', 140000, '87654321B');
+
+INSERT INTO MECANICO VALUES ('89193493T', 'Lalo', 'Lalez', TO_DATE('2024-03-01', 'YYYY-MM-DD'), 1500);
+INSERT INTO MECANICO VALUES ('78215654G', 'Pepe', 'Pepez', TO_DATE('2020-03-01', 'YYYY-MM-DD'), 1500);
+INSERT INTO MECANICO VALUES ('65242919T', 'Susi', 'Susez', TO_DATE('2024-01-01', 'YYYY-MM-DD'), 1500);
+INSERT INTO MECANICO VALUES ('17771914K', 'Dani', 'Danez', TO_DATE('2025-01-01', 'YYYY-MM-DD'), 1500);
+
+
+INSERT INTO COCHE_MECANICO VALUES ('2545AAA', '89193493T', NULL);
+INSERT INTO COCHE_MECANICO VALUES ('1234ABC', '65242919T', TO_DATE('2025-01-01', 'YYYY-MM-DD'));
+INSERT INTO COCHE_MECANICO VALUES ('8978AAA', '78215654G', TO_DATE('2025-02-01', 'YYYY-MM-DD'));
+INSERT INTO COCHE_MECANICO VALUES ('2945CVD', '17771914K', TO_DATE('2025-02-09', 'YYYY-MM-DD'));
+
+
+
+**************************** CONSULTAS **********************************************
+
+
+
+Coches que tenemos de la marca “Opel” con más de 150.000 kms
+
+SELECT * FROM COCHE
+WHERE UPPER(COCHE.marca_coche)='OPEL'
+AND COCHE.kms_coche > 150000;
+
+
+
+Localización de TODOS los clientes que hayan comprado algún coche de la marca “Opel” con más de 150.000 kms
+
+SELECT CLIENTE.direccion_cliente 
+FROM CLIENTE, COCHE
+WHERE CLIENTE.dni_cliente = COCHE.dni_cliente
+AND UPPER(COCHE.marca_coche)='OPEL'
+AND COCHE.kms_coche > 150000;
+
+
+
+Matrícula de coches que todavía NO hayan sido reparados
+
+SELECT DISTINCT COCHE.matricula_coche
+FROM COCHE, COCHE_MECANICO
+WHERE COCHE.matricula_coche = COCHE_MECANICO.matricula_coche
+AND COCHE_MECANICO.fecha_reparacion IS NULL;
+
+
+
+Nombre, apellido y teléfono de los clientes que tengan algún coche que haya sido reparado en los últimos 30 días.
+
+SELECT CLIENTE.nombre_cliente, CLIENTE.apellidos_cliente, CLIENTE.telefono_cliente
+FROM CLIENTE, COCHE, COCHE_MECANICO
+WHERE CLIENTE.dni_cliente = COCHE.dni_cliente
+AND COCHE.matricula_coche = COCHE_MECANICO.matricula_coche
+AND COCHE_MECANICO.fecha_reparacion >= SYSDATE -30;
+
+
+
+Número total de clientes que tengan algún coche que haya sido reparado por un mecánico contratado el último año.
+
+SELECT COUNT (DISTINCT CLIENTE.dni_cliente)
+AS CLIENTES_REP_ULTIMO_ANIO
+FROM CLIENTE, COCHE, MECANICO, COCHE_MECANICO
+WHERE CLIENTE.dni_cliente = COCHE.dni_cliente
+AND COCHE.matricula_coche = COCHE_MECANICO.matricula_coche
+AND COCHE_MECANICO.dni_mecanico = MECANICO.dni_mecanico
+AND COCHE_MECANICO.fecha_reparacion IS NOT NULL
+AND MECANICO.fecha_contr_mecanico >= SYSDATE - 365;
+
+
