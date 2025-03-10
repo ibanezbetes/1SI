@@ -1,0 +1,4 @@
+package criaturas;
+
+public class CriaturaFuego {
+}
