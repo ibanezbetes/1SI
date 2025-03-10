@@ -157,6 +157,12 @@ WHERE CLIENTE.dni_cliente = COCHE.dni_cliente
 AND COCHE.matricula_coche = COCHE_MECANICO.matricula_coche
 AND COCHE_MECANICO.dni_mecanico = MECANICO.dni_mecanico
 AND COCHE_MECANICO.fecha_reparacion IS NOT NULL
-AND MECANICO.fecha_contr_mecanico >= SYSDATE - 365;
+AND MECANICO.fecha_contr_mecanico >= SYSDATE - 365
+AND MECANICO.fecha_contr_mecanico <= SYSDATE;
+
+
+
+
+
 
 
