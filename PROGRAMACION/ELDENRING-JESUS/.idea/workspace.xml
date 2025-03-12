@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7fe87ed0-e4b0-4b0f-b8d2-c11d2f4e0ff5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/EJ_EXAMEN_WARHAMMER.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/src/armas/Arma.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/src/armas/ArmaAtaque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/src/armas/ArmaDefensa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/src/armas/Martillo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/src/interfaces/ArmamentoAtaque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/src/interfaces/IArmamentoDefensa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/src/interfaces/ICombate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/src/personajes/Enano.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/src/personajes/Goblin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/src/personajes/Orco.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/src/personajes/PielVerde.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EJ_EXAMEN_WARHAMMER/src/personajes/WarhammerPersonaje.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Arma/Arco.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Arma/Arma.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Arma/Escudo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Arma/Espada.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Arma/Lanza.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/IAtaque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/IDefensa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Personajes/Arquero.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Personajes/Caballero.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Personajes/Espadachin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Personajes/Guerrero.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NAVES-JESUS/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NAVES-JESUS/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NAVES-JESUS/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NAVES-JESUS/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NAVES-JESUS/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NAVES-JESUS/NAVES-JESUS.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../NAVES-JESUS/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/POKEMON-JESUS-3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/src/combate/Combate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/src/entrenador/Entrenador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/src/interfaces/IPelea.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/src/movimiento/Movimiento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/src/movimiento/MovimientoAtaque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/src/movimiento/MovimientoDefensa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/src/objeto/Eter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/src/objeto/Objeto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/src/objeto/PocionVida.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/src/pokemon/Pokemon.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/src/pokemon/PokemonAgua.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON-JESUS-3/src/pokemon/PokemonFuego.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON_JESUS/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON_JESUS/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON_JESUS/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON_JESUS/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON_JESUS/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON_JESUS/POKEMON_JESUS.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON_JESUS/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON_JESUS/src/interfaces/TipoAgua.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON_JESUS/src/interfaces/TipoElectrico.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON_JESUS/src/interfaces/TipoFuego.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../POKEMON_JESUS/src/pokemons/PokemonBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01-20250304T104102Z-001.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/WARHAMMER-01.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/armas/Arco.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/armas/Arma.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/armas/ArmaAtaque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/armas/ArmaDefensa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/armas/Armadura.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/armas/ArmamentoAtaque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/armas/ArmamentoDefensa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/armas/Casco.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/armas/Escudo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/armas/Hacha.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/armas/Martillo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/armas/Rabanadora.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/batallas/Escaramuza.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/batallas/Guerra.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/personajes/Enano.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/personajes/Goblin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/personajes/ICombate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/personajes/Martillador.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/personajes/Orco.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/personajes/PielVerde.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/personajes/Rompehierro.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/WARHAMMER-01/src/personajes/WarhammerPersonaje.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/armas/Arco.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/armas/Arma.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/armas/ArmaAtaque.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/armas/ArmaDefensa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/armas/Armadura.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/armas/ArmamentoAtaque.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/armas/ArmamentoDefensa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/armas/Casco.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/armas/Escudo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/armas/Hacha.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/armas/Martillo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/armas/Rabanadora.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/batallas/Escaramuza.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/batallas/Guerra.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/personajes/Enano.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/personajes/Goblin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/personajes/ICombate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/personajes/Martillador.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/personajes/Orco.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/personajes/PielVerde.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/personajes/Rompehierro.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01-20250304T104102Z-001/out/production/WARHAMMER-01-20250304T104102Z-001/personajes/WarhammerPersonaje.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/src/main/java/org/example/armas/interfaces/Arma.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/src/main/java/org/example/armas/interfaces/ArmaAtaque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/src/main/java/org/example/armas/interfaces/ArmaDefensa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/src/main/java/org/example/armas/interfaces/IArmamentoAtaque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/src/main/java/org/example/armas/interfaces/IArmamentoDefensa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/src/main/java/org/example/armas/interfaces/Martillo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/src/main/java/org/example/interfaces/ICombate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/src/main/java/org/example/personajes/Enano.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/src/main/java/org/example/personajes/Goblin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/src/main/java/org/example/personajes/Orco.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/src/main/java/org/example/personajes/PielVerde.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-01/src/main/java/org/example/personajes/WarhammerPersonaje.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-02/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-02/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-02/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-02/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-02/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-02/WARHAMMER-02.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-02/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-3/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-3/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-3/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-3/WARHAMMER-3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WARHAMMER-3/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/examenAccion.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/src/acciones/Accion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/src/acciones/AccionBurbuja.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/src/acciones/AccionLlamarada.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/src/acciones/AccionMordisco.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/src/acciones/AccionVentisca.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/src/criaturas/Criatura.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/src/criaturas/CriaturaAcuatica.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/src/criaturas/CriaturaFuego.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/src/criaturas/CriaturaVeneno.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/src/criaturas/CriaturaVoladora.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../examenAccion/src/interfaces/IAccion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sergiSilvia/img/comida.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sergiSilvia/img/comida1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sergiSilvia/img/foto1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sergiSilvia/img/regalo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sergiSilvia/img/regalo1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sergiSilvia/img/regalo2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sergiSilvia/img/viaje.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sergiSilvia/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sergiSilvia/music.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sergiSilvia/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sergiSilvia/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/src/java/org/example/Enano.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/src/java/org/example/PilerVerde.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/src/java/org/example/WarhammerPersonaje.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/src/java/org/example/armas/interfaces/Arma.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/src/java/org/example/armas/interfaces/ArmaAtaque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/src/java/org/example/armas/interfaces/ArmaDefensa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/src/java/org/example/armas/interfaces/IArmamentoAtaque.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/src/java/org/example/armas/interfaces/IArmamentoDefensa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/src/java/org/example/armas/interfaces/Martillo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/src/java/org/example/interfaces/ICombate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/src/java/org/example/personajes/Goblin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../warhammer/warhammer.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2uEAEVkAjHhYm1YRuMnf9M6RWfI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/daniz/Documents/GitHub/1SI/PROGRAMACION"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Personajes" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7fe87ed0-e4b0-4b0f-b8d2-c11d2f4e0ff5" name="Changes" comment="" />
+      <created>1741803248548</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741803248548</updated>
+    </task>
+    <servers />
+  </component>
+</project>
