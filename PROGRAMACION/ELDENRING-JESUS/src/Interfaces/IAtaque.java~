@@ -1,0 +1,5 @@
+package Interfaces;
+
+public interface IAtaque {
+    void atacar(Guerrero objetivo);
+}
