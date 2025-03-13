@@ -2,16 +2,16 @@
 <dia:persistence xmlns:dia="http://www.lysator.liu.se/~alla/dia/">
   <dia:window role="dia-main-window">
     <dia:attribute name="xpos">
-      <dia:int val="3250"/>
+      <dia:int val="2552"/>
     </dia:attribute>
     <dia:attribute name="ypos">
-      <dia:int val="119"/>
+      <dia:int val="-8"/>
     </dia:attribute>
     <dia:attribute name="width">
-      <dia:int val="1099"/>
+      <dia:int val="1920"/>
     </dia:attribute>
     <dia:attribute name="height">
-      <dia:int val="787"/>
+      <dia:int val="1009"/>
     </dia:attribute>
     <dia:attribute name="isopen">
       <dia:boolean val="true"/>
@@ -36,7 +36,9 @@
   </dia:window>
   <dia:list role="recent-files">
     <dia:attribute name="listvalue">
-      <dia:string>#C:\Users\daniz\Documents\GitHub\1SI\BASES_DATOS\T3_ORACLE\Ejercicio 17 Cadena de hoteles.dia
+      <dia:string>#C:\Users\daniz\Downloads\ENTORNOSREPASO.dia
+C:\Users\daniz\Downloads\mermaid-diagram-2025-03-13-185613.svg
+C:\Users\daniz\Documents\GitHub\1SI\BASES_DATOS\T3_ORACLE\Ejercicio 17 Cadena de hoteles.dia
 C:\Users\daniz\Documents\GitHub\1SI\ENTORNOS_DESARROLLO\DiaPortable\Data\Diagrama1.dia
 C:\Users\daniz\Documents\GitHub\1SI\ENTORNOS_DESARROLLO\LAVADORA\Lavadora v2.0.dia#</dia:string>
     </dia:attribute>
@@ -59,7 +61,8 @@ Diagrama de flujo#</dia:string>
   </dia:list>
   <dia:list role="color-menu">
     <dia:attribute name="listvalue">
-      <dia:string>##</dia:string>
+      <dia:string>##000099
+#D8E5E5#</dia:string>
     </dia:attribute>
   </dia:list>
   <dia:integer role="line-style">
@@ -259,7 +262,7 @@ Diagrama de flujo#</dia:string>
   </dia:string>
   <dia:string role="last-sheet-selected">
     <dia:attribute name="stringvalue">
-      <dia:string>#ER#</dia:string>
+      <dia:string>#UML#</dia:string>
     </dia:attribute>
   </dia:string>
   <dia:string role="end-arrow-type">
