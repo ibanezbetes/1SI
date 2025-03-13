@@ -1,0 +1,10 @@
+package Objetos;
+
+public class PocionVida extends Objeto {
+
+    private int cantidad;
+    public PocionVida(String nombre, int cantidad) {
+        super(nombre);
+        this.cantidad = cantidad;
+    }
+}

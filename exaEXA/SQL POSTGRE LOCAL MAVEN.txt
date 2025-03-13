@@ -1,0 +1,51 @@
+CREATE DATABASE peliculasDB;
+
+CREATE TABLE generos (
+    id SERIAL PRIMARY KEY,         -- ID único y autoincrementable para cada género
+    nombre VARCHAR(100) NOT NULL UNIQUE  -- Nombre del género, único
+);
+
+
+CREATE TABLE peliculas (
+    id SERIAL PRIMARY KEY,             -- ID único y autoincrementable para cada película
+    titulo VARCHAR(200) NOT NULL,      -- Título de la película
+    director VARCHAR(100) NOT NULL,    -- Director de la película
+    anio INT NOT NULL,                 -- Año de lanzamiento
+    genero_id INT,                     -- ID del género asociado
+    FOREIGN KEY (genero_id) REFERENCES generos(id)  -- Relación con la tabla 'generos'
+);
+
+
+INSERT INTO generos (nombre) VALUES 
+('Acción'), 
+('Comedia'), 
+('Drama'), 
+('Terror'), 
+('Ciencia Ficción');
+
+
+INSERT INTO peliculas (titulo, director, anio, genero_id) VALUES 
+('Gladiator', 'Ridley Scott', 2000, 1),  -- Género: Acción
+('The Hangover', 'Todd Phillips', 2009, 2),  -- Género: Comedia
+('Titanic', 'James Cameron', 1997, 3),  -- Género: Drama
+('The Conjuring', 'James Wan', 2013, 4),  -- Género: Terror
+('Blade Runner 2049', 'Denis Villeneuve', 2017, 5);  -- Género: Ciencia Ficción
+
+
+SELECT * FROM generos;
+
+
+SELECT * FROM peliculas;
+
+
+
+INSERT INTO peliculas (titulo, director, anio, genero_id) VALUES
+('Inception', 'Christopher Nolan', 2010, 1);  -- Género: Acción
+
+
+DELETE FROM peliculas WHERE id = 1;
+
+
+DROP TABLE IF EXISTS peliculas;
+DROP TABLE IF EXISTS generos;
+
