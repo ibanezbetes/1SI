@@ -5,7 +5,7 @@
       <dia:int val="-8"/>
     </dia:attribute>
     <dia:attribute name="ypos">
-      <dia:int val="1072"/>
+      <dia:int val="-8"/>
     </dia:attribute>
     <dia:attribute name="width">
       <dia:int val="1536"/>
@@ -36,7 +36,8 @@
   </dia:window>
   <dia:list role="recent-files">
     <dia:attribute name="listvalue">
-      <dia:string>#C:\Users\daniz\Documents\GitHub\1SI\BASES_DATOS\T3_ORACLE\Ejercicio 17 Cadena de hoteles.dia
+      <dia:string>#C:\Users\daniz\Downloads\diagrama.fig
+C:\Users\daniz\Documents\GitHub\1SI\BASES_DATOS\T3_ORACLE\Ejercicio 17 Cadena de hoteles.dia
 C:\Users\daniz\Documents\GitHub\1SI\ENTORNOS_DESARROLLO\LAVADORA\Lavadora.dia
 C:\Users\daniz\Documents\GitHub\1SI-BASES_DATOS\T2_SQL\Ejercicio7.dia
 C:\Users\daniz\Documents\GitHub\1SI-ENTORNOS_DESARROLLO\DiagramaIrrigadores.dia
@@ -59,6 +60,11 @@ C:\Users\daniz\Downloads\Sandwitch ejemplo inicial.dia#</dia:string>
 Diagrama de flujo#</dia:string>
     </dia:attribute>
   </dia:list>
+  <dia:list role="diagram-tree-hidden-types">
+    <dia:attribute name="listvalue">
+      <dia:string>##</dia:string>
+    </dia:attribute>
+  </dia:list>
   <dia:list role="arrow-menu">
     <dia:attribute name="listvalue">
       <dia:string>##</dia:string>
@@ -70,11 +76,6 @@ Diagrama de flujo#</dia:string>
     </dia:attribute>
   </dia:list>
   <dia:list role="font-menu">
-    <dia:attribute name="listvalue">
-      <dia:string>##</dia:string>
-    </dia:attribute>
-  </dia:list>
-  <dia:list role="diagram-tree-hidden-types">
     <dia:attribute name="listvalue">
       <dia:string>##</dia:string>
     </dia:attribute>
