@@ -233,20 +233,14 @@
 ; (gtk_accel_path "<Actions>/integrated-ui-actions/SelectTransitive" "<Control>t")
 ; (gtk_accel_path "<DiagramTreeObj>/Sort objects/sep0" "")
 ; (gtk_accel_path "<Actions>/display-actions/ViewNewview" "")
-<<<<<<< HEAD
-; (gtk_accel_path "<DiagramTreeDia>/Sort objects/Default/by type" "")
-=======
->>>>>>> e2c3c3e1df941faec753b2fecf791a5ac04b7af8
 ; (gtk_accel_path "<Actions>/tool-actions-1/ToolsText" "t")
 ; (gtk_accel_path "<DiagramTreeDia>/Sort objects/Default/by type" "")
-; (gtk_accel_path "<Actions>/recent-files/FileRecent_1" "<Control>2")
 ; (gtk_accel_path "<DiagramTreeObj>/Sort objects/All as inserted" "")
 ; (gtk_accel_path "<Actions>/integrated-ui-actions/Objects" "")
 ; (gtk_accel_path "<Actions>/tool-actions-0/ToolsLine" "l")
 ; (gtk_accel_path "<Actions>/integrated-ui-actions/DiagramProperties" "<Shift><Alt>Return")
 ; (gtk_accel_path "<Actions>/toolbox-actions/FileTree" "F8")
 ; (gtk_accel_path "<Actions>/display-actions/SelectInvert" "<Control>i")
-; (gtk_accel_path "<Actions>/recent-files/FileRecent_0" "<Control>1")
 ; (gtk_accel_path "<Actions>/integrated-ui-actions/ViewZoomin" "<Control>plus")
 ; (gtk_accel_path "<Actions>/display-actions/ViewZoom" "")
 ; (gtk_accel_path "<Actions>/display-actions/Edit" "")
