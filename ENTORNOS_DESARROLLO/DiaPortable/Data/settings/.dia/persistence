@@ -2,6 +2,7 @@
 <dia:persistence xmlns:dia="http://www.lysator.liu.se/~alla/dia/">
   <dia:window role="dia-main-window">
     <dia:attribute name="xpos">
+<<<<<<< HEAD
       <dia:int val="-8"/>
     </dia:attribute>
     <dia:attribute name="ypos">
@@ -12,6 +13,18 @@
     </dia:attribute>
     <dia:attribute name="height">
       <dia:int val="793"/>
+=======
+      <dia:int val="0"/>
+    </dia:attribute>
+    <dia:attribute name="ypos">
+      <dia:int val="64"/>
+    </dia:attribute>
+    <dia:attribute name="width">
+      <dia:int val="1613"/>
+    </dia:attribute>
+    <dia:attribute name="height">
+      <dia:int val="617"/>
+>>>>>>> e2c3c3e1df941faec753b2fecf791a5ac04b7af8
     </dia:attribute>
     <dia:attribute name="isopen">
       <dia:boolean val="true"/>
@@ -36,9 +49,14 @@
   </dia:window>
   <dia:list role="recent-files">
     <dia:attribute name="listvalue">
+<<<<<<< HEAD
       <dia:string>#C:\Users\daniz\Desktop\DiagramaUML.dia
 C:\Users\daniz\Documents\GitHub\1SI\ENTORNOS_DESARROLLO\DiaPortable\Data\DiagramaUML.dia
 C:\Users\daniz\Desktop\ENTORNOSREPASO.dia#</dia:string>
+=======
+      <dia:string>#C:\Users\daniz\Downloads\eNqdVdtO3DAQfd-vGK2E1BYC5RWtkMqlolKREIgPmDjDYpS1U19W0MvH9BOqvvV1f4xxEm9ikl1Q_bJZj2fOmeOZcZZlEyddSUdwJi2t_mi4vfwK7y6lktaRkRoKgi-q_jSQwYle5GS0fT_J2HUiSrT2TOLc4GIyAV71Dlyh-eYJftRbYe3eOCPVHIQuGtvAojiyGW77XAoUUqva8qsP0n.svg
+C:\Users\daniz\Downloads\pako_eNqdVttu2zAM_RXCQIFtTdr1NSgKrJehA1agaNGXwS-MzCTqbMnTJWjW9WP2CcPe9pofG-VLKifOEswvsUVS5_CIpPKcCJ1RMkqGw2GqnHQ5jeBSWlr-0vBw8xne3EglrSMjNWQEn1T1amAI57oYk9H2baqq4FSJHK29lDg1WIRv4Kdag1s03zzBc70WnsN7Z6SaAsPXxk2TYgDTs.svg#</dia:string>
+>>>>>>> e2c3c3e1df941faec753b2fecf791a5ac04b7af8
     </dia:attribute>
   </dia:list>
   <dia:list role="sheets">
@@ -51,6 +69,7 @@ C:\Users\daniz\Desktop\ENTORNOSREPASO.dia#</dia:string>
       <dia:string>##</dia:string>
     </dia:attribute>
   </dia:list>
+<<<<<<< HEAD
   <dia:list role="font-menu">
     <dia:attribute name="listvalue">
       <dia:string>##</dia:string>
@@ -61,6 +80,8 @@ C:\Users\daniz\Desktop\ENTORNOSREPASO.dia#</dia:string>
       <dia:string>##</dia:string>
     </dia:attribute>
   </dia:list>
+=======
+>>>>>>> e2c3c3e1df941faec753b2fecf791a5ac04b7af8
   <dia:integer role="line-style">
     <dia:attribute name="intvalue">
       <dia:int val="0"/>
@@ -258,7 +279,11 @@ C:\Users\daniz\Desktop\ENTORNOSREPASO.dia#</dia:string>
   </dia:string>
   <dia:string role="last-sheet-selected">
     <dia:attribute name="stringvalue">
+<<<<<<< HEAD
       <dia:string>#UML#</dia:string>
+=======
+      <dia:string>#Diagrama de flujo#</dia:string>
+>>>>>>> e2c3c3e1df941faec753b2fecf791a5ac04b7af8
     </dia:attribute>
   </dia:string>
   <dia:string role="end-arrow-type">
