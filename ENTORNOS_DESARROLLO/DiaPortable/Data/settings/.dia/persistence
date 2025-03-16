@@ -2,16 +2,16 @@
 <dia:persistence xmlns:dia="http://www.lysator.liu.se/~alla/dia/">
   <dia:window role="dia-main-window">
     <dia:attribute name="xpos">
-      <dia:int val="0"/>
+      <dia:int val="2552"/>
     </dia:attribute>
     <dia:attribute name="ypos">
-      <dia:int val="64"/>
+      <dia:int val="-8"/>
     </dia:attribute>
     <dia:attribute name="width">
-      <dia:int val="1613"/>
+      <dia:int val="1920"/>
     </dia:attribute>
     <dia:attribute name="height">
-      <dia:int val="617"/>
+      <dia:int val="1009"/>
     </dia:attribute>
     <dia:attribute name="isopen">
       <dia:boolean val="true"/>
@@ -46,6 +46,16 @@ C:\Users\daniz\Downloads\pako_eNqdVttu2zAM_RXCQIFtTdr1NSgKrJehA1agaNGXwS-MzCTqbM
     </dia:attribute>
   </dia:list>
   <dia:list role="diagram-tree-hidden-types">
+    <dia:attribute name="listvalue">
+      <dia:string>##</dia:string>
+    </dia:attribute>
+  </dia:list>
+  <dia:list role="color-menu">
+    <dia:attribute name="listvalue">
+      <dia:string>##</dia:string>
+    </dia:attribute>
+  </dia:list>
+  <dia:list role="font-menu">
     <dia:attribute name="listvalue">
       <dia:string>##</dia:string>
     </dia:attribute>
@@ -247,7 +257,7 @@ C:\Users\daniz\Downloads\pako_eNqdVttu2zAM_RXCQIFtTdr1NSgKrJehA1agaNGXwS-MzCTqbM
   </dia:string>
   <dia:string role="last-sheet-selected">
     <dia:attribute name="stringvalue">
-      <dia:string>#Diagrama de flujo#</dia:string>
+      <dia:string>#UML#</dia:string>
     </dia:attribute>
   </dia:string>
   <dia:string role="end-arrow-type">

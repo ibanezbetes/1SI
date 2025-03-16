@@ -1,0 +1,606 @@
+========================================
+ Cuaderno 1: Fundamentos de Docker
+========================================
+
+Objetivo:
+Aprender los conceptos clave de Docker, desde la instalación hasta la creación de contenedores y su gestión en la nube (AWS).
+
+----------------------------------------------------------------------
+EJERCICIO 1: Instalación de Docker
+----------------------------------------------------------------------
+1) Conéctate a tu instancia EC2 por SSH:
+   ssh -i /ruta/tu-llave.pem ec2-user@<IP-de-tu-instancia>
+
+2) Actualiza los paquetes del sistema:
+   sudo yum update -y
+
+3) Instala Docker:
+   sudo yum install docker -y
+
+4) Inicia el servicio de Docker:
+   sudo systemctl start docker
+
+5) Habilita Docker para que se inicie al reiniciar:
+   sudo systemctl enable docker
+
+6) Verifica la versión instalada:
+   docker --version
+
+----------------------------------------------------------------------
+EJERCICIO 2: Ejecutar tu primer contenedor
+----------------------------------------------------------------------
+1) Ejecuta el contenedor de prueba:
+   docker run hello-world
+
+2) Observa la salida y describe el mensaje del contenedor.
+
+----------------------------------------------------------------------
+EJERCICIO 3: Descargar y ejecutar una imagen de Nginx
+----------------------------------------------------------------------
+1) Descarga la imagen de Nginx:
+   docker pull nginx
+
+2) Ejecuta un contenedor con Nginx en el puerto 8080:
+   docker run -d -p 8080:80 nginx
+
+3) Comprueba que se está ejecutando:
+   docker ps
+
+4) Abre el navegador en http://<tu-IP-EC2>:8080 para verificar Nginx.
+
+----------------------------------------------------------------------
+EJERCICIO 4: Inspeccionar un contenedor en ejecución
+----------------------------------------------------------------------
+1) Lista los contenedores en ejecución:
+   docker ps
+
+2) Obtén información detallada:
+   docker inspect <container_id>
+
+----------------------------------------------------------------------
+EJERCICIO 5: Crear un contenedor interactivo con Ubuntu
+----------------------------------------------------------------------
+1) Ejecuta Ubuntu en modo interactivo:
+   docker run -it ubuntu bash
+
+2) Prueba algunos comandos (ls -l, uname -a).
+
+3) Sal del contenedor con:
+   exit
+
+----------------------------------------------------------------------
+EJERCICIO 6: Construir una imagen personalizada
+----------------------------------------------------------------------
+1) Crea un directorio y entra en él:
+   mkdir docker-test
+   cd docker-test
+
+2) Crea un archivo Dockerfile con este contenido:
+
+   FROM ubuntu
+   RUN apt update && apt install -y curl
+   CMD ["bash"]
+
+3) Construye la imagen:
+   docker build -t mi-imagen .
+
+4) Ejecuta un contenedor con tu imagen:
+   docker run -it mi-imagen
+
+----------------------------------------------------------------------
+EJERCICIO 7: Configurar variables de entorno en un contenedor
+----------------------------------------------------------------------
+1) Ejecuta un contenedor con variable de entorno:
+   docker run -e "MI_VARIABLE=HolaMundo" ubuntu env
+
+2) Observa la salida para ver "MI_VARIABLE=HolaMundo".
+
+----------------------------------------------------------------------
+EJERCICIO 8: Montar volúmenes para persistencia de datos
+----------------------------------------------------------------------
+1) Crea un volumen:
+   docker volume create mi-volumen
+
+2) Ejecuta un contenedor con el volumen montado:
+   docker run -it -v mi-volumen:/data ubuntu bash
+
+3) Crea un archivo dentro del contenedor (por ejemplo):
+   echo "Prueba de persistencia" > /data/archivo.txt
+
+4) Verifica que persiste incluso si paras el contenedor.
+
+----------------------------------------------------------------------
+EJERCICIO 9: Crear y administrar redes en Docker
+----------------------------------------------------------------------
+1) Crea una red personalizada:
+   docker network create mi-red
+
+2) Ejecuta un contenedor dentro de esa red:
+   docker run -dit --network mi-red --name contenedor1 ubuntu
+
+3) Verifica la conexión entre contenedores usando ping (puedes crear otro contenedor en la misma red).
+
+----------------------------------------------------------------------
+EJERCICIO 10: Ejecutar una base de datos en Docker
+----------------------------------------------------------------------
+1) Ejecuta un contenedor MySQL:
+   docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=1234 -d mysql
+
+2) Conéctate a la base de datos dentro del contenedor:
+   docker exec -it mysql-db bash
+   mysql -u root -p (introduce la contraseña "1234")
+
+----------------------------------------------------------------------
+CONSEJOS FINALES
+----------------------------------------------------------------------
+- Detener contenedores:
+  docker stop <container_id>
+
+- Eliminar contenedores:
+  docker rm <container_id>
+
+- Eliminar imágenes:
+  docker rmi <image_id>
+
+- Limpiar recursos en desuso (con cuidado):
+  docker system prune
+
+
+
+
+
+
+
+========================================
+ Cuaderno 2: Dockerización de una Aplicación Web Completa
+========================================
+
+Asignatura: Digitalización
+
+Objetivo:
+En este cuaderno aprenderás a dockerizar una aplicación web completa compuesta por:
+- Un frontend en HTML, CSS y JavaScript
+- Un backend con Node.js y Express
+- Una base de datos en AWS PostgreSQL
+
+Realizarás cada paso desde la configuración inicial hasta la ejecución con docker-compose,
+conectándote por SSH a una máquina EC2 en AWS.
+
+----------------------------------------------------------------------
+EJERCICIO 1: Configurar el Entorno en EC2
+----------------------------------------------------------------------
+Teoría:
+Antes de empezar a dockerizar nuestra aplicación, necesitamos preparar la
+máquina en AWS EC2.
+
+Práctica:
+1) Conéctate a tu instancia EC2 mediante SSH:
+   ssh -i /ruta/tu-llave.pem ec2-user@<IP-de-tu-instancia>
+
+2) Actualiza los paquetes del sistema:
+   sudo yum update -y
+
+3) Instala Docker y Git:
+   sudo yum install docker git -y
+
+4) Inicia y habilita el servicio de Docker:
+   sudo systemctl start docker
+   sudo systemctl enable docker
+
+5) Verifica la instalación ejecutando:
+   docker --version
+
+----------------------------------------------------------------------
+EJERCICIO 2: Crear el Proyecto y Configurar Node.js
+----------------------------------------------------------------------
+Teoría:
+El backend será una API en Express.js que se comunicará con la base de datos
+y el frontend.
+
+Práctica:
+1) Crea o clona un repositorio:
+   git clone <tu-repositorio>
+   cd <nombre-del-repositorio>
+   (o bien mkdir mi-proyecto && cd mi-proyecto)
+
+2) Inicializa un proyecto Node.js:
+   npm init -y
+
+3) Instala Express, pg, cors y dotenv:
+   npm install express pg cors dotenv
+
+4) Crea un archivo server.js con un servidor básico:
+   -------------------------------------------------
+   const express = require('express');
+   const app = express();
+   app.get('/', (req, res) => res.send('API funcionando'));
+   app.listen(3000, () => console.log('Servidor en puerto 3000'));
+   -------------------------------------------------
+
+5) Ejecuta el servidor:
+   node server.js
+
+----------------------------------------------------------------------
+EJERCICIO 3: Crear un Dockerfile para el Backend
+----------------------------------------------------------------------
+Teoría:
+El Dockerfile define cómo se construye la imagen del backend.
+
+Práctica:
+1) Crea un archivo Dockerfile en la raíz del backend con el siguiente contenido:
+   -------------------------------------------------
+   FROM node:18
+   WORKDIR /app
+   COPY package.json .
+   RUN npm install
+   COPY . .
+   CMD ["node", "server.js"]
+   EXPOSE 3000
+   -------------------------------------------------
+
+2) Construye la imagen:
+   docker build -t mi-backend .
+
+3) Ejecuta el contenedor:
+   docker run -p 3000:3000 mi-backend
+
+----------------------------------------------------------------------
+EJERCICIO 4: Conectar el Backend con AWS PostgreSQL
+----------------------------------------------------------------------
+Teoría:
+La base de datos debe configurarse en AWS RDS y conectarse con Express.
+
+Práctica:
+1) Crea una base de datos PostgreSQL en AWS RDS y anota la URL de conexión,
+   usuario, contraseña y nombre de la base de datos.
+
+2) Modifica server.js para conectarse a PostgreSQL usando pg:
+   -------------------------------------------------
+   const { Pool } = require('pg');
+   const pool = new Pool({
+       user: 'admin',
+       host: '<URL_RDS>',
+       database: 'mi_base',
+       password: 'contraseña',
+       port: 5432
+   });
+   -------------------------------------------------
+   Realiza una consulta de prueba para verificar la conexión.
+
+----------------------------------------------------------------------
+EJERCICIO 5: Crear la Imagen del Frontend
+----------------------------------------------------------------------
+Teoría:
+El frontend es estático y lo serviremos con Nginx.
+
+Práctica:
+1) Crea una carpeta frontend con archivos HTML, CSS y JS.
+
+2) Crea un Dockerfile en la carpeta frontend:
+   -------------------------------------------------
+   FROM nginx
+   COPY . /usr/share/nginx/html
+   EXPOSE 80
+   -------------------------------------------------
+
+3) Construye y ejecuta el contenedor:
+   docker build -t mi-frontend .
+   docker run -p 8080:80 mi-frontend
+
+----------------------------------------------------------------------
+EJERCICIO 6: Configurar docker-compose
+----------------------------------------------------------------------
+Teoría:
+Docker Compose nos permite definir y ejecutar múltiples contenedores juntos.
+
+Práctica:
+1) Crea un archivo docker-compose.yml en la raíz del proyecto:
+   -------------------------------------------------
+   version: '3'
+   services:
+     backend:
+       build: ./backend
+       ports:
+         - "3000:3000"
+     frontend:
+       build: ./frontend
+       ports:
+         - "8080:80"
+   -------------------------------------------------
+
+2) Levanta los servicios:
+   docker-compose up -d
+
+----------------------------------------------------------------------
+EJERCICIO 7: Crear Variables de Entorno
+----------------------------------------------------------------------
+Teoría:
+Las credenciales no deben estar en el código.
+
+Práctica:
+1) Crea un archivo .env con:
+   -------------------------------------------------
+   DB_HOST=<URL_RDS>
+   DB_USER=admin
+   DB_PASS=contraseña
+   DB_NAME=mi_base
+   -------------------------------------------------
+
+2) Modifica server.js para leerlas con dotenv:
+   -------------------------------------------------
+   require('dotenv').config();
+   const pool = new Pool({
+       user: process.env.DB_USER,
+       host: process.env.DB_HOST,
+       database: process.env.DB_NAME,
+       password: process.env.DB_PASS,
+       port: 5432
+   });
+   -------------------------------------------------
+
+----------------------------------------------------------------------
+EJERCICIO 8: Subir las Imágenes a Docker Hub
+----------------------------------------------------------------------
+Teoría:
+Para desplegar en producción, debemos subir las imágenes a Docker Hub.
+
+Práctica:
+1) Inicia sesión en Docker Hub:
+   docker login
+
+2) Etiqueta las imágenes y súbelas:
+   docker tag mi-backend usuario/mi-backend
+   docker push usuario/mi-backend
+
+   docker tag mi-frontend usuario/mi-frontend
+   docker push usuario/mi-frontend
+
+----------------------------------------------------------------------
+EJERCICIO 9: Desplegar en AWS EC2 con Docker Compose
+----------------------------------------------------------------------
+Teoría:
+AWS EC2 ejecutará docker-compose en producción.
+
+Práctica:
+1) Conéctate a EC2 y clona el repositorio.
+
+2) Ejecuta:
+   docker-compose up -d
+
+----------------------------------------------------------------------
+EJERCICIO 10: Configurar un Proxy Reverso con Nginx
+----------------------------------------------------------------------
+Teoría:
+Nginx puede gestionar el tráfico entre el frontend y backend.
+
+Práctica:
+1) Crea un archivo de configuración en /etc/nginx/conf.d/default.conf:
+   -------------------------------------------------
+   server {
+       location / {
+           proxy_pass http://backend:3000;
+       }
+   }
+   -------------------------------------------------
+
+2) Reinicia Nginx:
+   systemctl restart nginx
+
+Con estos ejercicios, tendrás una aplicación completa dockerizada
+lista para desplegarse en producción.
+
+
+
+
+
+
+
+========================================
+ Cuaderno 3: Publicación de una Aplicación en AWS con Docker y Load Balancer
+========================================
+
+Asignatura: Digitalización
+
+Objetivo:
+En este cuaderno, aprenderás a desplegar una aplicación web completa en AWS con:
+- Frontend en una instancia EC2 con Docker
+- Backend en otra instancia EC2 con Docker
+- Base de datos PostgreSQL en AWS RDS
+- Application Load Balancer (ALB) para distribuir el tráfico
+- Configuración de Security Groups y Listeners para la comunicación entre los servicios
+
+Todos los ejercicios se realizarán conectándose por SSH a las instancias EC2.
+
+----------------------------------------------------------------------
+EJERCICIO 1: Configuración de las Instancias EC2
+----------------------------------------------------------------------
+Teoría:
+Las instancias EC2 serán los servidores donde se ejecutarán el frontend y
+el backend. Es importante configurar correctamente las reglas de seguridad.
+
+Práctica:
+1) Crea dos instancias EC2 en AWS:
+   - Instancia para el Frontend
+   - Instancia para el Backend
+
+2) Asigna un Security Group a cada instancia con estas reglas:
+   - Frontend: Permitir tráfico entrante en el puerto 80 desde internet.
+   - Backend: Permitir tráfico entrante solo desde la IP del frontend en el puerto 3000.
+
+3) Conéctate a cada instancia por SSH y actualiza los paquetes:
+   -------------------------------------------------
+   sudo yum update -y
+   -------------------------------------------------
+
+4) Instala Docker en ambas instancias:
+   -------------------------------------------------
+   sudo yum install docker -y
+   sudo systemctl start docker
+   sudo systemctl enable docker
+   -------------------------------------------------
+
+----------------------------------------------------------------------
+EJERCICIO 2: Implementación del Backend con Docker
+----------------------------------------------------------------------
+Teoría:
+El backend será una API en Node.js con Express, ejecutada dentro de un
+contenedor Docker.
+
+Práctica:
+1) Conéctate a la instancia del backend.
+
+2) Clona el repositorio del backend o crea un nuevo proyecto.
+
+3) Crea un Dockerfile para la API:
+   -------------------------------------------------
+   FROM node:18
+   WORKDIR /app
+   COPY package.json .
+   RUN npm install
+   COPY . .
+   CMD ["node", "server.js"]
+   EXPOSE 3000
+   -------------------------------------------------
+
+4) Construye la imagen y ejecuta el contenedor:
+   -------------------------------------------------
+   docker build -t backend .
+   docker run -d -p 3000:3000 backend
+   -------------------------------------------------
+
+5) Verifica que la API está funcionando accediendo a:
+   http://<IP-BACKEND>:3000
+
+----------------------------------------------------------------------
+EJERCICIO 3: Configuración de AWS RDS con PostgreSQL
+----------------------------------------------------------------------
+Teoría:
+AWS RDS nos permite ejecutar una base de datos administrada sin preocuparnos
+por la infraestructura.
+
+Práctica:
+1) Crea una base de datos PostgreSQL en AWS RDS.
+
+2) Configura las credenciales y anota la URL de conexión.
+
+3) Modifica el backend para conectarse a RDS:
+   -------------------------------------------------
+   const { Pool } = require('pg');
+   const pool = new Pool({
+       user: 'admin',
+       host: '<URL_RDS>',
+       database: 'mi_base',
+       password: 'contraseña',
+       port: 5432
+   });
+   -------------------------------------------------
+
+4) Verifica la conexión desde la API realizando una consulta de prueba.
+
+----------------------------------------------------------------------
+EJERCICIO 4: Implementación del Frontend con Docker
+----------------------------------------------------------------------
+Teoría:
+El frontend es una aplicación HTML, CSS y JavaScript servida con Nginx.
+
+Práctica:
+1) Conéctate a la instancia del frontend.
+
+2) Clona el repositorio del frontend o crea un proyecto básico.
+
+3) Crea un Dockerfile:
+   -------------------------------------------------
+   FROM nginx
+   COPY . /usr/share/nginx/html
+   EXPOSE 80
+   -------------------------------------------------
+
+4) Construye y ejecuta el contenedor:
+   -------------------------------------------------
+   docker build -t frontend .
+   docker run -d -p 80:80 frontend
+   -------------------------------------------------
+
+5) Verifica que el frontend funciona accediendo a:
+   http://<IP-FRONTEND>
+
+----------------------------------------------------------------------
+EJERCICIO 5: Configuración de un Application Load Balancer
+----------------------------------------------------------------------
+Teoría:
+El ALB distribuirá el tráfico entre el frontend y las instancias backend.
+
+Práctica:
+1) Ve a AWS EC2 > Load Balancers y crea un Application Load Balancer.
+
+2) Configura los Listeners:
+   - HTTP (puerto 80) → Target Group (Frontend)
+   - HTTP (puerto 3000) → Target Group (Backend)
+
+3) Agrega las instancias EC2 al Target Group correspondiente.
+
+4) Prueba el balanceo accediendo a la URL del ALB.
+
+----------------------------------------------------------------------
+EJERCICIO 6: Conectar el Frontend con el Backend
+----------------------------------------------------------------------
+Teoría:
+El frontend debe consumir datos del backend a través del ALB.
+
+Práctica:
+1) Modifica el código JavaScript del frontend para llamar a la API:
+   -------------------------------------------------
+   fetch('http://<ALB-BACKEND-URL>:3000/api/datos')
+   -------------------------------------------------
+
+2) Verifica que el frontend puede acceder a los datos del backend.
+
+----------------------------------------------------------------------
+EJERCICIO 7: Configuración de Seguridad en AWS
+----------------------------------------------------------------------
+Práctica:
+1) Revisa los Security Groups:
+   - Bloquea accesos innecesarios.
+   - Permite solo tráfico entre instancias.
+
+2) Configura reglas en RDS para permitir tráfico únicamente desde
+   la instancia del backend.
+
+----------------------------------------------------------------------
+EJERCICIO 8: Configurar Logs y Monitoreo
+----------------------------------------------------------------------
+Teoría:
+Es importante monitorear los logs de nuestros servicios.
+
+Práctica:
+1) Habilita CloudWatch Logs en AWS.
+
+2) Configura los logs de Nginx y el backend para enviarlos a CloudWatch.
+
+----------------------------------------------------------------------
+EJERCICIO 9: Automatización con Docker Compose
+----------------------------------------------------------------------
+Práctica:
+1) Crea un docker-compose.yml para gestionar tus servicios (frontend y backend).
+
+2) Configura el backend y frontend para levantarlos con un solo comando:
+   -------------------------------------------------
+   docker-compose up -d
+   -------------------------------------------------
+
+----------------------------------------------------------------------
+EJERCICIO 10: Pruebas Finales y Optimización
+----------------------------------------------------------------------
+Práctica:
+1) Realiza pruebas de carga con herramientas como ab (Apache Benchmark).
+
+2) Optimiza configuraciones de Nginx y PostgreSQL.
+
+3) Documenta el flujo de despliegue y configuración para tener una guía de
+   referencia en futuras iteraciones.
+
+----------------------------------------------------------------------
+Con estos ejercicios, habrás aprendido a desplegar una aplicación web escalable
+en AWS con balanceo de carga y seguridad. ¡Enhorabuena! 🚀
+
+
