@@ -198,6 +198,14 @@ El backend será una API en Express.js que se comunicará con la base de datos
 y el frontend.
 
 Práctica:
+
+sudo yum install git -y
+
+
+sudo yum install -y nodejs
+npm init -y
+npm install express pg cors dotenv
+
 1) Crea o clona un repositorio:
    git clone <tu-repositorio>
    cd <nombre-del-repositorio>
