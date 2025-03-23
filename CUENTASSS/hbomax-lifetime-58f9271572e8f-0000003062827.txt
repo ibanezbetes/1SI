@@ -1,0 +1,15 @@
+recepcao.dataconta@hotmail.com:Jeffsche1 | firstName = scheila | lastName = CAVICHIOLI | profileName = [scheila, julia, bella, mari] | Lifetime autorenew = [True] | Sub = = Standard (Monthly)
+jucia_slosarek@onet.eu:Michal0488 | Lifetime autorenew = [True] | Sub = = Premium(Monthly)
+ana_atenciov@hotmail.com:Atencio13. | Lifetime autorenew = [True] | Sub = = Ad-Free (Monthly)
+mariasilvaneres.2015@gmail.com:123321456d | firstName = Maria Eduarda | lastName = Silva Neres | profileName = [BunDUDA, Dramin, Edu] | Lifetime autorenew = [True] | Sub = = Standard (Monthly)
+camyaylenlopez16@gmail.com:93006719Do. | firstName = Camila | lastName = Lopez | profileName = [Cammie, Marcelo, Valen, Invitados, DOMI] | Lifetime autorenew = [True] | Sub = = Standard (Monthly)
+makaylatucker88@icloud.com:Ilovewyatt88 | Lifetime autorenew = [True] | Sub = = Ad-Free (Monthly)
+rauleubiologo@gmail.com:RAULLUAR932 | firstName = Raul | lastName = César | profileName = [Mardone, Raul] | Lifetime autorenew = [True] | Sub = = Standard
+igmarsodre@gmail.com:140878Ifs | firstName = igmar Ferreira | lastName = Sodré | profileName = [igmar Ferreira, Amanda, JOAO GABRIEL] | Lifetime autorenew = [True] | Sub = = Standard (Monthly)
+perezcaballero.john@outlook.com:jhonsise04 | firstName = john | lastName = Perez Caballero | profileName = [John] | Lifetime autorenew = [True] | Sub = = Standard  | VISA = 6324
+penderikpatrikgameplay@gmail.com:TheHells2004# | Lifetime autorenew = [True] | Sub = = Global Premium (Bulanan)
+Lxrodz2009@gmail.com:Darien1160@ | Lifetime autorenew = [True] | Sub = = Ad-Free (Monthly)
+willianctoledo20@gmail.com:Toledo1903#### | firstName = Willian | lastName = Cardoso | profileName = [Willian, Crianças] | Lifetime autorenew = [True] | Sub = = Standard (Monthly)
+Timothyfalconer76@gmail.com:Flower$$$19 | Lifetime autorenew = [True] | Sub = = Standard NOFUNC
+gustavogb.barbosa@gmail.com:Zeusthedog01 | firstName = Gustavo | lastName = Gonçalves Barbosa | profileName = [Gustavo, Angela, Yan, Solomon, Carlos] | Lifetime autorenew = [True] | Sub = = LATAM Legacy STD | VISA = 7174 ROCIO
+ricardo.setran@gmail.com:Mariele12 | firstName = Ricardo | lastName = Ramos | profileName = [Ricardo, maria, Thiago] | Lifetime autorenew = [True] | Sub = = Legacy Standard | MASTERCARD = 7472 ROCIO

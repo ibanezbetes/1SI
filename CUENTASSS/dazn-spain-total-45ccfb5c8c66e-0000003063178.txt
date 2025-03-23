@@ -1,0 +1,7 @@
+rafelperez37@hotmail.es:anonimoASEKAS2468 | PlanType = DAZN PLUS | price = 39.99 | Status = Active | nextPaymentDate = 2025-04-13 | paymentMethod = Other | Expiry = Month | Country = Spain | FRESH MADE BY = C4r ROCIO 
+elfarfollas@msn.com:Dial88 | PlanType = DAZN PLUS | price = 39.99 | Status = Active | nextPaymentDate = 2025-04-01 | paymentMethod = Other | Expiry = Month | Country = Spain | FRESH MADE BY = C4r PAPA
+
+eliventuradeval@gmail.com:Loba1983 | PlanType = DAZN PLUS | price = 39.99 | Status = Active | nextPaymentDate = 2025-04-11 | paymentMethod = Other | Expiry = Month | Country = Spain | FRESH MADE BY = C4r
+grillojavi@hotmail.com:Sararaul6 | PlanType = DAZN PLUS | price = 39.99 | Status = Active | nextPaymentDate = 2025-04-08 | paymentMethod = Other | Expiry = Month | Country = Spain | FRESH MADE BY = C4r
+moicamos@gmail.com:CHP12345 | PlanType = DAZN PLUS | price = 39.99 | Status = Active | nextPaymentDate = 2025-04-06 | paymentMethod = Other | Expiry = Month | Country = Spain | FRESH MADE BY = C4r
+franchaveroveloso@gmail.com:Andrea2012 | PlanType = DAZN PLUS | price = 39.99 | Status = Active | nextPaymentDate = 2025-04-11 | paymentMethod = Other | Expiry = Month | Country = Spain | FRESH MADE BY = C4r
