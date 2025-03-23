@@ -1,6 +1,6 @@
 pdeodi@gmail.com:Tabbylove@0188:as.-region-in::Plan = Premium | Paymentmethods = UPI | Country = IN | VideoQuality = UHD | MaxStream = 4 | Membersince = January 2022 | Phone = 070305022789 ROCIO
 marta.dratwinska@gmail.com:Fragaria73:eu.-region-pl::Plan = Standardowy | Paymentmethods = PAYPAL | Country = PL | VideoQuality = HD | MaxStream = 2 | Membersince = September 2023 | Phone = 69207220319 |
-amanda.dobrzycka@wp.pl:1234amaD56:eu.-region-pl::Plan = Standardowy | Paymentmethods = CC | Country = PL | VideoQuality = HD | MaxStream = 2 | Membersince = September 2021
+amanda.dobrzycka@wp.pl:1234amaD56:eu.-region-pl::Plan = Standardowy | Paymentmethods = CC | Country = PL | VideoQuality = HD | MaxStream = 2 | Membersince = September 2021 MARIO
 jacek@mrozinscy.pl:Jacek0766:eu.-region-pl::Plan = Premium | Paymentmethods = CC | Country = PL | VideoQuality = UHD | MaxStream = 4 | Membersince = March 2020 | Phone = 50907210524
 edin17@wp.pl:Mateusz2912:eu.-region-pl::Plan = Podstawowy | Paymentmethods = CC | Country = PL | VideoQuality = HD720p | MaxStream = 1 | Membersince = June 2023 | Phone = 50903820017
 magda86.kaszowska@op.pl:policja1:eu.-region-pl::Plan = Premium | Paymentmethods = CC | Country = PL | VideoQuality = UHD | MaxStream = 4 | Membersince = August 2023 |
