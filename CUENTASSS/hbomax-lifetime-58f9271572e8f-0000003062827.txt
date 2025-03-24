@@ -15,3 +15,4 @@ Timothyfalconer76@gmail.com:Flower$$$19 | Lifetime autorenew = [True] | Sub = = 
 
 gustavogb.barbosa@gmail.com:Zeusthedog01 | firstName = Gustavo | lastName = Gonçalves Barbosa | profileName = [Gustavo, Angela, Yan, Solomon, Carlos] | Lifetime autorenew = [True] | Sub = = LATAM Legacy STD | VISA = 7174 ROCIO
 ricardo.setran@gmail.com:Mariele12 | firstName = Ricardo | lastName = Ramos | profileName = [Ricardo, maria, Thiago] | Lifetime autorenew = [True] | Sub = = Legacy Standard | MASTERCARD = 7472 ROCIO
+mbarrera@concitum.cl:MBeloy3748 | PlanStandard =  (Monthly) | Subscription = Premium Plan |
