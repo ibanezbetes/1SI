@@ -1,0 +1,73 @@
+APUNTES 25/03/2025 BBDD SQL
+
+SQL> SELECT DEPT_NO, COUNT(*) "TOTAL EMPLEADOS", AVG(SALARIO) "SUELDO MEDIO"
+  2  FROM EMPLE
+  3  GROUP BY DEPT_NO
+  4  HAVING AVG(SALARIO) < 2500
+  5  ORDER BY DEPT_NO;
+
+   DEPT_NO TOTAL EMPLEADOS SUELDO MEDIO
+---------- --------------- ------------
+        20               5         2274
+        30               6   1735,83333
+
+
+
+
+
+SQL> SELECT DEPT_NO, MAX(SALARIO) "MAXIMO", MIN(SALARIO) "MINIMO", SUM(SALARIO) "TOTAL"
+  2  FROM EMPLE
+  3  GROUP BY DEPT_NO
+  4  ORDER BY DEPT_NO;
+
+   DEPT_NO     MAXIMO     MINIMO      TOTAL
+---------- ---------- ---------- ----------
+        10       4100       2885       9985
+        20       3000       1040      11370
+        30       3005       1335      10415
+
+
+
+
+
+SQL> SELECT DEPT_NO, MAX(SALARIO) "MAXIMO", MIN(SALARIO) "MINIMO", SUM(SALARIO+NVL(COMISION,0)) "TOTAL"
+  2  FROM EMPLE
+  3  GROUP BY DEPT_NO
+  4  ORDER BY DEPT_NO;
+
+   DEPT_NO     MAXIMO     MINIMO      TOTAL
+---------- ---------- ---------- ----------
+        10       4100       2885       9985
+        20       3000       1040      11370
+        30       3005       1335      12475
+
+
+
+
+
+SQL> SELECT DEPART.DEPT_NO, EMPLE.OFICIO, COUNT(*) "TOTAL EMPLEADOS"
+  2  FROM EMPLE JOIN DEPART ON EMPLE.DEPT_NO=DEPART.DEPT_NO
+  3  GROUP BY DEPART.DEPT_NO, OFICIO
+  4  ORDER BY DEPT_NO;
+
+   DEPT_NO OFICIO     TOTAL EMPLEADOS
+---------- ---------- ---------------
+        10 DIRECTOR                 1
+        10 EMPLEADO                 1
+        10 PRESIDENTE               1
+        20 ANALISTA                 2
+        20 DIRECTOR                 1
+        20 EMPLEADO                 2
+        30 DIRECTOR                 1
+        30 EMPLEADO                 1
+        30 VENDEDOR                 4
+
+9 rows selected.
+
+
+
+
+
+
+
+
