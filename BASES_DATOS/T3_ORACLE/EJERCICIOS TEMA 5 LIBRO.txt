@@ -1,0 +1,150 @@
+EJERCICIOS TEMA 5 LIBRO
+
+1) Por cada oficio de los empleados del departamento 'VENTAS', la suma de salarios
+
+SQL> SELECT OFICIO,
+  2         SUM(SALARIO)
+  3    FROM EMPLE
+  4   WHERE DEPT_NO = (SELECT DEPT_NO
+  5                      FROM DEPART
+  6                     WHERE DNOMBRE = 'VENTAS')
+  7   GROUP BY OFICIO;
+
+OFICIO     SUM(SALARIO)
+---------- ------------
+VENDEDOR           6075
+EMPLEADO           1335
+DIRECTOR           3005
+
+
+2) Apellidos de EMPLE cuyo salario sea igual a la media de su propio departamento
+
+SQL> SELECT APELLIDO
+  2    FROM EMPLE
+  3   WHERE SALARIO = (SELECT AVG(SALARIO)
+  4                      FROM EMPLE
+  5                     WHERE DEPT_NO = EMPLE.DEPT_NO);
+
+no rows selected
+
+3) Número de empleados de 'VENTAS' cuyo oficio sea 'EMPLEADO'
+
+SQL> SELECT COUNT(*)
+  2    FROM EMPLE
+  3   WHERE DEPT_NO = (SELECT DEPT_NO
+  4                      FROM DEPART
+  5                     WHERE DNOMBRE = 'VENTAS')
+  6     AND OFICIO = 'EMPLEADO';
+
+  COUNT(*)
+----------
+         1
+
+4) Nombre del departamento que tenga más empleados con oficio 'EMPLEADO'
+
+SQL> SELECT DNOMBRE
+  2    FROM DEPART
+  3   WHERE DEPT_NO IN (
+  4         SELECT DEPT_NO
+  5           FROM EMPLE
+  6          WHERE OFICIO = 'EMPLEADO'
+  7          GROUP BY DEPT_NO
+  8         HAVING COUNT(*) >= ALL (
+  9               SELECT COUNT(*)
+ 10                 FROM EMPLE
+ 11                WHERE OFICIO = 'EMPLEADO'
+ 12                GROUP BY DEPT_NO
+ 13         )
+ 14   );
+
+DNOMBRE
+--------------
+INVESTIGACION
+
+5) Número y nombre del departamento con más 'EMPLEADOS'
+
+SQL> SELECT DEPT_NO,
+  2         DNOMBRE
+  3    FROM DEPART
+  4   WHERE DEPT_NO IN (
+  5         SELECT DEPT_NO
+  6           FROM EMPLE
+  7          WHERE OFICIO = 'EMPLEADO'
+  8          GROUP BY DEPT_NO
+  9         HAVING COUNT(*) >= ALL (
+ 10               SELECT COUNT(*)
+ 11                 FROM EMPLE
+ 12                WHERE OFICIO = 'EMPLEADO'
+ 13                GROUP BY DEPT_NO
+ 14         )
+ 15   );
+
+   DEPT_NO DNOMBRE
+---------- --------------
+        20 INVESTIGACION
+
+6) Departamentos que tienen más de dos personas con la misma profesión
+
+SQL> SELECT DISTINCT DNOMBRE
+  2    FROM DEPART
+  3   WHERE DEPT_NO IN (
+  4         SELECT DEPT_NO
+  5           FROM EMPLE
+  6          GROUP BY DEPT_NO, OFICIO
+  7         HAVING COUNT(*) > 2
+  8   );
+
+DNOMBRE
+--------------
+VENTAS
+
+7) NOMBRES DE ALUM QUE ESTÉN A LA VEZ EN ANTIGUOS Y EN NUEVOS
+
+SQL> SELECT NOMBRE
+  2    FROM ALUM
+  3   WHERE NOMBRE IN (SELECT NOMBRE FROM ANTIGUOS)
+  4     AND NOMBRE IN (SELECT NOMBRE FROM NUEVOS);
+
+NOMBRE
+--------------------
+ERNESTO
+
+8) OTRA FORMA DE SACAR ALUMNOS QUE ESTÉN EN ANTIGUOS Y NUEVOS
+
+SQL> SELECT ALUM.NOMBRE
+  2    FROM ALUM, ANTIGUOS, NUEVOS
+  3   WHERE ALUM.NOMBRE = ANTIGUOS.NOMBRE
+  4     AND ALUM.NOMBRE = NUEVOS.NOMBRE;
+
+NOMBRE
+--------------------
+ERNESTO
+
+9) NOMBRES DE ALUM QUE NO ESTÉN NI EN ANTIGUOS NI EN NUEVOS
+
+SQL> SELECT NOMBRE
+  2    FROM ALUM
+  3   WHERE NOMBRE NOT IN (SELECT NOMBRE FROM ANTIGUOS)
+  4     AND NOMBRE NOT IN (SELECT NOMBRE FROM NUEVOS);
+
+NOMBRE
+--------------------
+PEDRO
+LUISA
+RAQUEL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
