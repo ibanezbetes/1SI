@@ -118,6 +118,6 @@ iren4@mail.bg:Iren41971 | PlanType = Legacy Standard | NextBillingDate =  Feb 28
 juliodurante23@hotmail.com:Juja12345.? | PlanType = Premium (Monthly) | PaymentMethod = Billed Through Roku | Lifetime autorenew = [True]
 pablitocansino@gmail.com:Minisdef1970@34771309r | PlanType = Legacy Standard | PaymentMethod = VISA **** 9548 | Lifetime autorenew = [True]
 Stevevw22@gmail.com:quesadilla123 | USER = Steve Ling | PlanType = Plan actual | Lifetime autorenew = [True]
-honner000@gmail.com:angarita1440 | USER = Honner | PlanType = Plan actual | Lifetime autorenew = [True]
+ | USER = Honner | PlanType = Plan actual | Lifetime autorenew = [True]
 carolinip35@gmail.com:carolagatha1993@ | USER = Carolini | PlanType = Standard (Monthly) | PaymentMethod = Billed Through TIM Ultrafibra | Lifetime autorenew = [True]
 javisb84@gmail.com:Ponderosa84 | PlanType = Legacy Standard | PaymentMethod = VISA **** 2480 | Lifetime autorenew = [True]

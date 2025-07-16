@@ -13,3 +13,39 @@ moicamos@gmail.com:CHP12345 | PlanType = DAZN PLUS | price = 39.99 | Status = Ac
 
 franchaveroveloso@gmail.com:Andrea2012 | PlanType = DAZN PLUS | price = 39.99 | Status = Active | nextPaymentDate = 2025-04-11 | paymentMethod = Other | Expiry = Month | Country = Spain | FRESH MADE BY = C4r
 @bernabeu8 30/03/2025
+
+
+----------------
+
+guillermodasilvaribero@gmail.com:12345Wqa | Name: Guillermo Ribeiro | Country: ES
+
+franciscop406@gmail.com:FpR,250668 | Name: francisco paez rocriguez | Country: ES
+
+josem.hidalgo@hotmail.es:1567Lucho | Name: José Manuel Hidalgo Garzón | Country: ES
+
+iristonet@gmail.com:Marbell1310 | Name: antonio martinez perez | Country: ES
+
+zamoranojulian58@yahoo.es:zamorano28758leotu | Name: Julián Zamorano Dominguez | Country: ES
+
+fabeloper@gmail.com:Nash5574 | Name: Fabian Soria | Country: ES
+
+ferlopez83@gmail.com:Fernan1012 | Name: Fernando Lopez Fernández | Country: ES
+
+julio2502.jmm@gmail.com:Jmmnela21 | Name: Julio Marqués Marchand | Country: ES
+
+lugofuer@hotmail.com:Antonio1960 | Name: Justo Antonio Rigueiro Vallejo | Country: ES
+
+jcsolans1771@gmail.com:Alcofea7 | Name: Juan Carlos Solans | Country: ES
+
+---------------
+
+
+joaquinvalderrama@gmail.com:Rovacias61 | (Subscripción) = [dazn plus] | (Periodo del plan) = [Month] | (Precio) = [39.99] | (País) = [España] | (Lifetime autorenew) = [True]
+
+Algrubio@yahoo.es:Juan2009 | (Subscripción) = [dazn plus] | (Periodo del plan) = [Month] | (Precio) = [39.99] | (País) = [España] | (Lifetime autorenew) = [True]
+
+ignacioburgada@hotmail.com:Burgada73 | (Subscripción) = [dazn plus] | (Periodo del plan) = [Month] | (Precio) = [39.99] | (País) = [España] | (Lifetime autorenew) = [True]
+
+jlnm1961@gmail.com:Kopito61 | (Subscripción) = [dazn plus] | (Periodo del plan) = [Month] | (Precio) = [39.99] | (País) = [España] | (Lifetime autorenew) = [True]
+
+alex.gonzalez.fernandez.14@gmail.com:Cem123456 | (Subscripción) = [dazn plus] | (Periodo del plan) = [Month] | (Precio) = [39.99] | (País) = [España] | (Lifetime autorenew) = [True]
